@@ -1,9 +1,9 @@
 import './styles.css';
 import { useRef } from 'react';
-import { SubmitButton } from '../SubmitButton';
+import SubmitButton from '../SubmitButton';
 import useFormValidation from '../../hooks/useFormValidation';
 
-export const Form = ({
+const Form = ({
   children,
   onSubmit,
   isSubmitActive
@@ -34,3 +34,5 @@ export const Form = ({
     </form>
   )
 };
+
+export default Form;
