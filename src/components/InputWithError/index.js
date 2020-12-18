@@ -1,7 +1,7 @@
 import './styles.css';
 import { useState } from 'react';
 
-export const InputWithError = ({
+const InputWithError = ({
   name,
   placeholder,
   type,
@@ -40,3 +40,5 @@ export const InputWithError = ({
     </>
   )
 };
+
+export default InputWithError;
