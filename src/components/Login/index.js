@@ -1,12 +1,12 @@
 import './styles.css';
 import { useState } from 'react';
-import { Form } from "../Form";
-import { InputWithError } from "../InputWithError"
+import Form from "../Form";
+import InputWithError from "../InputWithError";
 
-export const LoginForm = ({
+const Login = ({
   // TODO -- прописать в App функцию для обработки login
   // и передать в пропсы
-  onSubmit
+  onLogin
 }) => {
   const [data, setData] = useState({
     email: '',
@@ -25,7 +25,7 @@ export const LoginForm = ({
   return (
     <div className="form-wrapper">
       <Form
-        onSubmit={onSubmit}
+        onSubmit={onLogin}
         isSubmitActive={false}
       >
         <h2>Личный кабинет</h2>
@@ -50,3 +50,5 @@ export const LoginForm = ({
     </div>
   )
 };
+
+export default Login;

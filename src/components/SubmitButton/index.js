@@ -1,6 +1,6 @@
 import './styles.css';
 
-export const SubmitButton = ({
+const SubmitButton = ({
   title,
   isActive,
 }) => {
@@ -14,3 +14,5 @@ export const SubmitButton = ({
     </button>
   )
 };
+
+export default SubmitButton;
