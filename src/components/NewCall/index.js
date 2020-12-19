@@ -18,6 +18,8 @@ import otherLogo from '../../images/create_call_other.svg';
 import iceLogo from '../../images/create_call_ice.svg';
 import snowLogo from '../../images/create_call_snow.svg';
 import treeLogo from '../../images/create_call_tree.svg';
+import angryLogo from '../../images/create_call_angry.svg';
+import disappointmentLogo from '../../images/create_call_disappointment.svg';
 
 const NewCall = () => {
   return (
@@ -62,7 +64,7 @@ const NewCall = () => {
             <h2 className="int-title">Составьте новое обращение</h2>
             <p className="hint-subtitle">Выберите место где возникла проблема</p>
           </div>
-          <div className="cards">
+          <div className="cards cards_type_place">
             <button type="button" className="card card_type_place">
               <img src="#" alt="" className="card__emoji"></img>
               <p className="card__title"> Кваритра</p>
@@ -121,7 +123,7 @@ const NewCall = () => {
             <h2 className="int-title">Выберите проблему</h2>
             <p className="hint-subtitle"></p>
           </div>
-          <div className="cards">
+          <div className="cards cards__type_problem">
             <button type="button" className="card card_type_problem">
               <img src={plungerLogo} alt="" className="card__emoji"></img>
               <p className="card__title">Засор канализации</p>
@@ -204,7 +206,7 @@ const NewCall = () => {
             <h2 className="int-title">Выберите проблему</h2>
             <p className="hint-subtitle"></p>
           </div>
-          <div className="cards">
+          <div className="cards cards__type_problem">
             <button type="button" className="card card_type_problem">
               <img src={graffitiLogo} alt="" className="card__emoji"></img>
               <p className="card__title">Надписи на стенах</p>
@@ -307,7 +309,7 @@ const NewCall = () => {
             <h2 className="int-title">Выберите проблему</h2>
             <p className="hint-subtitle"></p>
           </div>
-          <div className="cards">
+          <div className="cards cards__type_problem">
             <button type="button" className="card card_type_problem">
               <img src={trashLogo} alt="" className="card__emoji"></img>
               <p className="card__title">Мусор</p>
@@ -354,6 +356,130 @@ const NewCall = () => {
             </button>
           </div>
           <button type="button" className="button button_type_forward"><p className="button__title">Далее</p></button>
+        </section>
+      </section>
+      <footer className="footer"></footer>
+
+      <header className="header">
+        <div className="logo"></div>
+        <div className="header__user-profile">
+          <a href="#" className="header__user-profile-enter">nikerfe@gmail.com</a>
+          <button type="submit" className="header__user-profile-logout"></button>
+        </div>
+      </header>
+      <section className="new-call">
+        <nav className="navigation">
+          <ul className="navigation__item-list">
+            <li className="navigation__item">
+              <a href="#" className="navigation__item-link"><div className="navigation__item-image navigation__item-image_type_user-calls"></div>
+                <p className="navigation__item-title">Заявка</p>
+              </a>
+            </li>
+            <li className="navigation__item">
+              <a href="#" className="navigation__item-link">
+                <div className="navigation__item-image navigation__item-image_type_new-call"></div>
+                <p className="navigation__item-title">Оставить обращение</p>
+              </a>
+            </li>
+            <li className="navigation__item">
+              <a href="#" className="navigation__item-link">
+                <div className="navigation__item-image navigation__item-image_type_profile"></div>
+                <p className="navigation__item-title">Профиль</p>
+              </a>
+            </li>
+            <li className="navigation__item">
+              <a href="#" className="navigation__item-link">
+                <div className="navigation__item-image navigation__item-image_type_profile"></div>
+                <p className="navigation__item-title">О проекте</p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <section className="create-call create-call_type_actuality">
+          <div className="hint">
+            <h2 className="int-title">Определите срочность проблемы</h2>
+            <p className="hint-subtitle"></p>
+          </div>
+          <div className="cards cards__type_actuality">
+            <button type="button" className="card card_type_actuality">
+              <img src={angryLogo} alt="" className="card__emoji card__emoji_type_actuality"></img>
+              <p className="card__title card__title_type_actuality">Срочно</p>
+            </button>
+            <button type="button" className="card card_type_actuality">
+              <img src={disappointmentLogo} alt="" className="card__emoji card__emoji_type_actuality"></img>
+              <p className="card__title card__title_type_actuality">Несрочно</p>
+            </button>
+          </div>
+          <button type="button" className="button button_type_forward"><p className="button__title">Далее</p></button>
+        </section>
+      </section>
+      <footer className="footer"></footer>
+
+      <header className="header">
+        <div className="logo"></div>
+        <div className="header__user-profile">
+          <a href="#" className="header__user-profile-enter">nikerfe@gmail.com</a>
+          <button type="submit" className="header__user-profile-logout"></button>
+        </div>
+      </header>
+      <section className="new-call">
+        <nav className="navigation">
+          <ul className="navigation__item-list">
+            <li className="navigation__item">
+              <a href="#" className="navigation__item-link"><div className="navigation__item-image navigation__item-image_type_user-calls"></div>
+                <p className="navigation__item-title">Заявка</p>
+              </a>
+            </li>
+            <li className="navigation__item">
+              <a href="#" className="navigation__item-link">
+                <div className="navigation__item-image navigation__item-image_type_new-call"></div>
+                <p className="navigation__item-title">Оставить обращение</p>
+              </a>
+            </li>
+            <li className="navigation__item">
+              <a href="#" className="navigation__item-link">
+                <div className="navigation__item-image navigation__item-image_type_profile"></div>
+                <p className="navigation__item-title">Профиль</p>
+              </a>
+            </li>
+            <li className="navigation__item">
+              <a href="#" className="navigation__item-link">
+                <div className="navigation__item-image navigation__item-image_type_profile"></div>
+                <p className="navigation__item-title">О проекте</p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <section className="create-call create-call_type_card-call">
+          <div className="hint">
+            <h2 className="int-title">Определите срочность проблемы</h2>
+            <p className="hint-subtitle"></p>
+          </div>
+          <div className="cards cards_type_call">
+          <div className="card-call">
+            <div className="card-call__element">
+              <h3 className="card-call__title">Место</h3>
+              <img src="#" alt="" className="card-call__image card-call__image_type_place"></img>
+            </div>
+            <div className="card-call__element">
+              <h3 className="card-call__title">Проблема</h3>
+              <img src="#" alt="" className="card-call__image card-call__image_type_problem"></img>
+            </div>
+            <div className="card-call__element">
+              <h3 className="card-call__title">Срочность</h3>
+              <img src="#" alt="" className="card-call__image card-call__image_type_actuality"></img>
+            </div>
+            <div className="card-call__element .card-call__element_type_adress">
+              <h3 className="card-call__title">Адрес</h3>
+              <p className="card-call__description card-call__description_type_adress">Заглушка</p>
+            </div>
+            <div className="card-call__element card-call__element_type_poem">
+              <h3 className="card-call__title">Описание</h3>
+              <p className="card-call__description card-call__description_type_poem">Заглушка</p>
+            </div>
+          </div>
+          </div>
+          <button type="submit" className="button button_type_submit"><p className="button__title">Отправить</p></button>
         </section>
       </section>
       <footer className="footer"></footer>
