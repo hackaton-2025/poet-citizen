@@ -18,12 +18,10 @@ function App() {
   }
 
   return (
-<<<<<<< HEAD
+
     <div className="page">
       {/* <LoginForm /> */}
-=======
-    <div className="App">
->>>>>>> d1e3abb5309cc71a443f2b5d29cf26ba2180ddcd
+
       <Switch>
         <Route path="/signin">
           <Login
