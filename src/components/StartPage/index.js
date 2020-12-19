@@ -10,7 +10,7 @@ const StartPage = () => {
       <Link to="/new-call">Оставить заявку</Link>
       <Link to="/about">О проекте</Link>
       <Link to="/signup">Регистрация</Link>
-      <Link to="/sugnin">Вход</Link>
+      <Link to="/signin">Вход</Link>
     </div>
   )
 };

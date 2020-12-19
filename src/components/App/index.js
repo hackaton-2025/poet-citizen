@@ -1,13 +1,13 @@
-import './App.css';
+import './styles.css';
 import { useState } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Login from './components/Login';
-import ProtectedRoute from './hocs/ProtectedRoute';
-import NewCall from './components/NewCall';
-import StartPage from './components/StartPage';
-import Register from './components/Register';
-import Account from './Account';
-import About from './About';
+import Login from '../Login';
+import ProtectedRoute from '../../hocs/ProtectedRoute';
+import NewCall from '../NewCall';
+import StartPage from '../StartPage';
+import Register from '../Register';
+import Account from '../Account';
+import About from '../About';
 // import { LoginForm } from './components/LoginForm';
 
 function App() {
