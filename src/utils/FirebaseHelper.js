@@ -1,8 +1,5 @@
-//var firebase = require("firebase/app");
-//import firebase from "firebase/app";
-//Юля выбери подходящий способ получения переменной firebase, я её использую для работы с базой.
-//Перед этим нужно обязательно сделать npm install --save firebase
-
+import firebase from "firebase/app";
+import { FIREBASE_CONFIG } from "../configs/firebaseConfig.js";
 // Как пользоваться:
 // const fbHelper = new FirebaseHelper(firebase);
 // fbHelper.initializeApp();
@@ -14,21 +11,15 @@
 //   status: "Не просмотрено",
 //   srochnost: "Срочно",
 // });
-// fbHelper.getCards("test@yandex.ru");
+// fbHelper.getCards("test@yandex.ru").then((value) => {
+//  console.log(value);
+//});
+
+//Юля по поводу переменной с конфигурацией ты это имела ввиду?
 
 export class FirebaseHelper {
   constructor(firebase) {
-    this._config = {
-      apiKey: "AIzaSyC_BhdqVU3XRCNQeXjkE1GkwfGiuSKhXE0",
-      authDomain: "hackaton-yandex-praktikum.firebaseapp.com",
-      databaseURL:
-        "https://hackaton-yandex-praktikum-default-rtdb.firebaseio.com",
-      projectId: "hackaton-yandex-praktikum",
-      storageBucket: "hackaton-yandex-praktikum.appspot.com",
-      messagingSenderId: "1002406482202",
-      appId: "1:1002406482202:web:cd20c09f8fa000555c1ca3",
-      measurementId: "G-XDKFMK8GY0",
-    };
+    this._config = FIREBASE_CONFIG;
     this._firebase = firebase;
   }
 
@@ -50,7 +41,7 @@ export class FirebaseHelper {
     });
   }
 
-  getCards(email) {
+  async getCards(email) {
     const array = [];
     this._dbRef
       .ref("requests/")
@@ -63,7 +54,8 @@ export class FirebaseHelper {
           array.push(childData);
         });
         array.reverse();
-        console.log(array); //массив значений
       });
+    this._cards = await array;
+    return this._cards;
   }
 }
