@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "./styles.css";
+
 import { FirebaseHelper } from "../../utils/FirebaseHelper.js";
 
 const StartPage = () => {
