@@ -21,7 +21,7 @@ import treeLogo from '../../images/create_call_tree.svg';
 
 const NewCall = () => {
   return (
-    <div className="page">
+    <div className="page-container">
       <header className="header">
         <div className="logo"></div>
         <div className="header__user-profile">

@@ -1,14 +1,6 @@
-.page {
-    max-width: 1440px;
-    padding: 0 165px;
-    background-color: #E8EDFF;
-    font-family: Inter, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  text-rendering: optimizeLegibility;
+.page-container {
+  max-width: 1110px;
+  margin: 0 auto;
 }
 
 .header {
@@ -207,7 +199,8 @@ cursor: pointer;
 .button_type_forward {
     width: 160px;
     height: 50px;
-    margin: 35px 0 0 auto;
+    align-self: flex-end;
+    margin-top: 35px;
 }
 
 .footer  {
