@@ -8,7 +8,6 @@ import StartPage from '../StartPage';
 import Register from '../Register';
 import Account from '../Account';
 import About from '../About';
-// import { LoginForm } from './components/LoginForm';
 
 function App() {
   // TODO -- initial state false
@@ -19,8 +18,12 @@ function App() {
   }
 
   return (
+<<<<<<< HEAD
     <div className="page">
       {/* <LoginForm /> */}
+=======
+    <div className="App">
+>>>>>>> d1e3abb5309cc71a443f2b5d29cf26ba2180ddcd
       <Switch>
         <Route path="/signin">
           <Login

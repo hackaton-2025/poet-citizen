@@ -1,8 +1,9 @@
-import { Link } from 'react-router-dom';
-import './styles.css';
+import { Link } from "react-router-dom";
+import "./styles.css";
+import { FirebaseHelper } from "../../utils/FirebaseHelper.js";
 
 const StartPage = () => {
-  return(
+  return (
     // TODO -- Это всё просто для наглядности. Убрать.
     <div className="test">
       <h1>Здесь будет стартовая страница</h1>
@@ -12,7 +13,7 @@ const StartPage = () => {
       <Link to="/signup">Регистрация</Link>
       <Link to="/signin">Вход</Link>
     </div>
-  )
+  );
 };
 
 export default StartPage;
