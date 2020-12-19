@@ -1,24 +1,9 @@
-import firebase from "firebase/app";
+import firebase from "firebase";
 import { FIREBASE_CONFIG } from "../configs/firebaseConfig.js";
-// Как пользоваться:
-// const fbHelper = new FirebaseHelper(firebase);
-// fbHelper.initializeApp();
-
-// fbHelper.addNewCard({
-//   email: "test@yandex.ru",
-//   name: "Коды эмоджи через пробел",
-//   text: "Стих",
-//   status: "Не просмотрено",
-//   srochnost: "Срочно",
-// });
-// fbHelper.getCards("test@yandex.ru").then((value) => {
-//  console.log(value);
-//});
-
 //Юля по поводу переменной с конфигурацией ты это имела ввиду?
 
 export class FirebaseHelper {
-  constructor(firebase) {
+  constructor() {
     this._config = FIREBASE_CONFIG;
     this._firebase = firebase;
   }
