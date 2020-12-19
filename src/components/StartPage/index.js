@@ -5,24 +5,24 @@ const StartPage = () => {
   return (
     // TODO -- Это всё просто для наглядности. Убрать.
     <div className="page-container">
-      <header class="header">
-        <div class="header__content">
-          <div class="contacts">
-            <div class="logo"></div>
-            <h3 class="contacts__text">Написать нам: dom@zhkh.ru</h3>
+      <header className="header">
+        <div className="header__content">
+          <div className="contacts">
+            <div className="logo"></div>
+            <h3 className="contacts__text">Написать нам: dom@zhkh.ru</h3>
           </div>
           <Link to="/signin" className="header__btn">
             Войти
           </Link>
         </div>
       </header>
-      <section class="banner">
-        <div class="banner__content">
-          <h1 class="banner__title">
+      <section className="banner">
+        <div className="banner__content">
+          <h1 className="banner__title">
             Экспресс заявки на проведение работ по благоустройству и
             обслуживанию объектов жилых комплексов
           </h1>
-          <div class="banner__btn-container">
+          <div className="banner__btn-container">
             <Link to="/me" className="banner__btn">
               Личный кабинет
             </Link>
@@ -32,31 +32,31 @@ const StartPage = () => {
           </div>
         </div>
       </section>
-      <section class="content">
-        <div class="content__content">
-          <h2 class="content__title">Услуги</h2>
-          <ul class="content__list">
-            <li class="content__item"></li>
-            <li class="content__item"></li>
-            <li class="content__item"></li>
-            <li class="content__item"></li>
-            <li class="content__item"></li>
-            <li class="content__item"></li>
+      <section className="content">
+        <div className="content__content">
+          <h2 className="content__title">Услуги</h2>
+          <ul className="content__list">
+            <li className="content__item"></li>
+            <li className="content__item"></li>
+            <li className="content__item"></li>
+            <li className="content__item"></li>
+            <li className="content__item"></li>
+            <li className="content__item"></li>
           </ul>
         </div>
       </section>
-      <section class="content content_news">
-        <div class="content__content">
-          <h2 class="content__title">Новости</h2>
-          <ul class="content__list">
-            <li class="content__item content__item_news"></li>
-            <li class="content__item content__item_news"></li>
-            <li class="content__item content__item_news"></li>
+      <section className="content content_news">
+        <div className="content__content">
+          <h2 className="content__title">Новости</h2>
+          <ul className="content__list">
+            <li className="content__item content__item_news"></li>
+            <li className="content__item content__item_news"></li>
+            <li className="content__item content__item_news"></li>
           </ul>
         </div>
       </section>
-      <footer class="footer">
-        <div class="footer__content">
+      <footer className="footer">
+        <div className="footer__content">
           <Link to="/new-call" className="">
             Оставить заявку
           </Link>

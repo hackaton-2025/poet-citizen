@@ -21,7 +21,7 @@ import treeLogo from "../../images/create_call_tree.svg";
 import angryLogo from "../../images/create_call_angry.svg";
 import disappointmentLogo from "../../images/create_call_disappointment.svg";
 
-const NewCall = () => {
+const Account = () => {
   return (
     <div className="page-container">
       <div className="page-container__content">
@@ -67,19 +67,13 @@ const NewCall = () => {
             </ul>
           </nav>
           <section className="requests">
-            <template id="requests__null">
-              <div className="requests__null">
-                <h1 className="requests__title requests__title_null">
-                  Нет ни одной заявки в работе :(
-                </h1>
-                <p className="requests__subtitle">
-                  Составьте обращение - здесь появится информация по вашей
-                  заявке
-                </p>
-              </div>
-            </template>
             <div className="requests__list">
-              <h1 className="requests__title">Ваши заявки:</h1>
+              <h1 className="requests__title requests__title_null">
+                Нет ни одной заявки в работе :(
+              </h1>
+              <p className="requests__subtitle">
+                Составьте обращение - здесь появится информация по вашей заявке
+              </p>
               <div className="requests__item">
                 <div className="requests__header">
                   <p className="requests__name">&#129314; &#129314;</p>
@@ -103,4 +97,4 @@ const NewCall = () => {
   );
 };
 
-export default NewCall;
+export default Account;
