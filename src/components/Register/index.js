@@ -62,6 +62,7 @@ const Register = ({ onRegister }) => {
           id="house"
           name="house"
           type="text"
+          pattern="^(\d{1,3}[а-я]{0,1})"
           required={true}
           value={values.house || ''}
           onChange={handleChange}
@@ -73,6 +74,7 @@ const Register = ({ onRegister }) => {
           id="entrance"
           name="entrance"
           type="text"
+          pattern="^(\d{1,2})"
           value={values.entrance || ''}
           onChange={handleChange}
         />
@@ -83,6 +85,7 @@ const Register = ({ onRegister }) => {
           id="floor"
           name="floor"
           type="text"
+          pattern="^(\d{1,2})"
           value={values.floor || ''}
           onChange={handleChange}
         />
@@ -93,6 +96,7 @@ const Register = ({ onRegister }) => {
           id="flat"
           name="flat"
           type="text"
+          pattern="^(\d{1,4}[а-я]{0,1})"
           value={values.flat || ''}
           onChange={handleChange}
         />
