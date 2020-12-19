@@ -1,27 +1,6 @@
 import "./styles.css";
-import plungerLogo from "../../images/create_call_plunger.svg";
-import cockroachLogo from "../../images/create_call_cockroach.svg";
-import heatLogo from "../../images/create_call_heat.svg";
-import floodLogo from "../../images/create_call_flood.svg";
-import lampLogo from "../../images/create_call_lamp.svg";
-import frozeLogo from "../../images/create_call_froze.svg";
-import craneLogo from "../../images/create_call_crane.svg";
-import flashLogo from "../../images/create_call_flash.svg";
-import doorphoneLogo from "../../images/create_call_doorphone.svg";
-import adLogo from "../../images/create_call_ad.svg";
-import graffitiLogo from "../../images/create_call_graffiti.svg";
-import mopLogo from "../../images/create_call_mop.svg";
-import smellLogo from "../../images/create_call_smell.svg";
-import trashLogo from "../../images/create_call_trash.svg";
-import elevatorLogo from "../../images/create_call_elevator.svg";
-import otherLogo from "../../images/create_call_other.svg";
-import iceLogo from "../../images/create_call_ice.svg";
-import snowLogo from "../../images/create_call_snow.svg";
-import treeLogo from "../../images/create_call_tree.svg";
-import angryLogo from "../../images/create_call_angry.svg";
-import disappointmentLogo from "../../images/create_call_disappointment.svg";
 
-const Account = () => {
+const NewCall = () => {
   return (
     <div className="page-container">
       <div className="page-container__content">
@@ -68,12 +47,11 @@ const Account = () => {
           </nav>
           <section className="requests">
             <div className="requests__list">
-              <h1 className="requests__title requests__title_null">
+              <h1 className="requests__title">
                 Нет ни одной заявки в работе :(
               </h1>
-              <p className="requests__subtitle">
-                Составьте обращение - здесь появится информация по вашей заявке
-              </p>
+            </div>
+            <template id="requests__item">
               <div className="requests__item">
                 <div className="requests__header">
                   <p className="requests__name">&#129314; &#129314;</p>
@@ -88,7 +66,7 @@ const Account = () => {
                   Обращение составлено: 12.03.19 – 12:33
                 </p>
               </div>
-            </div>
+            </template>
           </section>
         </section>
         <footer className="footer"></footer>
@@ -97,4 +75,4 @@ const Account = () => {
   );
 };
 
-export default Account;
+export default NewCall;
