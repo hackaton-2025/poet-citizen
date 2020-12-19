@@ -18,7 +18,10 @@ function App() {
   }
 
   return (
-    <div className="App">
+
+    <div className="page">
+      {/* <LoginForm /> */}
+
       <Switch>
         <Route path="/signin">
           <Login
