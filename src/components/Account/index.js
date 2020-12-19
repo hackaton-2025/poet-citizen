@@ -1,6 +1,6 @@
 import "./styles.css";
 
-const NewCall = () => {
+const Account = () => {
   return (
     <div className="page-container">
       <div className="page-container__content">
@@ -75,4 +75,4 @@ const NewCall = () => {
   );
 };
 
-export default NewCall;
+export default Account;
