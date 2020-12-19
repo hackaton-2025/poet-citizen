@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 import "./styles.css";
 
-import { FirebaseHelper } from "../../utils/FirebaseHelper.js";
-
 const StartPage = () => {
   return (
     // TODO -- Это всё просто для наглядности. Убрать.
