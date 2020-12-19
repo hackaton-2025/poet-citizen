@@ -1,19 +1,19 @@
-import { Link } from "react-router-dom";
-import "./styles.css";
-
-const StartPage = () => {
-  return (
-    // TODO -- Это всё просто для наглядности. Убрать.
-    <div className="page-container">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Document</title>
+  </head>
+  <body class="page">
+    <div class="page-container">
       <header class="header">
         <div class="header__content">
           <div class="contacts">
             <div class="logo"></div>
             <h3 class="contacts__text">Написать нам: dom@zhkh.ru</h3>
           </div>
-          <Link to="/signin" className="header__btn">
-            Войти
-          </Link>
+          <button type="button" class="header__btn">Войти</button>
         </div>
       </header>
       <section class="banner">
@@ -23,12 +23,10 @@ const StartPage = () => {
             обслуживанию объектов жилых комплексов
           </h1>
           <div class="banner__btn-container">
-            <Link to="/me" className="banner__btn">
-              Личный кабинет
-            </Link>
-            <Link to="/signup" className="banner__btn banner__btn_transparent">
+            <button type="button" class="banner__btn">Личный кабинет</button>
+            <button type="button" class="banner__btn banner__btn_transparent">
               Регистрация
-            </Link>
+            </button>
           </div>
         </div>
       </section>
@@ -56,17 +54,8 @@ const StartPage = () => {
         </div>
       </section>
       <footer class="footer">
-        <div class="footer__content">
-          <Link to="/new-call" className="">
-            Оставить заявку
-          </Link>
-          <Link to="/about" className="">
-            О проекте
-          </Link>
-        </div>
+        <div class="footer__content"></div>
       </footer>
     </div>
-  );
-};
-
-export default StartPage;
+  </body>
+</html>
