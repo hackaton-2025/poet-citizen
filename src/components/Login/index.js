@@ -1,5 +1,4 @@
 import './styles.css';
-import { useState } from 'react';
 import useFormValidation from '../../hooks/useFormWithValidation';
 import setCustomValidity from '../../utils/setCustomValidity';
 
@@ -24,11 +23,11 @@ const Login = ({
         onSubmit={handleSubmit}
       >
         <h2>Личный кабинет</h2>
-        <label htmlFor="name">Email</label>
+
+        <label htmlFor="email">Email</label>
         <input
-          id="name"
+          id="email"
           name="email"
-          placeholder="Введите email"
           type="email"
           pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
           required={true}
@@ -36,11 +35,11 @@ const Login = ({
           onChange={handleChange}
         />
         <span>{errors.email || ''}</span>
+
         <label htmlFor="password">Пароль</label>
         <input
           id="password"
           name="password"
-          placeholder="Введите пароль"
           type="password"
           minLength="6"
           required={true}
@@ -48,6 +47,7 @@ const Login = ({
           onChange={handleChange}
         />
         <span>{errors.password || ''}</span>
+
         <button
           className="submit-btn"
           type="submit"
