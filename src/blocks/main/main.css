@@ -1,0 +1,19 @@
+.main {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 255px 1fr;
+  padding-top: 50px;
+  gap: 30px;
+  align-items: flex-start;
+  flex-grow: 1;
+}
+
+.main__content {
+  background-color: #ffffff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 70px 62px;
+  min-height: 600px;
+  box-sizing: border-box;
+}
