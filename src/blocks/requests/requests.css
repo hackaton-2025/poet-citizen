@@ -1,73 +1,9 @@
-
-.requests__title {
-  font-style: normal;
-  font-weight: 600;
-  color: #000000;
-  font-size: 24px;
-  line-height: 29px;
-  margin: 0 0 30px 0;
-}
-
-.requests__title_null {
-  font-size: 36px;
-  line-height: 44px;
-  margin: 0 0 20px 0;
-}
-
-.requests__subtitle {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 22px;
-  color: #000000;
-  margin: 0;
-}
-
-.requests__item {
-  background: #e8edff;
-  border-radius: 10px;
-  padding: 20px 28px;
-  margin: 0 0 30px 0;
-}
-
-.requests__item:last-child {
-  margin: 0;
-}
-
-.requests__header {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0 0 15px 0;
-}
-
-.requests__name {
-  margin: 0;
-  line-height: normal;
-  font-size: 37px;
-}
-
-.requests__status {
-  margin: 0;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 22px;
-}
-
-.requests__text {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 22px;
-  margin: 0 0 54px 0;
-}
-
-.requests__date {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 22px;
-  margin: 0;
-}
+@import url(./__date/requests__date.css);
+@import url(./__header/requests__header.css);
+@import url(./__item/requests__item.css);
+@import url(./__name/requests__name.css);
+@import url(./__status/requests__status.css);
+@import url(./__subtitle/requests__subtitle.css);
+@import url(./__text/requests__text.css);
+@import url(./__title/requests__title.css);
+@import url(./__title/_null/requests__title_null.css);

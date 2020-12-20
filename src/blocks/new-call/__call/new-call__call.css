@@ -1,0 +1,6 @@
+.new-call__call {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 222px;
+    grid-template-rows: 141px 1fr;
+    gap: 20px 25px;
+  }
