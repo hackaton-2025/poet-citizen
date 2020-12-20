@@ -6,7 +6,7 @@ import Navigation from "./Navigation";
 import NewCall from "./NewCall";
 import Requests from "./Requests";
 
-const Account = () => {
+const Account = ({ loggedIn, onLogout }) => {
   const { path, url } = useRouteMatch();
 
   // TODO -- это временно для демонстрации
@@ -14,7 +14,7 @@ const Account = () => {
 
   return (
     <div className="page__container page__narrow">
-      <Header />
+      <Header loggedIn={loggedIn} onLogout={onLogout} />
       <main className="main">
         <Navigation url={url} />
         <section className="main__content">

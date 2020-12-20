@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route, Redirect, useHistory } from "react-router-dom";
 import ProtectedRoute from "../hocs/ProtectedRoute";
 import StartPage from "./StartPage";
 import Account from "./Account";
@@ -8,12 +8,27 @@ import Login from "./Login";
 import Register from "./Register";
 
 function App() {
-  // TODO -- initial state false
-  const [loggedIn, setLoggedIn] = useState(true);
+
+  const history = useHistory();
+  
+  const [loggedIn, setLoggedIn] = useState(false);
 
   const handleLogin = () => {
     // TODO -- логика авторизации
+    setLoggedIn(true);
+    history.push('/me');
   };
+
+  const handleRegister = () => {
+    // TODO
+    history.push('/me');
+  }
+
+  const handleLogout = () => {
+    // TODO
+    setLoggedIn(false);
+    history.push('/')
+  }
 
   return (
       <Switch>
@@ -21,15 +36,14 @@ function App() {
           <Login onLogin={handleLogin} />
         </Route>
         <Route path="/signup">
-          <Register />
+          <Register onRegister={handleRegister} />
         </Route>
-        
-        <ProtectedRoute path="/me" component={Account} loggedIn={loggedIn} />
+        <ProtectedRoute path="/me" component={Account} loggedIn={loggedIn} onLogout={handleLogout} />
         <Route path="/about">
           <About />
         </Route>
         <Route exact path="/">
-          <StartPage />
+          <StartPage loggedIn={loggedIn} onLogout={handleLogout} />
         </Route>
         <Route>
           {loggedIn ? <Redirect to="/" /> : <Redirect to="/sign-in" />}

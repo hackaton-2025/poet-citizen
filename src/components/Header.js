@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Header = ({ loggedIn }) => {
+const Header = ({ loggedIn, onLogout }) => {
   return (
     <header className="header">
       <div className="header__content page__narrow">
@@ -9,7 +9,7 @@ const Header = ({ loggedIn }) => {
             <div className="logo"></div>
             <div className="header__user-profile">
               <p className="header__user-profile-enter">nikerfe@gmail.com</p>
-              <button type="submit" className="header__user-profile-logout page__button"></button>
+              <button className="header__user-profile-logout page__button" onClick={onLogout} />
             </div>
           </>
           : <>

@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 import Footer from "./Footer";
 import Header from "./Header";
 
-const StartPage = () => {
+const StartPage = ({ loggedIn, onLogout }) => {
   return (
     <div className="page__container">
-      <Header />
+      <Header loggedIn={loggedIn} onLogout={onLogout} />
       <section className="banner">
         <div className="banner__content page__narrow">
           <h1 className="banner__title">
