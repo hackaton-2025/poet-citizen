@@ -16,6 +16,8 @@ const Login = ({ onLogin }) => {
       onSubmit={handleSubmit}
       submitTitle="Вход"
       isFormValid={isFormValid}
+      linkText="Создать аккаунт"
+      path="/signup"
       modificator="form_type_login"
     >
       <h2 className="form__title">Личный кабинет</h2>

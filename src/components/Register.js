@@ -14,8 +14,10 @@ const Register = ({ onRegister }) => {
   return (
     <Form
       onSubmit={handleSubmit}
-      submitTitle="Вход"
+      submitTitle="Регистрация"
       isFormValid={isFormValid}
+      linkText="Войти"
+      path="/signin"
       modificator="form_type_register"
     >
       <h2 className="form__title">Создать аккаунт</h2>
