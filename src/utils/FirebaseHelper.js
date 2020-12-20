@@ -1,6 +1,5 @@
 import firebase from "firebase";
 import { FIREBASE_CONFIG } from "../configs/firebaseConfig.js";
-//Юля по поводу переменной с конфигурацией ты это имела ввиду?
 
 export class FirebaseHelper {
   constructor() {

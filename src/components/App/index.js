@@ -1,13 +1,12 @@
 import "./styles.css";
 import { useState } from "react";
-import { Switch, Route } from "react-router-dom";
-import Login from "../Login";
+import { Switch, Route, Redirect } from "react-router-dom";
 import ProtectedRoute from "../../hocs/ProtectedRoute";
-import NewCall from "../NewCall";
 import StartPage from "../StartPage";
-import Register from "../Register";
-import Account from "../Account";
-import About from "../About";
+import Account from "../Account.js";
+import About from "../About.js";
+import Login from "../Login.js";
+import Register from "../Register.js";
 
 function App() {
   // TODO -- initial state false
@@ -18,10 +17,6 @@ function App() {
   };
 
   return (
-
-    <div className="page">
-      {/* <LoginForm /> */}
-
       <Switch>
         <Route path="/signin">
           <Login onLogin={handleLogin} />
@@ -29,11 +24,7 @@ function App() {
         <Route path="/signup">
           <Register />
         </Route>
-        <ProtectedRoute
-          path="/new-call"
-          component={NewCall}
-          loggedIn={loggedIn}
-        />
+        
         <ProtectedRoute path="/me" component={Account} loggedIn={loggedIn} />
         <Route path="/about">
           <About />
@@ -41,8 +32,10 @@ function App() {
         <Route exact path="/">
           <StartPage />
         </Route>
+        <Route>
+          {loggedIn ? <Redirect to="/" /> : <Redirect to="/sign-in" />}
+        </Route>
       </Switch>
-    </div>
   );
 }
 
