@@ -236,12 +236,12 @@ justify-content: center;
 }
 
 .button {
-border-radius: 30px;
-border: none;
-background-color: #5264A3;
-color: #ffffff;
-padding: 0;
-cursor: pointer;
+    border-radius: 30px;
+    border: none;
+    background-color: #5264A3;
+    color: #ffffff;
+    padding: 0;
+    cursor: pointer;
 }
 
 
@@ -297,9 +297,9 @@ margin: 15px 0 14px 20px;
 
 .card-call__description {
     font-size: 18px;
-line-height: 20px;
-font-weight: 400;
-margin: 0 20px;
+    line-height: 20px;
+    font-weight: 400;
+    margin: 0 20px;
 }
 
 .footer  {
