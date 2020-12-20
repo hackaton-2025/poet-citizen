@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Route, Switch, useRouteMatch } from "react-router-dom";
+import Footer from "./Footer";
 import Header from "./Header";
 import Navigation from "./Navigation";
 import NewCall from "./NewCall";
@@ -12,11 +13,11 @@ const Account = () => {
   const [isEmpty, setEmptyState] = useState (true);
 
   return (
-    <div className="page__narrow page__full-height">
+    <div className="page__container page__narrow">
       <Header />
-      <main className="page__container">
+      <main className="main">
         <Navigation url={url} />
-        <section className="page__content">
+        <section className="main__content">
         <Switch>
           <Route path={`${path}/calls`}>
             <Requests isEmpty={isEmpty} />
@@ -30,16 +31,9 @@ const Account = () => {
         </Switch>
         </section>
       </main>
-      <footer className="footer"></footer>
+      <Footer />
     </div>
   );
 };
 
 export default Account;
-
-
-{/* <ProtectedRoute
-          path="/new-call"
-          component={NewCall}
-          loggedIn={loggedIn}
-        /> */}

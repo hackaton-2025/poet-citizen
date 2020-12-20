@@ -1,12 +1,11 @@
-import "./styles.css";
 import { useState } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
-import ProtectedRoute from "../../hocs/ProtectedRoute";
-import StartPage from "../StartPage";
-import Account from "../Account.js";
-import About from "../About.js";
-import Login from "../Login.js";
-import Register from "../Register.js";
+import ProtectedRoute from "../hocs/ProtectedRoute";
+import StartPage from "./StartPage";
+import Account from "./Account";
+import About from "./About";
+import Login from "./Login";
+import Register from "./Register";
 
 function App() {
   // TODO -- initial state false
