@@ -6,7 +6,7 @@ import ProtectedRoute from "../../hocs/ProtectedRoute";
 import NewCall from "../NewCall.js";
 import StartPage from "../StartPage";
 import Account from "../Account";
-import About from "../About";
+import About from "../About.js";
 import Login from "../Login.js";
 import Register from "../Register.js";
 
