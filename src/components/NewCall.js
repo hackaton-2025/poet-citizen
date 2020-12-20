@@ -1,19 +1,18 @@
-import './styles.css';
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import Header from '../Header.js';
-import Navigation from '../Navigation.js';
-import plungerLogo from '../../images/create_call_plunger.svg';
-import cockroachLogo from '../../images/create_call_cockroach.svg';
-import heatLogo from '../../images/create_call_heat.svg';
-import floodLogo from '../../images/create_call_flood.svg';
-import lampLogo from '../../images/create_call_lamp.svg';
-import frozeLogo from '../../images/create_call_froze.svg';
-import craneLogo from '../../images/create_call_crane.svg';
-import flashLogo from '../../images/create_call_flash.svg';
-import doorphoneLogo from '../../images/create_call_doorphone.svg';
-import angryLogo from '../../images/create_call_angry.svg';
-import disappointmentLogo from '../../images/create_call_disappointment.svg';
+import Header from './Header.js';
+import Navigation from './Navigation.js';
+import plungerLogo from '../images/create_call_plunger.svg';
+import cockroachLogo from '../images/create_call_cockroach.svg';
+import heatLogo from '../images/create_call_heat.svg';
+import floodLogo from '../images/create_call_flood.svg';
+import lampLogo from '../images/create_call_lamp.svg';
+import frozeLogo from '../images/create_call_froze.svg';
+import craneLogo from '../images/create_call_crane.svg';
+import flashLogo from '../images/create_call_flash.svg';
+import doorphoneLogo from '../images/create_call_doorphone.svg';
+import angryLogo from '../images/create_call_angry.svg';
+import disappointmentLogo from '../images/create_call_disappointment.svg';
 // Всех этих импортов не будет!!
 
 const NewCall = () => {
