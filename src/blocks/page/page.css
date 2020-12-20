@@ -1,0 +1,43 @@
+.page {
+  height: 100%;
+  background-color: #E8EDFF;
+  font-family: Inter, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+}
+
+.page__container {
+  margin: 0 auto;
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.page__narrow {
+  max-width: 1110px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-title {
+  font-size: 36px;
+  line-height: 44px;
+  font-weight: 600px;
+  margin: 0 0 20px 0;
+}
+
+.page-subtitle {
+  font-size: 18px;
+  line-height: 22px;
+  margin: 0;
+}
+
+.page__button {
+  /* Здесь общие для всех кнопок стили: убираем браузерные стили */
+}

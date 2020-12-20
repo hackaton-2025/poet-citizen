@@ -1,0 +1,18 @@
+.card {
+  display: flex;
+  align-items: center;
+  background-color: #E8EDFF;
+  border-radius: 10px;
+  padding: 0 10px;
+  border: none;
+  cursor: pointer;
+}
+
+@import url(./__emoji/card__emoji.css);
+@import url(./__emoji/_type/card__emoji_type_actuality.css);
+@import url(./__title/card__title.css);
+@import url(./__title/_type/card__title_type_actuality.css);
+@import url(./_type/card_type_actuality.css);
+@import url(./_type/card_type_place.css);
+@import url(./_type/card_type_problem.css);
+

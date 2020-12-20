@@ -1,0 +1,11 @@
+@import url(./__cards/cards.css);
+@import url(./__cards/_type/new-call__cards_type_actuality.css);
+@import url(./__cards/_type/new-call__cards_type_place.css);
+@import url(./__cards/_type/new-call__cards_type_problem.css);
+@import url(./__call-description/new-call__call-description.css);
+@import url(./__call-element/new-call__call-element.css);
+@import url(./__call-element/_type/new-call__call-element_type_poem.css);
+@import url(./__call-image/new-call__call-image.css);
+@import url(./__call-title/new-call__call-title.css);
+@import url(./__call/new-call__call.css);
+@import url(./__next-button/new-call__next-button.css);
