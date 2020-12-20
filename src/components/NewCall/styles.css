@@ -1,4 +1,4 @@
-.page-container {
+/* .page__narrow {
   max-width: 1110px;
   margin: 0 auto;
 }
@@ -21,7 +21,8 @@
 .header__user-profile {
     border-radius: 10px;
     padding: 15px 20px;
-    margin-left: auto;
+    display: flex;
+    justify-content: space-between;
     background-color: #ffffff;
 }
 
@@ -29,6 +30,7 @@
     font-size: 18px;
     text-decoration: none;
     margin-right: 50px;
+    margin-top: 0;margin-bottom: 0;
     color: #000000;
 }
 
@@ -42,7 +44,7 @@
     background-color: #ffffff;
 }
 
-.new-call {
+.page__container {
     width: 100%;
     display: grid;
     grid-template-columns: 255px 1fr;
@@ -122,11 +124,12 @@
     margin: 260px 0 85px 0;
 }
 
-.create-call {
+.page__content {
     background-color: #ffffff;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
+    padding: 70px 62px;
 }
 
 .create-call_type_place {
@@ -146,26 +149,25 @@
     padding: 70px 62px 95px 62px;
 }
 
-.hint-title {
+.page__title {
     font-size: 36px;
     line-height: 44px;
     font-weight: 600px;
     margin: 0 0 20px 0;
 }
 
-.hint-subtitle {
+.page__subtitle {
     font-size: 18px;
     line-height: 22px;
     margin: 0;
 }
 
 .cards {
-    
+  display: grid;
 }
 
 
 .cards_type_place {
-    display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 25px 20px;
     padding-top: 38px;
@@ -175,7 +177,6 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 25px 20px;
-    padding-top: 38px;
 }
 
 .cards__type_actuality {
@@ -259,7 +260,7 @@ justify-content: center;
     margin-top: 35px;
 }
 
-.card-call {
+.new-call__call {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 222px;
     grid-template-rows: 141px 1fr;
@@ -267,7 +268,7 @@ justify-content: center;
    
 }
 
-.card-call__element {
+.new-call__call-element {
     width: 100%;
     background-color: #E8EDFF;
     border-radius: 10px;
@@ -277,25 +278,25 @@ justify-content: center;
     
 }
 
-.card-call__element_type_poem {
+.new-call__call-element_type_poem {
     grid-column: 1/5;
     max-height: 180px;
 }
 
-.card-call__title {
+.new-call__call-title {
 font-size: 18px;
 line-height: 22px;
 font-weight: 600;
 margin: 15px 0 14px 20px;
 }
 
-.card-call__image {
+.new-call__call-image {
     width: 60px;
     height: 60px;
     margin: 0 auto;
 }
 
-.card-call__description {
+.new-call__call-description {
     font-size: 18px;
     line-height: 20px;
     font-weight: 400;
@@ -305,4 +306,4 @@ margin: 15px 0 14px 20px;
 .footer  {
     height: 175px;
     width: 100%;
-}
+} */

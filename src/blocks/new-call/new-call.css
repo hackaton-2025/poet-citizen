@@ -1,0 +1,57 @@
+@import url(./__cards/cards.css);
+
+.new-call__next-button {
+  border-radius: 30px;
+  border: none;
+  background-color: #5264A3;
+  color: #ffffff;
+  padding: 0;
+  cursor: pointer;
+  width: 160px;
+  height: 50px;
+  align-self: flex-end;
+  margin-top: 35px;
+}
+
+.new-call__call {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 222px;
+  grid-template-rows: 141px 1fr;
+  gap: 20px 25px;
+ 
+}
+
+.new-call__call-element {
+  width: 100%;
+  background-color: #E8EDFF;
+  border-radius: 10px;
+  display:flex;
+  flex-direction: column;
+  height: 125px;
+  
+}
+
+.new-call__call-element_type_poem {
+  grid-column: 1/5;
+  max-height: 180px;
+}
+
+.new-call__call-title {
+font-size: 18px;
+line-height: 22px;
+font-weight: 600;
+margin: 15px 0 14px 20px;
+}
+
+.new-call__call-image {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+}
+
+.new-call__call-description {
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 400;
+  margin: 0 20px;
+}

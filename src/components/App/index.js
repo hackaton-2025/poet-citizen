@@ -19,7 +19,6 @@ function App() {
   };
 
   return (
-    <div className="page">
       <Switch>
         <Route path="/signin">
           <Login onLogin={handleLogin} />
@@ -40,7 +39,6 @@ function App() {
           <StartPage />
         </Route>
       </Switch>
-    </div>
   );
 }
 
