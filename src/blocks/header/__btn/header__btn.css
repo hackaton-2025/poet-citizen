@@ -1,0 +1,15 @@
+.header__btn {
+    outline: none;
+    background: #5264a3;
+    border: none;
+    padding: 14px 54px;
+    border-radius: 30px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #ffffff;
+    cursor: pointer;
+    text-decoration: none;
+  }

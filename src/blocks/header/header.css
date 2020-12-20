@@ -3,67 +3,19 @@
   box-sizing: border-box;
 }
 
-.header__content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+@import url(./__user-profile/header__user-profile.css);
+@import url(./__user-profile-logout/header__user-profile-logout.css);
+@import url(./__user-profile-enter/header__user-profile-enter.css);
+@import url(./__email/header__email.css);
+@import url(./__content/header__content.css);
+@import url(./__contacts/header__contacts.css);
+@import url(./__btn/header__btn.css);
 
-.header__user-profile {
-  border-radius: 10px;
-  padding: 15px 20px;
-  display: flex;
-  justify-content: space-between;
-  background-color: #ffffff;
-}
 
-.header__user-profile-enter {
-  font-size: 18px;
-  text-decoration: none;
-  margin-right: 50px;
-  margin-top: 0;
-  margin-bottom: 0;
-  color: #000000;
-}
 
-.header__user-profile-logout {
-  width: 18px;
-  height: 18px;
-  background-image: url(../../images/header__profile-logout.svg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  border: none;
-  background-color: #ffffff;
-}
 
-.header__btn {
-  outline: none;
-  background: #5264a3;
-  border: none;
-  padding: 14px 54px;
-  border-radius: 30px;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 22px;
-  text-align: center;
-  color: #ffffff;
-  cursor: pointer;
-  text-decoration: none;
-}
 
-.header__contacts {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
 
-.header__email {
-  margin: 0 0 0 30px;
-  padding: 0;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 22px;
-  color: #000000;
-}
+
+
+

@@ -1,0 +1,9 @@
+.header__user-profile-logout {
+    width: 18px;
+    height: 18px;
+    background-image: url(../../../images/header__profile-logout.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: none;
+    background-color: #ffffff;
+  }
