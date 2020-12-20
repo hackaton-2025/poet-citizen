@@ -18,13 +18,15 @@ const Login = ({
 
   return (
     <div className="form-wrapper">
+      <div className="form-container form-container_type_login">
+      <button className="form__button-close form_button-close_type_login"></button>
       <form
-        className="form"
+        className="form form_type_login"
         onSubmit={handleSubmit}
       >
-        <h2>Личный кабинет</h2>
+        <h2 className="form__title form__title_type_login">Личный кабинет</h2>
 
-        <label htmlFor="email">Email</label>
+        <label className="form__label form__label_type_login" htmlFor="email">Email</label>
         <input
           id="email"
           name="email"
@@ -33,10 +35,11 @@ const Login = ({
           required={true}
           value={values.email || ''}
           onChange={handleChange}
+          className="form__input form__input_type_login"
         />
-        <span>{errors.email || ''}</span>
+        <span className="form__input-error form__input-error_type_login">{errors.email || ''}</span>
 
-        <label htmlFor="password">Пароль</label>
+        <label className="form__label form__label_type_login" htmlFor="password">Пароль</label>
         <input
           id="password"
           name="password"
@@ -45,17 +48,20 @@ const Login = ({
           required={true}
           value={values.password || ''}
           onChange={handleChange}
+          className="form__input form__input_type_login"
         />
-        <span>{errors.password || ''}</span>
+        <span className="form__input-error form__input-error_type_login">{errors.password || ''}</span>
 
         <button
           className="submit-btn"
           type="submit"
           disabled={!isFormValid}
+          className="button button_type_enter"
         >
           Вход
         </button>
       </form>
+      </div>
     </div>
   )
 };
