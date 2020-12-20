@@ -3,10 +3,10 @@ import { useState } from "react";
 import { Switch, Route } from "react-router-dom";
 // import Login from "./Login";
 import ProtectedRoute from "../../hocs/ProtectedRoute";
-import NewCall from "../NewCall";
+import NewCall from "../NewCall.js";
 import StartPage from "../StartPage";
 import Account from "../Account";
-import About from "../About";
+import About from "../About.js";
 import Login from "../Login.js";
 import Register from "../Register.js";
 
@@ -19,7 +19,6 @@ function App() {
   };
 
   return (
-    <div className="page">
       <Switch>
         <Route path="/signin">
           <Login onLogin={handleLogin} />
@@ -40,7 +39,6 @@ function App() {
           <StartPage />
         </Route>
       </Switch>
-    </div>
   );
 }
 
