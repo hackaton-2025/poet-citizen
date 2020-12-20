@@ -1,26 +1,3 @@
 .new-call__cards {
   display: grid;
 }
-
-.new-call__cards_type_place {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px 20px;
-    padding-top: 38px;
-}
-
-.new-call__cards_type_problem {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px 20px;
-}
-
-.new-call__cards_type_actuality {
-    display: grid;
-    gap: 25px 20px;
-    grid-template-columns: repeat(2, 1fr);
-    justify-content: center;
-}
-
-.new-call__cards_type_call {
-  padding: 70px 62px 95px 62px;
-}

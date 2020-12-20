@@ -1,0 +1,5 @@
+.new-call__cards_type_place {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px 20px;
+    padding-top: 38px;
+}
