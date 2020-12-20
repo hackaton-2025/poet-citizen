@@ -11,6 +11,9 @@ import flashLogo from '../images/create_call_flash.svg';
 import doorphoneLogo from '../images/create_call_doorphone.svg';
 import angryLogo from '../images/create_call_angry.svg';
 import disappointmentLogo from '../images/create_call_disappointment.svg';
+import apartamentLogo from '../images/create_call_apartament.svg';
+import entanceLogo from '../images/create_call_entrance.svg';
+import yardLogo from '../images/create_call_yard.svg';
 // Всех этих импортов не будет!!
 
 const NewCall = ({ onAdd }) => {
@@ -47,15 +50,15 @@ const NewCall = ({ onAdd }) => {
           <p className="page__subtitle">Выберите место где возникла проблема</p>
           <div className="new-call__cards new-call__cards_type_place">
             <button type="button" className="card card_type_place">
-              <img src="#" alt="#" className="card__emoji"></img>
+              <img src={apartamentLogo} alt="#" className="card__emoji"></img>
               <p className="card__title"> Кваритра</p>
             </button>
             <button type="button" className="card card_type_place">
-              <img src="#" alt="#" className="card__emoji"></img>
+              <img src={entanceLogo} alt="#" className="card__emoji"></img>
               <p className="card__title">Подъезд</p>
             </button>
             <button type="button" className="card card_type_place">
-              <img src="#" alt="#" className="card__emoji"></img>
+              <img src={yardLogo} alt="#" className="card__emoji"></img>
               <p className="card__title">Двор</p>
             </button>
           </div>
@@ -141,15 +144,15 @@ const NewCall = ({ onAdd }) => {
           <div className="new-call__call">
             <div className="new-call__call-element">
               <h3 className="new-call__call-title">Место</h3>
-              <img src="#" alt="" className="new-call__call-image new-call__call-image_type_place"></img>
+              <img src={apartamentLogo} alt="" className="new-call__call-image new-call__call-image_type_place"></img>
             </div>
             <div className="new-call__call-element">
               <h3 className="new-call__call-title">Проблема</h3>
-              <img src="#" alt="" className="new-call__call-image new-call__call-image_type_problem"></img>
+              <img src={floodLogo} alt="" className="new-call__call-image new-call__call-image_type_problem"></img>
             </div>
             <div className="new-call__call-element">
               <h3 className="new-call__call-title">Срочность</h3>
-              <img src="#" alt="" className="new-call__call-image new-call__call-image_type_actuality"></img>
+              <img src={angryLogo} alt="" className="new-call__call-image new-call__call-image_type_actuality"></img>
             </div>
             <div className="new-call__call-element new-call__call-element_type_adress">
               <h3 className="new-call__call-title">Адрес</h3>
