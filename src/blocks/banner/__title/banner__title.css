@@ -1,0 +1,10 @@
+.banner__title {
+    max-width: 833px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 58px;
+    padding: 0 0 50px 0;
+    margin: 0;
+    color: #000000;
+  }

@@ -5,45 +5,15 @@
   padding-bottom: 100px;
 }
 
-/* Добавляем цвет в модификаторы, чтобы можно было сделать разноцветные блоки */
-.section_content_services {
-  padding-top: 100px;
-  background-color: white;
-}
+@import url(./_content/section_content_news.css);
+@import url(./_content/section_content_services.css);
+@import url(./__title/section__title.css);
+@import url(./__list/__list.css);
+@import url(./__item/section__item.css);
+@import url(./__item/_news/section__item_news.css);
 
-.section_content_news {
-  background-color: white;
-}
 
-.section__title {
-  font-style: normal;
-  font-weight: 600;
-  font-size: 36px;
-  line-height: 44px;
-  color: #000000;
-  padding: 0;
-  margin: 0 0 50px 0;
-}
 
-.section__list {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
 
-.section__item {
-  width: 160px;
-  height: 160px;
-  background: #e8edff;
-  border-radius: 50%;
-}
 
-.section__item_news {
-  width: 350px;
-  height: 230px;
-  border-radius: 30px;
-}
+
