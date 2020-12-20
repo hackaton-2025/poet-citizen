@@ -1,0 +1,100 @@
+.form-container_type_register {
+    width: 630px;
+    border-radius: 30px;
+    background-color: mediumslateblue;
+    padding: 50px;
+    position: relative;
+}
+
+.form_type_register {
+    margin: 0;
+    width: 100%;
+}
+
+.form__title_type_register {
+    font-size: 36px;
+    line-height: 44px;
+    font-weight: 600;
+    margin: 0 0 40px 0;
+}
+
+.form__label_type_register {
+    font-size: 18px;
+    line-height: 22px;
+    margin: 0 0 15px 0;
+}
+
+.form__input-error_type_register {
+    height: 30px;
+    color: red;
+    margin-top: 5px;
+}
+
+.form__fieldset_type_register {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.form__input-container_type_register {
+    display: flex;
+    flex-direction: column;
+}
+
+.form__input_type_register {
+    height: 45px;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    font-size: 18px;
+}
+
+.form__fieldset_type_contact {
+    display: grid;
+    grid-template-columns: 58% 1fr;
+    gap: 20px;
+}
+
+.form__fieldset_type_street {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.form__fieldset_type_adress {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.form__fieldset_type_login {
+    display: grid;
+    grid-template-columns: 58% 1fr;
+    gap: 20px;
+}
+
+
+.button_type_register {
+    width: 210px;
+    height: 50px;
+    margin: 10px 0 0 auto;
+}
+
+.form_button-close_type_register {
+    width: 20px;
+    height: 20px;
+    background-image: url(../../images/form__button-close.svg);
+    background-size: cover;
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 20px 20px 0 0;
+    border: 0;
+    border-radius: 30px;
+    border: none;
+    background-color: #5264A3;
+    color: #ffffff;
+    padding: 0;
+    cursor: pointer;
+}
