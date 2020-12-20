@@ -1,0 +1,5 @@
+.form_type_login {
+    width: 440px;
+    display: flex;
+    flex-direction: column;
+  }
