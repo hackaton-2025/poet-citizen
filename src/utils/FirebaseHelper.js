@@ -13,18 +13,14 @@ export class FirebaseHelper {
     this._dbRef.ref("requests/" + cardKey).remove();
   }
 
-  addNewCard({ email, emojis, text, status, urgency }) {
+  addNewCard(card) {
     const cardKey = this._dbRef.ref("requests/").push().key;
     const date = new Date();
-    this._dbRef.ref("requests/" + cardKey).set({
-      cardKey: cardKey,
-      emojis: emojis,
-      text: text,
-      status: status,
-      urgency: urgency,
-      date: date,
-      email: email,
-    });
+    card.date = `${date.getDate()}.${
+      date.getMonth() + 1
+    }.${date.getFullYear()}`;
+    card.cardKey = cardKey;
+    this._dbRef.ref("requests/" + cardKey).set(card);
   }
 
   getCards(email) {
