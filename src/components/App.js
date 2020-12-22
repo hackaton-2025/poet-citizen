@@ -14,10 +14,17 @@ function App() {
   
   const [loggedIn, setLoggedIn] = useState(false);
 
-  const handleLogin = () => {
-    // TODO -- логика авторизации
-    setLoggedIn(true);
-    history.push('/me');
+  const handleLogin = (data) => {
+    firebase.login(data)
+      .then((data) => {
+        localStorage.setItem('id', data.id);
+        setLoggedIn(true);
+        history.push('/me');
+      })
+      .catch((err) => {
+        // TODO -- выводить ошибку в поле для ошибки -- ждём, когда будет дизайн
+        console.log(err.message);
+      })
   };
 
   const handleRegister = (data) => {
@@ -32,7 +39,7 @@ function App() {
   };
 
   const handleLogout = () => {
-    // TODO
+    localStorage.removeItem('id');
     setLoggedIn(false);
     history.push('/')
   }
@@ -53,7 +60,7 @@ function App() {
           <StartPage loggedIn={loggedIn} onLogout={handleLogout} />
         </Route>
         <Route>
-          {loggedIn ? <Redirect to="/" /> : <Redirect to="/sign-in" />}
+          {loggedIn ? <Redirect to="/" /> : <Redirect to="/signin" />}
         </Route>
       </Switch>
   );

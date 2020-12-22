@@ -1,6 +1,12 @@
 import firebase from "firebase";
 import { FIREBASE_CONFIG } from "../configs/firebaseConfig.js";
 
+// TODO -- возможно когда-нибудь это стоит переделать.
+// Нельзя в открытом виде хранить пароли, сообщать пользователю, что именно -- 
+// email или пароль был введён неверно, хранить в localStorage сделует не id, а токен,
+// и много чего ещё.
+// Но в силу ограниченности по времени (это же хакатон!) полноценного бэкенда нет.
+
 firebase.initializeApp(FIREBASE_CONFIG)
 
 const db = firebase.database();
@@ -46,9 +52,29 @@ const registerUser = (userData) => {
         throw new Error('Такой пользователь уже существует');
       } else {
         db.ref("users/").push(userData);
+        return userData
       }
     }, () => {
       throw new Error('Что-то пошло не так!')
+    });
+};
+
+const login = (enteredData) => {
+  return getUser(enteredData.email)
+    .then((data) => {
+      if (!data.val()) {
+        throw new Error('Пользователя с таким email не существует')
+      } else {
+        const userId = Object.keys(data.val())[0];
+        const userData = data.val()[userId];
+
+        if (userData.password !== enteredData.password) {
+          throw new Error('Неправильный пароль');
+        } else {
+          delete userData.password;
+          return { id: userId, userData };
+        }
+      }
     });
 };
 
@@ -59,6 +85,7 @@ export default {
   getUser,
   getCards,
   registerUser,
+  login,
 }
 
 
