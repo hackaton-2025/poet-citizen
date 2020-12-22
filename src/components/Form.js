@@ -1,4 +1,5 @@
 import cn from 'classnames';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import NYDecoration from './NYDecoration';
 
@@ -15,7 +16,9 @@ const Form = ({
   imageUrl,
   imageAlt,
 }) => {
+
   const formClassName = cn("form", {[modificator]: modificator});
+
   return (
     <div className="form-wrapper">
       <form
@@ -45,7 +48,7 @@ const Form = ({
             </p>
           }
         </div>
-        <NYDecoration />
+        <NYDecoration ref={decorRef} />
       </form>
     </div>
   );

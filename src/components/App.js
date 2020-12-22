@@ -6,6 +6,7 @@ import Account from "./Account";
 import About from "./About";
 import Login from "./Login";
 import Register from "./Register";
+import Background from "./Background";
 
 function App() {
 
@@ -31,6 +32,8 @@ function App() {
   }
 
   return (
+    <>
+      <Background />
       <Switch>
         <Route path="/signin">
           <Login onLogin={handleLogin} />
@@ -49,6 +52,7 @@ function App() {
           {loggedIn ? <Redirect to="/" /> : <Redirect to="/sign-in" />}
         </Route>
       </Switch>
+    </>
   );
 }
 
