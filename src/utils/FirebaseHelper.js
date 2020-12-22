@@ -36,7 +36,7 @@ const getCards = (email) => {
   return getCardsResult;
 }
 
-const getUser = (email) => {
+const getUserByEmail = (email) => {
   const checkUserResult = db
     .ref("users/")
     .orderByChild("email")
@@ -45,8 +45,31 @@ const getUser = (email) => {
   return checkUserResult;
 }
 
+const getUsers = () => {
+  return db.ref("/users").once("value").then((snapshot) => {
+    let items = [];
+
+    snapshot.forEach((childSnapshot) => {
+      items.push({ id: childSnapshot.key, data: childSnapshot.val() })
+    });
+    
+    return items;
+  });
+};
+
+const getUserById = (id) => {
+  return getUsers().then((users) => {
+    const user = users.find((user) => user.id === id);
+    if (!user) {
+      throw new Error('Необходима авторизация')
+    }
+
+    return user;
+  });
+};
+
 const registerUser = (userData) => {
-  return getUser(userData.email)
+  return getUserByEmail(userData.email)
     .then((data) => {
       if (data.val()) {
         throw new Error('Такой пользователь уже существует');
@@ -60,7 +83,7 @@ const registerUser = (userData) => {
 };
 
 const login = (enteredData) => {
-  return getUser(enteredData.email)
+  return getUserByEmail(enteredData.email)
     .then((data) => {
       if (!data.val()) {
         throw new Error('Пользователя с таким email не существует')
@@ -82,7 +105,8 @@ const login = (enteredData) => {
 export default {
   deleteCard,
   addNewCard,
-  getUser,
+  getUserByEmail,
+  getUserById,
   getCards,
   registerUser,
   login,

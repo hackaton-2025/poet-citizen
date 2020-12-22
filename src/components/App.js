@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Switch, Route, Redirect, useHistory } from 'react-router-dom';
 import ProtectedRoute from '../hocs/ProtectedRoute';
 import StartPage from './StartPage';
@@ -14,11 +14,32 @@ function App() {
   
   const [loggedIn, setLoggedIn] = useState(false);
 
+  // Проверяет, авторизован ли пользователь
+  const tokenCheck = () => {
+    const token = localStorage.getItem('id');
+
+    if (token) {
+      firebase.getUserById(token)
+      .then((user) => {
+        // TODO -- добавить сохранение данных пользователя в контекст
+        setLoggedIn(true);
+        history.push('/');
+      })
+      .catch((err) => console.log(err.message));
+    }
+  }
+
+  // Проводит при загрузке страницы проверку, авторизован ли пользователь
+  useEffect(() => {
+    tokenCheck();
+  }, []);
+
   const handleLogin = (data) => {
     firebase.login(data)
       .then((data) => {
         localStorage.setItem('id', data.id);
         setLoggedIn(true);
+        // TODO -- добавить сохранение данных пользователя в контекст
         history.push('/me');
       })
       .catch((err) => {
