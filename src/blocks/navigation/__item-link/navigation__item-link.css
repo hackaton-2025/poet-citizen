@@ -1,4 +1,6 @@
 .navigation__item-link {
     display: flex;
     text-decoration: none;
+    align-items: center;
+    
   }

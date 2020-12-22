@@ -1,10 +1,9 @@
 .navigation__item-image {
-    width: 25px;
-    height: 25px;
+    width: 40px;
+    height: 47px;
     background-repeat: no-repeat;
     background-size: contain;
+    margin: 14px 24px;
   }
 
-  .navigation__item:last-of-type {
-    margin-bottom: 0;
-  }
+  
