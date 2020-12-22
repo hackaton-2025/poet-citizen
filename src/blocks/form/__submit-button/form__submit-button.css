@@ -8,3 +8,7 @@
     color: #ffffff;
     padding: 0;
   }
+
+  .form__submit-button:hover {
+    background: linear-gradient(94.08deg, #7E87F8 100%, #9B50FB 98.92%);;
+  }
