@@ -39,19 +39,13 @@ const getUser = (email) => {
   return checkUserResult;
 }
 
-const registerUser = ({ name, tel, address, email, password }) => {
-  return getUser(email)
+const registerUser = (userData) => {
+  return getUser(userData.email)
     .then((data) => {
       if (data.val()) {
         throw new Error('Такой пользователь уже существует');
       } else {
-        db.ref("users/").push({
-          name: name,
-          tel: tel,
-          address: address,
-          email: email,
-          password: password,
-        });
+        db.ref("users/").push(userData);
       }
     }, () => {
       throw new Error('Что-то пошло не так!')

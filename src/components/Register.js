@@ -8,7 +8,7 @@ const Register = ({ onRegister }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onRegister();
+    onRegister(values);
   }
 
   return (

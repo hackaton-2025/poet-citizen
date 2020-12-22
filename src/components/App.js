@@ -6,6 +6,7 @@ import Account from './Account';
 import About from './About';
 import Login from './Login';
 import Register from './Register';
+import firebase from '../utils/firebaseHelper';
 
 function App() {
 
@@ -19,10 +20,16 @@ function App() {
     history.push('/me');
   };
 
-  const handleRegister = () => {
-    // TODO
-    history.push('/me');
-  }
+  const handleRegister = (data) => {
+    firebase.registerUser(data)
+      .then(() => {
+        history.push('/signin');
+      })
+      .catch((err) => {
+        // TODO -- выводить ошибку в поле для ошибки -- ждём, когда будет дизайн
+        console.log(err.message);
+      });
+  };
 
   const handleLogout = () => {
     // TODO
