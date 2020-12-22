@@ -1,66 +1,82 @@
 import firebase from "firebase";
 import { FIREBASE_CONFIG } from "../configs/firebaseConfig.js";
 
-export class FirebaseHelper {
-  constructor() {
-    this._config = FIREBASE_CONFIG;
-    this._firebase = firebase;
-    this._firebase.initializeApp(this._config);
-    this._dbRef = this._firebase.database();
-  }
+firebase.initializeApp(FIREBASE_CONFIG)
 
-  deleteCard(cardKey) {
-    this._dbRef.ref("requests/" + cardKey).remove();
-  }
+const db = firebase.database();
 
-  addNewCard(card) {
-    const cardKey = this._dbRef.ref("requests/").push().key;
-    const date = new Date();
-    card.date = `${date.getDate()}.${
-      date.getMonth() + 1
-    }.${date.getFullYear()}`;
-    card.cardKey = cardKey;
-    this._dbRef.ref("requests/" + cardKey).set(card);
-  }
+const deleteCard = (cardKey) => {
+  db.ref("requests/" + cardKey).remove();
+};
 
-  getCards(email) {
-    const getCardsResult = this._dbRef
-      .ref("requests/")
-      .orderByChild("email")
-      .equalTo(email)
-      .once("value");
-    return getCardsResult;
-  }
+const addNewCard = ({ email, data, status = 'На рассмотрении' }) => {
+  const cardKey = db.ref("requests/").push().key;
+  const date = new Date();
+  db.ref("requests/" + cardKey).set({
+    cardKey: cardKey,
+    email: email,
+    data: data,
+    status: status,
+    date: date,
+  });
+};
 
-  getUser(email) {
-    const checkUserResult = this._dbRef
-      .ref("users/")
-      .orderByChild("email")
-      .equalTo(email)
-      .once("value");
-    return checkUserResult;
-  }
-
-  registerUser({ fio, call, adress, email, password }) {
-    this._dbRef.ref("users/").push({
-      fio: fio,
-      call: call,
-      adress: adress,
-      email: email,
-      password: password,
-    });
-  }
+const getCards = (email) => {
+  const getCardsResult = db
+    .ref("requests/")
+    .orderByChild("email")
+    .equalTo(email)
+    .once("value");
+  return getCardsResult;
 }
+
+const getUser = (email) => {
+  const checkUserResult = db
+    .ref("users/")
+    .orderByChild("email")
+    .equalTo(email)
+    .once("value");
+  return checkUserResult;
+}
+
+const registerUser = ({ name, tel, address, email, password }) => {
+  return getUser(email)
+    .then((data) => {
+      if (data.val()) {
+        throw new Error('Такой пользователь уже существует');
+      } else {
+        db.ref("users/").push({
+          name: name,
+          tel: tel,
+          address: address,
+          email: email,
+          password: password,
+        });
+      }
+    }, () => {
+      throw new Error('Что-то пошло не так!')
+    });
+};
+
+
+export default {
+  deleteCard,
+  addNewCard,
+  getUser,
+  getCards,
+  registerUser,
+}
+
 
 //ИНСТРУКЦИЯ
 
-// import { FirebaseHelper } from "./../utils/FirebaseHelper.js";
+// import firebase from '../utils/firebaseHelper';
 
 // const db = new FirebaseHelper();
 
 //Проверяет, существует ли пользователь с указанным email
 //Если да, то возвращает объект с информацией об этом пользователе, если нет, то регистрирует нового пользователя.
-// db.getUser("ivan@yandex.ru").then((data) => {
+// firebase.getUser("ivan@yandex.ru").then((data) => {
 //   if (data.val()) {
 //     console.log("Такой пользователь уже существует");
 //     const user = data.val()[Object.keys(data.val())[0]];
@@ -79,7 +95,7 @@ export class FirebaseHelper {
 // });
 
 //Добавляет новую карточку
-// db.addNewCard({
+// firebase.addNewCard({
 //   email: "ivan@yandex.ru",
 //   emojis: "&#128126; &#129302; &#128125;",
 //   text: "Текст какого-то стихотворения",
@@ -88,10 +104,10 @@ export class FirebaseHelper {
 // });
 
 //Удаляет карточку по ключу. Ключ содержится в объекте карточки в поле cardKey
-// db.deleteCard("-MP4i_8X7asVh4x-F9tj");
+// firebase.deleteCard("-MP4i_8X7asVh4x-F9tj");
 
 //Выводит список карточек пользователя
-// db.getCards("ivan@yandex.ru").then((data) => {
+// firebase.getCards("ivan@yandex.ru").then((data) => {
 //   const arrayCards = [];
 //   data.forEach(function (value) {
 //     var childData = value.exportVal();

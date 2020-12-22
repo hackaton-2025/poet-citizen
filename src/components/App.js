@@ -1,11 +1,11 @@
-import { useState } from "react";
-import { Switch, Route, Redirect, useHistory } from "react-router-dom";
-import ProtectedRoute from "../hocs/ProtectedRoute";
-import StartPage from "./StartPage";
-import Account from "./Account";
-import About from "./About";
-import Login from "./Login";
-import Register from "./Register";
+import { useState } from 'react';
+import { Switch, Route, Redirect, useHistory } from 'react-router-dom';
+import ProtectedRoute from '../hocs/ProtectedRoute';
+import StartPage from './StartPage';
+import Account from './Account';
+import About from './About';
+import Login from './Login';
+import Register from './Register';
 
 function App() {
 
