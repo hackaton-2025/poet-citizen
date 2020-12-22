@@ -1,19 +1,8 @@
-
 .form__button-close {
-    width: 20px;
-    height: 20px;
-    background-image: url(../../../images/form__button-close.svg);
-    background-size: cover;
-    background-color: transparent;
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 20px 20px 0 0;
-    border: 0;
-    border-radius: 30px;
-    border: none;
-    background-color: #5264A3;
-    color: #ffffff;
-    padding: 0;
-    cursor: pointer;
+  text-decoration: none;
+  font-size: 17px;
+  line-height: 23px;
+  color: #0038FF;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  display: block;
   }

@@ -1,8 +1,10 @@
 .form__input {
-    height: 45px;
+    height: 40px;
     border: none;
     border-radius: 10px;
     width: 100%;
     box-sizing: border-box;
     font-size: 18px;
+    color: #313131;
+    background-color: rgba(255, 255, 255, 0.6);
   }

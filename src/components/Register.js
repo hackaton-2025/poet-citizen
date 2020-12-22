@@ -1,5 +1,8 @@
 import useFormValidation from '../hooks/useFormWithValidation';
 import setCustomValidity from '../utils/setCustomValidity';
+import thinkSmileImage from '../images/form_think_smile.svg';
+import treeSmileImage from '../images/form_christmas-tree.svg';
+import giftSmileImage from '../images/form_gift.svg';
 import Form from './Form';
 
 const Register = ({ onRegister }) => {
@@ -20,10 +23,12 @@ const Register = ({ onRegister }) => {
       path="/signin"
       modificator="form_type_register"
     >
-      <h2 className="form__title">Создать аккаунт</h2>
+      <img src={treeSmileImage} alt="" className="form__image form__image_type_tree"></img>
+      <img src={thinkSmileImage} alt="" className="form__image form__image_type_think-smile"></img>
+      <img src={giftSmileImage} alt="" className="form__image form__image_type_gift"></img>
       <fieldset className="form__fieldset form__fieldset_type_contact ">
         <div className="form__input-container">
-          <label className="from__label" htmlFor="name">ФИО</label>
+          <label className="form__label" htmlFor="name">ФИО</label>
           <input
             id="name"
             name="name"
@@ -37,7 +42,7 @@ const Register = ({ onRegister }) => {
           <span className="form__input-error">{errors.name || ''}</span>
         </div>
         <div className="form__input-container">
-          <label className="from__label" htmlFor="tel">Номер телефона</label>
+          <label className="form__label" htmlFor="tel">Номер телефона</label>
           <input
             id="tel"
             name="tel"
@@ -54,7 +59,7 @@ const Register = ({ onRegister }) => {
       </fieldset>
       <fieldset className="form__fieldset form__fieldset_type_street">
         <div className="form__input-container">
-          <label className="from__label" htmlFor="street">Улица</label>
+          <label className="form__label" htmlFor="street">Улица</label>
           <input
             id="street"
             name="street"
@@ -70,7 +75,7 @@ const Register = ({ onRegister }) => {
       </fieldset>
       <fieldset className="form__fieldset form__fieldset_type_adress">
         <div className="form__input-container">
-          <label className="from__label" htmlFor="house">Дом</label>
+          <label className="form__label" htmlFor="house">Дом</label>
           <input
             id="house"
             name="house"
@@ -84,7 +89,7 @@ const Register = ({ onRegister }) => {
           <span className="form__input-error">{errors.house || ''}</span>
         </div>
         <div className="form__input-container">
-          <label className="from__label" htmlFor="entrance">Подъезд</label>
+          <label className="form__label" htmlFor="entrance">Подъезд</label>
           <input
             id="entrance"
             name="entrance"
@@ -97,7 +102,7 @@ const Register = ({ onRegister }) => {
           <span className="form__input-error">{errors.entrance || ''}</span>
         </div>
         <div className="form__input-container">
-          <label className="from__label" htmlFor="floor">Этаж</label>
+          <label className="form__label" htmlFor="floor">Этаж</label>
           <input
             id="floor"
             name="floor"
@@ -110,7 +115,7 @@ const Register = ({ onRegister }) => {
           <span className="form__input-error">{errors.floor || ''}</span>
         </div>
         <div className="form__input-container">
-          <label className="from__label" htmlFor="flat">Квартира</label>
+          <label className="form__label" htmlFor="flat">Квартира</label>
           <input
             id="flat"
             name="flat"
@@ -125,7 +130,7 @@ const Register = ({ onRegister }) => {
       </fieldset>
       <fieldset className="form__fieldset form__fieldset_type_login ">
         <div className="form__input-container">
-          <label className="from__label" htmlFor="email">Email</label>
+          <label className="form__label" htmlFor="email">Email</label>
           <input
             id="email"
             name="email"
@@ -140,7 +145,7 @@ const Register = ({ onRegister }) => {
           <span className="form__input-error">{errors.email || ''}</span>
         </div>
         <div className="form__input-container">
-          <label className="from__label" htmlFor="password">Пароль</label>
+          <label className="form__label" htmlFor="password">Пароль</label>
           <input
             id="password"
             name="password"

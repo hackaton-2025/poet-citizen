@@ -8,7 +8,12 @@ const Form = ({ onSubmit, children, submitTitle, isFormValid, linkText, path, mo
       <form
         className={formClassName}
         onSubmit={onSubmit}
-      >
+      ><div className="form__header">
+      
+      <a href="#" className="form__button-close">&lt; Вернуться назад</a>
+      <h2 className="form__title">Создать аккаунт</h2>
+      </div>
+        <div className="form__main-container">
         {children}
         <button
             type="submit"
@@ -19,6 +24,7 @@ const Form = ({ onSubmit, children, submitTitle, isFormValid, linkText, path, mo
         </button>
         {linkText && <Link className="form__link" to={path}>{linkText}</Link>}
         <Link className="form__button-close" to="/"></Link>
+        </div>
       </form>
     </div>
   );

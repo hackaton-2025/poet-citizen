@@ -1,0 +1,9 @@
+.form__image_type_gift {
+    width: 160px;
+    height: 160px;
+    transform: rotate(15deg);
+    position: absolute;
+    bottom: -70px;
+    right: -100px;
+    z-index: 0;
+}

@@ -1,0 +1,8 @@
+.form__main-container {
+    padding: 0 25px 25px 25px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    z-index: 3;
+}
