@@ -1,16 +1,3 @@
-.form {
-  border-radius: 30px;
-  backdrop-filter: blur(20px);
-}
-
-.form-wrapper {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: blue;
-}
-
 @import url(./__header/form__header.css);
 @import url(./__main-container/form__main-container.css);
 @import url(./_type/form_type_register.css);
@@ -23,37 +10,28 @@
 @import url(./__fieldset/_type/form__fieldset_type_street.css);
 @import url(./__input-container/form__input-container.css);
 @import url(./__input/form__input.css);
+@import url(./__input/_valid/form__input_valid.css);
+@import url(./__input/_invalid/form__input_invalid.css);
 @import url(./__input-error/form__input-error.css);
 @import url(./__label/form__label.css);
 @import url(./__link/form__link.css);
-@import url(./__button-close/form__button-close.css);
 @import url(./__submit-button/form__submit-button.css);
-@import url(./__image/_type/form__image_type_think-smile.css);
-@import url(./__image/_type/form__image_type_tree.css);
-@import url(./__image/_type/form__image_type_gift.css);
+@import url(./__image/form__image.css);
+@import url(./__link-env-text/form__link-env-text.css);
 
+.form {
+  border-radius: 30px;
+  box-sizing: border-box;
+  backdrop-filter: blur(20px);
+  background-color: rgba(255, 255, 255, 0.4);
+  position: relative;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.form-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
 

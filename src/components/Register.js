@@ -1,8 +1,6 @@
 import useFormValidation from '../hooks/useFormWithValidation';
 import setCustomValidity from '../utils/setCustomValidity';
 import thinkSmileImage from '../images/form_think_smile.svg';
-import treeSmileImage from '../images/form_christmas-tree.svg';
-import giftSmileImage from '../images/form_gift.svg';
 import Form from './Form';
 
 const Register = ({ onRegister }) => {
@@ -19,13 +17,14 @@ const Register = ({ onRegister }) => {
       onSubmit={handleSubmit}
       submitTitle="Регистрация"
       isFormValid={isFormValid}
+      linkEnvText="Уже зарегистрированы?"
       linkText="Войти"
       path="/signin"
       modificator="form_type_register"
+      title="Создать аккаунт"
+      imageUrl={thinkSmileImage}
+      imageAlt="Думающий эмоджи"
     >
-      <img src={treeSmileImage} alt="" className="form__image form__image_type_tree"></img>
-      <img src={thinkSmileImage} alt="" className="form__image form__image_type_think-smile"></img>
-      <img src={giftSmileImage} alt="" className="form__image form__image_type_gift"></img>
       <fieldset className="form__fieldset form__fieldset_type_contact ">
         <div className="form__input-container">
           <label className="form__label" htmlFor="name">ФИО</label>
