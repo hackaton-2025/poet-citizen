@@ -1,0 +1,8 @@
+.new-call__steps-container {
+    display: grid;
+    width: 340px;
+    grid-template-columns: 36px 1fr 36px 1fr 36px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}

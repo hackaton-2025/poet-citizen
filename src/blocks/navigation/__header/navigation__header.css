@@ -1,0 +1,10 @@
+.navigation__header {
+        display: flex;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        justify-content: center;
+        padding: 28px auto;
+        background-color: linear-gradient(0deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(20px);
+        
+}
