@@ -1,3 +1,7 @@
 .form__link {
-
+  grid-area: link;
+  text-decoration: none;
+  font-size: 17px;
+  line-height: 23px;
+  color: #0038FF;
 }

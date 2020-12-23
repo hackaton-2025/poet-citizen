@@ -1,6 +1,8 @@
+
 import { useEffect, useState } from 'react';
 import { Switch, Route, Redirect, useHistory } from 'react-router-dom';
 import ProtectedRoute from '../hocs/ProtectedRoute';
+import Background from "./Background";
 import StartPage from './StartPage';
 import Account from './Account';
 import About from './About';
@@ -66,6 +68,8 @@ function App() {
   }
 
   return (
+    <>
+      <Background />
       <Switch>
         <Route path="/signin">
           <Login onLogin={handleLogin} />
@@ -84,6 +88,7 @@ function App() {
           {loggedIn ? <Redirect to="/" /> : <Redirect to="/signin" />}
         </Route>
       </Switch>
+    </>
   );
 }
 

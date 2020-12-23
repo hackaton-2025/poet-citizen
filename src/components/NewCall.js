@@ -50,15 +50,15 @@ const NewCall = ({ onAdd }) => {
           <p className="page__subtitle">Выберите место где возникла проблема</p>
           <div className="new-call__cards new-call__cards_type_place">
             <button type="button" className="card card_type_place">
-              <img src={apartamentLogo} alt="#" className="card__emoji"></img>
+              <img src={apartamentLogo} alt="#" className="card__emoji" />
               <p className="card__title"> Кваритра</p>
             </button>
             <button type="button" className="card card_type_place">
-              <img src={entanceLogo} alt="#" className="card__emoji"></img>
+              <img src={entanceLogo} alt="#" className="card__emoji" />
               <p className="card__title">Подъезд</p>
             </button>
             <button type="button" className="card card_type_place">
-              <img src={yardLogo} alt="#" className="card__emoji"></img>
+              <img src={yardLogo} alt="#" className="card__emoji" />
               <p className="card__title">Двор</p>
             </button>
           </div>
@@ -74,39 +74,39 @@ const NewCall = ({ onAdd }) => {
           <p className="page__subtitle"></p>
           <div className="new-call__cards new-call__cards_type_problem">
             <button type="button" className="card card_type_problem">
-              <img src={plungerLogo} alt="#" className="card__emoji"></img>
+              <img src={plungerLogo} alt="#" className="card__emoji" />
               <p className="card__title">Засор канализации</p>
             </button>
             <button type="button" className="card card_type_problem">
-              <img src={cockroachLogo} alt="#" className="card__emoji"></img>
+              <img src={cockroachLogo} alt="#" className="card__emoji" />
               <p className="card__title">Требуется дизенсекция</p>
             </button>
             <button type="button" className="card card_type_problem">
-              <img src={heatLogo} alt="#" className="card__emoji"></img>
+              <img src={heatLogo} alt="#" className="card__emoji" />
               <p className="card__title">Высокая температура</p>
             </button>
             <button type="button" className="card card_type_problem">
-              <img src={floodLogo} alt="#" className="card__emoji"></img>
+              <img src={floodLogo} alt="#" className="card__emoji" />
               <p className="card__title">Протечка трубы</p>
             </button>
             <button type="button" className="card card_type_problem">
-              <img src={lampLogo} alt="#" className="card__emoji"></img>
+              <img src={lampLogo} alt="#" className="card__emoji" />
               <p className="card__title">Перегорела лампочка</p>
             </button>
             <button type="button" className="card card_type_problem">
-              <img src={frozeLogo} alt="#" className="card__emoji"></img>
+              <img src={frozeLogo} alt="#" className="card__emoji" />
               <p className="card__title">Низкая температура</p>
             </button>
             <button type="button" className="card card_type_problem">
-              <img src={craneLogo} alt="#" className="card__emoji"></img>
+              <img src={craneLogo} alt="#" className="card__emoji" />
               <p className="card__title">Отсутствует вода</p>
             </button>
             <button type="button" className="card card_type_problem">
-              <img src={flashLogo} alt="#" className="card__emoji"></img>
+              <img src={flashLogo} alt="#" className="card__emoji" />
               <p className="card__title">Отсутствует эл. питание</p>
             </button>
             <button type="button" className="card card_type_problem">
-              <img src={doorphoneLogo} alt="#" className="card__emoji"></img>
+              <img src={doorphoneLogo} alt="#" className="card__emoji" />
               <p className="card__title">Сломался домофон</p>
             </button>
           </div>
@@ -122,11 +122,11 @@ const NewCall = ({ onAdd }) => {
           <p className="page__subtitle"></p>
           <div className="new-call__cards new-call__cards_type_actuality">
             <button type="button" className="card card_type_actuality">
-              <img src={angryLogo} alt="#" className="card__emoji card__emoji_type_actuality"></img>
+              <img src={angryLogo} alt="#" className="card__emoji card__emoji_type_actuality" />
               <p className="card__title card__title_type_actuality">Срочно</p>
             </button>
             <button type="button" className="card card_type_actuality">
-              <img src={disappointmentLogo} alt="#" className="card__emoji card__emoji_type_actuality"></img>
+              <img src={disappointmentLogo} alt="#" className="card__emoji card__emoji_type_actuality" />
               <p className="card__title card__title_type_actuality">Несрочно</p>
             </button>
           </div>
@@ -144,15 +144,15 @@ const NewCall = ({ onAdd }) => {
           <div className="new-call__call">
             <div className="new-call__call-element">
               <h3 className="new-call__call-title">Место</h3>
-              <img src={apartamentLogo} alt="" className="new-call__call-image new-call__call-image_type_place"></img>
+              <img src={apartamentLogo} alt="" className="new-call__call-image new-call__call-image_type_place" />
             </div>
             <div className="new-call__call-element">
               <h3 className="new-call__call-title">Проблема</h3>
-              <img src={floodLogo} alt="" className="new-call__call-image new-call__call-image_type_problem"></img>
+              <img src={floodLogo} alt="" className="new-call__call-image new-call__call-image_type_problem" />
             </div>
             <div className="new-call__call-element">
               <h3 className="new-call__call-title">Срочность</h3>
-              <img src={angryLogo} alt="" className="new-call__call-image new-call__call-image_type_actuality"></img>
+              <img src={angryLogo} alt="" className="new-call__call-image new-call__call-image_type_actuality" />
             </div>
             <div className="new-call__call-element new-call__call-element_type_adress">
               <h3 className="new-call__call-title">Адрес</h3>
