@@ -9,6 +9,7 @@ const Card = ({
   cardPoem,
   sizeModificator,
   onCardClick = null,
+  checkedCard,
 }) => {
   const cardClassName = cn(
     'card',
@@ -16,6 +17,8 @@ const Card = ({
       [sizeModificator]: sizeModificator,
       'card_type_button': onCardClick,
       'card_type_not-button': !onCardClick,
+      'card_checked': checkedCard === cardTitle,
+      'card_unchecked': checkedCard !== cardTitle,
     }
   );
 

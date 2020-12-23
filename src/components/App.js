@@ -42,7 +42,7 @@ function App() {
         localStorage.setItem('id', data.id);
         setLoggedIn(true);
         // TODO -- добавить сохранение данных пользователя в контекст
-        history.push('/me');
+        history.push('/me/calls');
       })
       .catch((err) => {
         // TODO -- выводить ошибку в поле для ошибки -- ждём, когда будет дизайн

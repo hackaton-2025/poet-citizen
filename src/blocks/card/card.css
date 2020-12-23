@@ -8,11 +8,14 @@
 @import url(./_size/card_size_l.css);
 @import url(./_type/card_type_button.css);
 @import url(./_type/card_type_not_button.css);
+@import url(./_checked/card_checked.css);
+@import url(./_unchecked/card_unchecked.css);
 
 .card {
   display: flex;
   align-items: center;
-  background-color: #E8EDFF;
+  /* Фон в card_checked/unchecked */
+  /* background-color: #E8EDFF; */
   border-radius: 10px;
   padding: 0 10px;
   border: none;

@@ -13,7 +13,7 @@ const StartPage = ({ loggedIn, onLogout }) => {
             обслуживанию объектов жилых комплексов
           </h1>
           <div className="banner__btn-container">
-            <Link to="/me" className="banner__btn">
+            <Link to="/me/calls" className="banner__btn">
               Личный кабинет
             </Link>
             <Link to="/signup" className="banner__btn banner__btn_transparent">
