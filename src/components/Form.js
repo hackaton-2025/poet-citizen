@@ -7,15 +7,18 @@ const Form = ({
   children,
   submitTitle,
   isFormValid,
-  linkEnvText,
+  linkEnvText='',
   linkText,
   path,
   modificator,
-  title,
+  title='Добро пожаловать!',
   imageUrl,
-  imageAlt,
+  imageAlt='',
 }) => {
+
   const formClassName = cn("form", {[modificator]: modificator});
+
+
   return (
     <div className="form-wrapper">
       <form
@@ -25,7 +28,9 @@ const Form = ({
         <div className="form__header">
         <Link className="form__link" to="/">&lt; Вернуться на главную</Link>
           <h2 className="form__title">{title}</h2>
-          <img src={imageUrl} alt={imageAlt} className="form__image form__image_type_think-smile"></img>
+          { imageUrl &&
+            <img src={imageUrl} alt={imageAlt} className="form__image form__image_type_think-smile" />
+          }
         </div>
           <div className="form__main-container">
           {children}

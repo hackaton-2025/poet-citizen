@@ -1,8 +1,10 @@
-@import url(./_img/ny-decor_img_gift.css);
-@import url(./_img/ny-decor_img_tree.css);
+@import url(./__image/ny-decor__image.css);
 
 .ny-decor {
   position: absolute;
-  width: 160px;
-  height: 160px;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -5;
 }
