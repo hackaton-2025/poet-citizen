@@ -13,10 +13,6 @@ const NewCall = ({ onAdd }) => {
 
   // Стейт для хранения выбранных параметров запроса -- меняем при нажатии на карточку
   const [checkedCallParams, setCheckedCallParams] = useState({});
-  
-
-  // Стейт для хранения отфильтрованных запросов
-  // const [filteredProblems, setProblems] = useState(problems);
 
   // Стейт для хранения запросов, отфильтрованных по локации (предыдущий использовать не получится)
   const [problemsForLocation, setProblemsForLocation] = useState([]);
@@ -25,22 +21,14 @@ const NewCall = ({ onAdd }) => {
 
   const handleLocationCheck = (checkedLocation) => {
     setCheckedCallParams({...checkedCallParams, location: checkedLocation});
-    // setProblemsForLocation(problems.filter((problem) => problem.location.name === checkedLocation));
-    // setProblems(problemsForLocation);
   };
 
   const handleProblemCheck = (checkedProblem) => {
     setCheckedCallParams({...checkedCallParams, problem: checkedProblem});
-    // setProblems(problemsForLocation.filter((problem) => problem.name === checkedProblem));
   };
 
   const handleUrgencyCheck = (checkedUrgency) => {
     setCheckedCallParams({...checkedCallParams, urgency: checkedUrgency});
-    // console.log(filteredProblems)
-    // setFinalProblem({
-    //   ...filteredProblems[0],
-    //   poem: filteredProblems[0].poem.filter((poem) => poem.urgency.name === checkedUrgency)[0],
-    // });
   };
 
   const handleLocationConfirm = () => {
@@ -149,7 +137,9 @@ const NewCall = ({ onAdd }) => {
             <Card cardTitle="Проблема" imageCode={finalProblem.emoji} sizeModificator="card_size_xs" />
             <Card cardTitle="Срочность" imageCode={finalProblem.poem.urgency.emoji} sizeModificator="card_size_xs" />
             <Card cardTitle="Адрес" cardText="Здесь будет адрес" sizeModificator="card_size_xs" />
-            <Card cardTitle="Описание" cardSign={finalProblem.poem.author} cardPoem={finalProblem.poem.text} sizeModificator="card_size_xl" />
+            <Card cardTitle="Описание" cardSign={finalProblem.poem.author} cardPoem={finalProblem.poem.text}
+                  sizeModificator="card_size_xl"
+            />
           </div>
           <button type="submit" className="new-call__next-button" onClick={handleSend}>
             <p className="button__title">Отправить</p>
