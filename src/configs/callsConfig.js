@@ -172,7 +172,7 @@ const problems = [
   },
   {
     name: 'Засор канализации',
-    emoji: '',
+    emoji: '129696',
     location: outdoors,
     urgency: urgent,
     poem: {
@@ -185,7 +185,7 @@ const problems = [
   },
   {
     name: 'Засор канализации',
-    emoji: '',
+    emoji: '129696',
     location: outdoors,
     urgency: notUrgent,
     poem: {
@@ -633,7 +633,7 @@ const problems = [
   // Квартира
   {
     name: 'Засор канализации',
-    emoji: '',
+    emoji: '129696',
     location: flat,
     urgency: urgent,
     poem: {
@@ -646,7 +646,7 @@ const problems = [
   },
   {
     name: 'Засор канализации',
-    emoji: '',
+    emoji: '129696',
     location: flat,
     urgency: notUrgent,
     poem: {
