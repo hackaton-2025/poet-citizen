@@ -1,12 +1,14 @@
-import { useState } from "react";
-import { Switch, Route, Redirect, useHistory } from "react-router-dom";
-import ProtectedRoute from "../hocs/ProtectedRoute";
-import StartPage from "./StartPage";
-import Account from "./Account";
-import About from "./About";
-import Login from "./Login";
-import Register from "./Register";
+
+import { useEffect, useState } from 'react';
+import { Switch, Route, Redirect, useHistory } from 'react-router-dom';
+import ProtectedRoute from '../hocs/ProtectedRoute';
 import Background from "./Background";
+import StartPage from './StartPage';
+import Account from './Account';
+import About from './About';
+import Login from './Login';
+import Register from './Register';
+import firebase from '../utils/firebaseHelper';
 
 function App() {
 
@@ -14,19 +16,53 @@ function App() {
   
   const [loggedIn, setLoggedIn] = useState(false);
 
-  const handleLogin = () => {
-    // TODO -- логика авторизации
-    setLoggedIn(true);
-    history.push('/me');
-  };
+  // Проверяет, авторизован ли пользователь
+  const tokenCheck = () => {
+    const token = localStorage.getItem('id');
 
-  const handleRegister = () => {
-    // TODO
-    history.push('/me');
+    if (token) {
+      firebase.getUserById(token)
+      .then((user) => {
+        // TODO -- добавить сохранение данных пользователя в контекст
+        setLoggedIn(true);
+        history.push('/');
+      })
+      .catch((err) => console.log(err.message));
+    }
   }
 
+  // Проводит при загрузке страницы проверку, авторизован ли пользователь
+  useEffect(() => {
+    tokenCheck();
+  }, []);
+
+  const handleLogin = (data) => {
+    firebase.login(data)
+      .then((data) => {
+        localStorage.setItem('id', data.id);
+        setLoggedIn(true);
+        // TODO -- добавить сохранение данных пользователя в контекст
+        history.push('/me');
+      })
+      .catch((err) => {
+        // TODO -- выводить ошибку в поле для ошибки -- ждём, когда будет дизайн
+        console.log(err.message);
+      })
+  };
+
+  const handleRegister = (data) => {
+    firebase.registerUser(data)
+      .then(() => {
+        history.push('/signin');
+      })
+      .catch((err) => {
+        // TODO -- выводить ошибку в поле для ошибки -- ждём, когда будет дизайн
+        console.log(err.message);
+      });
+  };
+
   const handleLogout = () => {
-    // TODO
+    localStorage.removeItem('id');
     setLoggedIn(false);
     history.push('/')
   }
@@ -49,7 +85,7 @@ function App() {
           <StartPage loggedIn={loggedIn} onLogout={handleLogout} />
         </Route>
         <Route>
-          {loggedIn ? <Redirect to="/" /> : <Redirect to="/sign-in" />}
+          {loggedIn ? <Redirect to="/" /> : <Redirect to="/signin" />}
         </Route>
       </Switch>
     </>

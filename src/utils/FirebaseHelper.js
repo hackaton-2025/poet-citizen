@@ -1,66 +1,127 @@
 import firebase from "firebase";
 import { FIREBASE_CONFIG } from "../configs/firebaseConfig.js";
 
-export class FirebaseHelper {
-  constructor() {
-    this._config = FIREBASE_CONFIG;
-    this._firebase = firebase;
-    this._firebase.initializeApp(this._config);
-    this._dbRef = this._firebase.database();
-  }
+// TODO -- возможно когда-нибудь это стоит переделать.
+// Нельзя в открытом виде хранить пароли, сообщать пользователю, что именно -- 
+// email или пароль был введён неверно, хранить в localStorage сделует не id, а токен,
+// и много чего ещё.
+// Но в силу ограниченности по времени (это же хакатон!) полноценного бэкенда нет.
 
-  deleteCard(cardKey) {
-    this._dbRef.ref("requests/" + cardKey).remove();
-  }
+firebase.initializeApp(FIREBASE_CONFIG)
 
-  addNewCard(card) {
-    const cardKey = this._dbRef.ref("requests/").push().key;
-    const date = new Date();
-    card.date = `${date.getDate()}.${
-      date.getMonth() + 1
-    }.${date.getFullYear()}`;
-    card.cardKey = cardKey;
-    this._dbRef.ref("requests/" + cardKey).set(card);
-  }
+const db = firebase.database();
 
-  getCards(email) {
-    const getCardsResult = this._dbRef
-      .ref("requests/")
-      .orderByChild("email")
-      .equalTo(email)
-      .once("value");
-    return getCardsResult;
-  }
+const deleteCard = (cardKey) => {
+  db.ref("requests/" + cardKey).remove();
+};
 
-  getUser(email) {
-    const checkUserResult = this._dbRef
-      .ref("users/")
-      .orderByChild("email")
-      .equalTo(email)
-      .once("value");
-    return checkUserResult;
-  }
+const addNewCard = ({ email, data, status = 'На рассмотрении' }) => {
+  const cardKey = db.ref("requests/").push().key;
+  const date = new Date();
+  db.ref("requests/" + cardKey).set({
+    cardKey: cardKey,
+    email: email,
+    data: data,
+    status: status,
+    date: date,
+  });
+};
 
-  registerUser({ fio, call, adress, email, password }) {
-    this._dbRef.ref("users/").push({
-      fio: fio,
-      call: call,
-      adress: adress,
-      email: email,
-      password: password,
-    });
-  }
+const getCards = (email) => {
+  const getCardsResult = db
+    .ref("requests/")
+    .orderByChild("email")
+    .equalTo(email)
+    .once("value");
+  return getCardsResult;
 }
+
+const getUserByEmail = (email) => {
+  const checkUserResult = db
+    .ref("users/")
+    .orderByChild("email")
+    .equalTo(email)
+    .once("value");
+  return checkUserResult;
+}
+
+const getUsers = () => {
+  return db.ref("/users").once("value").then((snapshot) => {
+    let items = [];
+
+    snapshot.forEach((childSnapshot) => {
+      items.push({ id: childSnapshot.key, data: childSnapshot.val() })
+    });
+    
+    return items;
+  });
+};
+
+const getUserById = (id) => {
+  return getUsers().then((users) => {
+    const user = users.find((user) => user.id === id);
+    if (!user) {
+      throw new Error('Необходима авторизация')
+    }
+
+    return user;
+  });
+};
+
+const registerUser = (userData) => {
+  return getUserByEmail(userData.email)
+    .then((data) => {
+      if (data.val()) {
+        throw new Error('Такой пользователь уже существует');
+      } else {
+        db.ref("users/").push(userData);
+        return userData
+      }
+    }, () => {
+      throw new Error('Что-то пошло не так!')
+    });
+};
+
+const login = (enteredData) => {
+  return getUserByEmail(enteredData.email)
+    .then((data) => {
+      if (!data.val()) {
+        throw new Error('Пользователя с таким email не существует')
+      } else {
+        const userId = Object.keys(data.val())[0];
+        const userData = data.val()[userId];
+
+        if (userData.password !== enteredData.password) {
+          throw new Error('Неправильный пароль');
+        } else {
+          delete userData.password;
+          return { id: userId, userData };
+        }
+      }
+    });
+};
+
+
+export default {
+  deleteCard,
+  addNewCard,
+  getUserByEmail,
+  getUserById,
+  getCards,
+  registerUser,
+  login,
+}
+
 
 //ИНСТРУКЦИЯ
 
-// import { FirebaseHelper } from "./../utils/FirebaseHelper.js";
+// import firebase from '../utils/firebaseHelper';
 
 // const db = new FirebaseHelper();
 
 //Проверяет, существует ли пользователь с указанным email
 //Если да, то возвращает объект с информацией об этом пользователе, если нет, то регистрирует нового пользователя.
-// db.getUser("ivan@yandex.ru").then((data) => {
+// firebase.getUser("ivan@yandex.ru").then((data) => {
 //   if (data.val()) {
 //     console.log("Такой пользователь уже существует");
 //     const user = data.val()[Object.keys(data.val())[0]];
@@ -79,7 +140,7 @@ export class FirebaseHelper {
 // });
 
 //Добавляет новую карточку
-// db.addNewCard({
+// firebase.addNewCard({
 //   email: "ivan@yandex.ru",
 //   emojis: "&#128126; &#129302; &#128125;",
 //   text: "Текст какого-то стихотворения",
@@ -88,10 +149,10 @@ export class FirebaseHelper {
 // });
 
 //Удаляет карточку по ключу. Ключ содержится в объекте карточки в поле cardKey
-// db.deleteCard("-MP4i_8X7asVh4x-F9tj");
+// firebase.deleteCard("-MP4i_8X7asVh4x-F9tj");
 
 //Выводит список карточек пользователя
-// db.getCards("ivan@yandex.ru").then((data) => {
+// firebase.getCards("ivan@yandex.ru").then((data) => {
 //   const arrayCards = [];
 //   data.forEach(function (value) {
 //     var childData = value.exportVal();
