@@ -1,10 +1,9 @@
 .banner__title {
-    max-width: 833px;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 48px;
-    line-height: 58px;
-    padding: 0 0 50px 0;
-    margin: 0;
-    color: #000000;
-  }
+  font-style: normal;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 38px;
+  text-align: center;
+  color: #313131;
+  margin: 0 0 36px 0;
+}
