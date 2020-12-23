@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { locations, problems, urgencies } from '../configs/callsConfig';
 import Card from './Card';
 
+// TODO -- когда-нибудь реорганизовать конфиг с вызовами и переписать логику -- не нравится
 const NewCall = ({ onAdd }) => {
   const history = useHistory();
 
