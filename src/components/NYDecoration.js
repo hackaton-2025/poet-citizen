@@ -20,8 +20,8 @@ const NYDecoration = () => {
   }, []);
   return (
     <div ref={node => (decorRef.current = node)} className="ny-decor">
-      <img src={treeSmileImage} alt="Эмоджи с ёлкой" className="ny-decor__image ny-decor__image_content_tree"></img>
-      <img src={giftSmileImage} alt="Эмоджи с подарком" className="ny-decor__image ny-decor__image_content_gift"></img>
+      <img src={treeSmileImage} alt="Эмоджи с ёлкой" className="ny-decor__image ny-decor__image_content_tree" />
+      <img src={giftSmileImage} alt="Эмоджи с подарком" className="ny-decor__image ny-decor__image_content_gift" />
     </div>
   );
 };
