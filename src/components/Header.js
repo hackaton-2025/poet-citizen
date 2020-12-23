@@ -6,7 +6,7 @@ const Header = ({ loggedIn, onLogout }) => {
       <div className="header__content page__narrow">
         { loggedIn
           ? <>
-            <div className="logo"></div>
+            <div className="logo" />
             <div className="header__user-profile">
               <p className="header__user-profile-enter">nikerfe@gmail.com</p>
               <button className="header__user-profile-logout page__button" onClick={onLogout} />
@@ -14,7 +14,7 @@ const Header = ({ loggedIn, onLogout }) => {
           </>
           : <>
             <div className="header__contacts">
-              <div className="logo"></div>
+              <div className="logo" />
               <h3 className="header__email">Написать нам: dom@zhkh.ru</h3>
             </div>
             <Link to="/signin" className="header__btn">

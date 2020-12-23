@@ -1,8 +1,19 @@
 .form__input {
-    height: 45px;
-    border: none;
-    border-radius: 10px;
-    width: 100%;
-    box-sizing: border-box;
-    font-size: 18px;
-  }
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 2px 8px;
+  font-size: 18px;
+  color: #313131;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ffffff60;
+}
+
+.form__input:focus {
+  outline: none;
+  border-color: #7E87F860;
+}

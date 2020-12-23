@@ -1,5 +1,4 @@
 /* Добавляем цвет в модификаторы, чтобы можно было сделать разноцветные блоки */
 .section_content_services {
-    padding-top: 100px;
-    background-color: white;
-  }
+  padding-top: 100px;
+}
