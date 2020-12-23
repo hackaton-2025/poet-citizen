@@ -1,0 +1,27 @@
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0 0 0 / 0.6);
+}
+
+@import url(./__content/popup__content.css);
+@import url(./__content/_news/popup__content_news.css);
+@import url(./__content/_about/popup__content_about.css);
+@import url(./__content/_dialog/popup__content_dialog.css);
+@import url(./__close-btn/popup__close-btn.css);
+@import url(./__title/popup__title.css);
+@import url(./__title/_team/popup__title_team.css);
+@import url(./__title/_dialog/popup__title_dialog.css);
+@import url(./__date/popup__date.css);
+@import url(./__subtitle/popup__subtitle.css);
+@import url(./__text/popup__text.css);
+@import url(./__text/_team/popup__text_team.css);
+@import url(./__subtext/popup__subtext.css);
+@import url(./__smiles/popup__smiles.css);
+@import url(./__link/popup__link.css);
