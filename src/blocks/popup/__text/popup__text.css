@@ -1,0 +1,13 @@
+.popup__text {
+  margin: 0 0 16px 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 23px;
+  letter-spacing: 0.03em;
+  color: #313131;
+}
+
+.popup__text:last-of-type {
+  margin: 0;
+}

@@ -1,0 +1,13 @@
+.popup__close-btn {
+  padding: 0px;
+  margin: 0;
+  border: 0;
+  background: 0;
+  color: #0038ff;
+  font-size: 20px;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  outline: none;
+  cursor: pointer;
+}

@@ -2,6 +2,8 @@
     display: flex;
     flex-direction: column;
     list-style: none;
-    padding: 0;
+    padding: 24px 16px 314px 16px;
     margin: 0;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
   }
