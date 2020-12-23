@@ -15,7 +15,6 @@ const Header = ({ loggedIn, onLogout }) => {
           : <>
             <div className="header__contacts">
               <div className="logo" />
-              <h3 className="header__email">Написать нам: dom@zhkh.ru</h3>
             </div>
             <Link to="/signin" className="header__btn">
               Войти

@@ -105,12 +105,20 @@ const StartPage = ({ loggedIn, onLogout }) => {
         </div>
       </section>
       <Footer>
-        <Link to="/new-call" className="">
-          Оставить заявку
+        <div className="logo" />
+        <div className="footer__email">
+          <p className="footer__email-title">Написать нам:</p>
+          <Link to="/new-call" className="footer__email-link">
+            info@obeiru.ru
         </Link>
-        <Link to="/about" className="">
+        </div>
+        <Link to="/about" className="footer__about">
           О проекте
         </Link>
+        <div className="footer__copyright">
+          <p className="footer__copyright-title">Яндекс.Практикум</p>
+          <p className="footer__copyright-subtitle">Hackaton 2025</p>
+        </div>
       </Footer>
     </div>
   );
