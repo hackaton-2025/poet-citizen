@@ -83,7 +83,6 @@ const NewCall = ({ onAdd }) => {
       { Boolean(!isLocationChecked) &&
         <>
           <h2 className="page__title">Составьте новое обращение</h2>
-          <p className="page__subtitle">Выберите место где возникла проблема</p>
           <div className="new-call__cards new-call__cards_type_place">
             { renderCards({
                 cards: locations,
