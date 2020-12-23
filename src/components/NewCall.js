@@ -1,19 +1,21 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import plungerLogo from '../images/create_call_plunger.svg';
-import cockroachLogo from '../images/create_call_cockroach.svg';
-import heatLogo from '../images/create_call_heat.svg';
-import floodLogo from '../images/create_call_flood.svg';
-import lampLogo from '../images/create_call_lamp.svg';
-import frozeLogo from '../images/create_call_froze.svg';
-import craneLogo from '../images/create_call_crane.svg';
-import flashLogo from '../images/create_call_flash.svg';
-import doorphoneLogo from '../images/create_call_doorphone.svg';
-import angryLogo from '../images/create_call_angry.svg';
-import disappointmentLogo from '../images/create_call_disappointment.svg';
-import apartamentLogo from '../images/create_call_apartament.svg';
-import entanceLogo from '../images/create_call_entrance.svg';
-import yardLogo from '../images/create_call_yard.svg';
+import plungerLogo from '../images/emoji/create_call_plunger.svg';
+import cockroachLogo from '../images/emoji/create_call_cockroach.svg';
+import heatLogo from '../images/emoji/create_call_heat.svg';
+import floodLogo from '../images/emoji/create_call_flood.svg';
+import lampLogo from '../images/emoji/create_call_lamp.svg';
+import frozeLogo from '../images/emoji/create_call_froze.svg';
+import craneLogo from '../images/emoji/create_call_crane.svg';
+import flashLogo from '../images/emoji/create_call_flash.svg';
+import doorphoneLogo from '../images/emoji/create_call_doorphone.svg';
+import angryLogo from '../images/emoji/create_call_angry.svg';
+import disappointmentLogo from '../images/emoji/create_call_disappointment.svg';
+import apartamentLogo from '../images/emoji/create_call_apartament.svg';
+import entanceLogo from '../images/emoji/create_call_entrance.svg';
+import yardLogo from '../images/emoji/create_call_yard.svg';
+import { locations } from '../configs/callsConfig';
+import Card from './Card';
 // Всех этих импортов не будет!!
 
 const NewCall = ({ onAdd }) => {
@@ -40,6 +42,46 @@ const NewCall = ({ onAdd }) => {
     onAdd(false);
     history.push('/me/calls');
   }
+
+  // setValues({ ...values, [name]: value });
+
+  // loadImage(name) {
+  //   import('../images/${name}')
+  //     .then(image => {
+  //       console.log(image); // this may be object with image inside...
+  //       this.setState({ src: image })
+  //     })
+  // }
+
+  // const [emojis, setEmogis] = useState({});
+
+  // const loadEmojis = () => {
+  //   locations.forEach((location) => {
+  //     import(`../images/emoji/${location.emoji}.png`)
+  //       .then((image) => {
+  //         setEmogis({ ...emojis, [location.emoji]: image});
+  //         // console.log(location.emoji, image)
+  //       })
+  //   })
+  // }
+  
+  const renderLocations = () => {
+    return (
+      locations.map((location, i) => {
+        return <Card key={i} imageCode={location.emoji} cardTitle={location.name} sizeModificator="card_size_m" />
+      })
+    );
+  };
+  
+  console.log(locations)
+  
+  // useEffect(() => {
+    
+  //   loadEmojis();
+  // }, [])
+  
+  // console.log(emojis);
+    
 // TODO -- почему-то здесь при использовании оператора && вместо страниц, для которых
 //  условие ложно, отображаются нули. Разобраться.
   return (
@@ -49,18 +91,23 @@ const NewCall = ({ onAdd }) => {
           <h2 className="page__title">Составьте новое обращение</h2>
           <p className="page__subtitle">Выберите место где возникла проблема</p>
           <div className="new-call__cards new-call__cards_type_place">
-            <button type="button" className="card card_type_place">
+            {/* <button type="button" className="card card_type_place">
               <img src={apartamentLogo} alt="#" className="card__emoji" />
+              <p>&#127912;</p>
               <p className="card__title"> Кваритра</p>
             </button>
             <button type="button" className="card card_type_place">
               <img src={entanceLogo} alt="#" className="card__emoji" />
-              <p className="card__title">Подъезд</p>
+              <p style={{fontSize: 30}}>&#127969; </p>
+              <p className="card__title"> Подъезд</p>
             </button>
             <button type="button" className="card card_type_place">
               <img src={yardLogo} alt="#" className="card__emoji" />
               <p className="card__title">Двор</p>
-            </button>
+            </button> */}
+            {
+              renderLocations()
+            }
           </div>
           <button type="button" className="new-call__next-button" onClick={handleTerritoryCheck}>
             <p className="button__title">Далее</p>

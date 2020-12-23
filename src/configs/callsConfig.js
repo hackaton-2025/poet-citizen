@@ -1,27 +1,31 @@
 const urgent = {
   name: 'Срочно',
-  emoji: '128545;',
+  emoji: '128545',
 };
 
 const notUrgent = {
   name: 'Несрочно',
-  emoji: '128555;',
+  emoji: '128555',
 };
 
 const outdoors = {
   name: 'Двор',
-  emoji: '127960;',
+  emoji: '127960',
 };
 
 const house = {
   name: 'Подъезд',
-  emoji: '127969;',
+  emoji: '127969',
 };
 
 const flat = {
   name: 'Квартира',
-  emoji: '128682;',
+  emoji: '128682',
 };
+
+const locations = [flat, house, outdoors];
+
+const urgencies = [urgent, notUrgent];
 
 const problems = [
   {
@@ -996,4 +1000,8 @@ const problems = [
 //   },
 // },
 
-export default problems;
+export {
+  locations,
+  urgencies,
+  problems,
+};

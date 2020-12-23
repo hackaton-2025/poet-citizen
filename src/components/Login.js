@@ -18,7 +18,7 @@ const Login = ({ onLogin }) => {
       isFormValid={isFormValid}
       linkText="Создать аккаунт"
       path="/signup"
-      modificator="form_type_login"
+      typeModificator="form_type_login"
     >
       <h2 className="form__title">Личный кабинет</h2>
       <label className="form__label" htmlFor="email">Email</label>
