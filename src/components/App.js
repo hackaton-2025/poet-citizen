@@ -8,7 +8,7 @@ import Account from './Account';
 import About from './About';
 import Login from './Login';
 import Register from './Register';
-import firebase from '../utils/firebaseHelper';
+import firebase from '../utils/firebase';
 
 function App() {
 
