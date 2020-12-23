@@ -20,7 +20,7 @@ const Register = ({ onRegister }) => {
       linkEnvText="Уже зарегистрированы?"
       linkText="Войти"
       path="/signin"
-      modificator="form_type_register"
+      typeModificator="form_type_register"
       title="Создать аккаунт"
       imageUrl={thinkSmileImage}
       imageAlt="Думающий эмоджи"

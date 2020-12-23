@@ -10,13 +10,13 @@ const Form = ({
   linkEnvText='',
   linkText,
   path,
-  modificator,
+  typeModificator,
   title='Добро пожаловать!',
   imageUrl,
   imageAlt='',
 }) => {
 
-  const formClassName = cn("form", {[modificator]: modificator});
+  const formClassName = cn("form", {[typeModificator]: typeModificator});
 
 
   return (
