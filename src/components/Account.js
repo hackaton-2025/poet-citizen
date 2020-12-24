@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Route, Switch, useRouteMatch } from "react-router-dom";
+import { Redirect, Route, Switch, useRouteMatch } from "react-router-dom";
 import Footer from "./Footer";
 import Header from "./Header";
 import Navigation from "./Navigation";
@@ -26,11 +26,14 @@ const Account = ({ loggedIn, onLogout }) => {
             <Route path={`${path}/new-call`}>
               <NewCall onAdd={setEmptyState} />
             </Route>
-            <Route exact path={`${path}/`}>
+            <Route path={`${path}/profile`}>
               <h2>Здесь будет профиль</h2>
             </Route>
-            <Route exact path={`${path}/about`}>
+            <Route path={`${path}/about`}>
               <About />
+            </Route>
+            <Route>
+              <Redirect to={`${path}/calls`} />
             </Route>
           </Switch>
         </section>

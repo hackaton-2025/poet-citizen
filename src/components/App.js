@@ -25,7 +25,6 @@ function App() {
       .then((user) => {
         // TODO -- добавить сохранение данных пользователя в контекст
         setLoggedIn(true);
-        history.push('/');
       })
       .catch((err) => console.log(err.message));
     }
@@ -72,7 +71,7 @@ function App() {
       <Background />
       <Switch>
         <Route path="/signin">
-          <Login onLogin={handleLogin} />
+          <Login onLogin={handleLogin} loggedIn={loggedIn} />
         </Route>
         <Route path="/signup">
           <Register onRegister={handleRegister} />

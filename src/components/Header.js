@@ -6,9 +6,12 @@ const Header = ({ loggedIn, onLogout }) => {
       <div className="header__content page__narrow">
         { loggedIn
           ? <>
-            <div className="logo" />
+            <Link to="/" className="logo">
+              {/* Здесь содержимое логотипа */}
+            </Link>
+            {/* <div className="logo" /> */}
             <div className="header__user-profile">
-              <p className="header__user-profile-enter">nikerfe@gmail.com</p>
+              <Link to="/me/calls" className="header__user-profile-enter">nikerfe@gmail.com</Link>
               <button className="header__user-profile-logout page__button" onClick={onLogout} />
             </div>
           </>
@@ -17,7 +20,7 @@ const Header = ({ loggedIn, onLogout }) => {
               <div className="logo" />
             </div>
             <Link to="/signin" className="header__btn">
-              Войти
+              Личный кабинет
             </Link>
           </>
         }
