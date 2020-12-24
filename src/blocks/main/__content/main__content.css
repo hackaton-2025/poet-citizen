@@ -6,4 +6,5 @@
   min-height: 600px;
   box-sizing: border-box;
   background: rgba(255, 255, 255, 0.4);
+  position: relative;
 }
