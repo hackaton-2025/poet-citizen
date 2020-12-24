@@ -16,6 +16,7 @@ import uslugi4 from "../images/emoji/uslugi4.svg";
 import uslugi5 from "../images/emoji/uslugi5.svg";
 import uslugi6 from "../images/emoji/uslugi6.svg";
 
+// TODO -- когда-нибудь отрефакторить это, вынести компоненты и т.д.
 const StartPage = ({ loggedIn, onLogout }) => {
   return (
     <div className="page__container page__narrow">

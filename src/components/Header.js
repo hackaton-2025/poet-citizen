@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import CurrentUserContext from "../contexts/CurrentUserContext";
 
 const Header = ({ loggedIn, onLogout }) => {
+  const userEmail = useContext(CurrentUserContext).email;
+
   return (
     <header className="header">
       <div className="header__content page__narrow">
@@ -11,7 +15,7 @@ const Header = ({ loggedIn, onLogout }) => {
             </Link>
             {/* <div className="logo" /> */}
             <div className="header__user-profile">
-              <Link to="/me/calls" className="header__user-profile-enter">nikerfe@gmail.com</Link>
+              <Link to="/me/calls" className="header__user-profile-enter">{userEmail}</Link>
               <button className="header__user-profile-logout page__button" onClick={onLogout} />
             </div>
           </>

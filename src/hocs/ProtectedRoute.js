@@ -1,7 +1,6 @@
 import { Redirect, Route } from "react-router-dom"
 
 const ProtectedRoute = ({ component: Component, path, ...props }) => {
-  console.log(path)
   return (
     <Route path={path}>
       {
