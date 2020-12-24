@@ -1,10 +1,10 @@
 @import url(./__header/navigation__header.css);
 @import url(./__title/navigation__title.css);
 @import url(./__container/navigation__container.css);
-@import url(./__item-link/navigation__link.css);
-@import url(./__item-link/_active/navigation__link_active.css);
-@import url(./__item-image/navigation__link-image.css);
-@import url(./__item-title/navigation__link-title.css);
+@import url(./__link/navigation__link.css);
+@import url(./__link/_active/navigation__link_active.css);
+@import url(./__link-image/navigation__link-image.css);
+@import url(./__link-title/navigation__link-title.css);
 
 .navigation {
   width: 100%;

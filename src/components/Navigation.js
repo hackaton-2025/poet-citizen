@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navigation = ({ url }) => {
   return (
@@ -15,7 +15,7 @@ const Navigation = ({ url }) => {
           <div className="navigation__link-image navigation__link-image_type_new-call" />
           <p className="navigation__link-title">Оставить обращение</p>
         </NavLink>
-        <NavLink to={`${url}`} className="navigation__link" activeClassName="navigation__link_active">
+        <NavLink to={`${url}/profile`} className="navigation__link" activeClassName="navigation__link_active">
           <div className="navigation__link-image navigation__link-image_type_profile" />
           <p className="navigation__link-title">Профиль</p>
         </NavLink>
