@@ -1,5 +1,6 @@
 import firebase from "firebase";
 import { FIREBASE_CONFIG } from "../configs/firebaseConfig.js";
+import formatDate from "./formatDate.js";
 
 // TODO -- возможно когда-нибудь это стоит переделать.
 // Нельзя в открытом виде хранить пароли, сообщать пользователю, что именно -- 
@@ -16,8 +17,7 @@ const deleteCard = (cardKey) => {
 };
 
 const addNewCard = ({ userId, data, status = 'На рассмотрении' }) => {
-  const date = new Date();
-  console.log(userId, data)
+  const date = formatDate(new Date())
   return db.ref("requests/").push({
     owner: userId,
     data: data,

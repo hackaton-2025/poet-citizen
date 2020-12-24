@@ -126,7 +126,6 @@ function App() {
     const userId = localStorage.getItem('id');
     firebase.getCards(userId)
       .then((cards) => {
-        console.log(cards)
         setUserCalls(cards);
       })
       .catch(err => console.log(err));
@@ -135,6 +134,8 @@ function App() {
   useEffect(() => {
     getUserCalls();
   }, [])
+
+  
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
