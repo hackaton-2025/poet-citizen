@@ -1,5 +1,5 @@
 .popup {
-  display: none;
+  display: flex;
   position: fixed;
   top: 0;
   left: 0;
@@ -10,6 +10,7 @@
   background: rgba(0 0 0 / 0.6);
 }
 
+@import url(./_show/popup_show.css);
 @import url(./__content/popup__content.css);
 @import url(./__content/_news/popup__content_news.css);
 @import url(./__content/_about/popup__content_about.css);

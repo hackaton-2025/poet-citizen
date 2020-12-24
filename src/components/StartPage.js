@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
+
+import NewsPopup from "./NewsPopup";
 
 import lightning from "../images/emoji/9889.png";
 import house from "../images/emoji/127969.png";
 import bulb from "../images/emoji/128161.png";
-import news from "../images/emoji/128195.png";
+import newsEmoji from "../images/emoji/128195.png";
 import faucet from "../images/emoji/128688.png";
 import broom from "../images/emoji/129529.png";
 
@@ -17,6 +20,48 @@ import uslugi5 from "../images/emoji/uslugi5.svg";
 import uslugi6 from "../images/emoji/uslugi6.svg";
 
 const StartPage = ({ loggedIn, onLogout }) => {
+  let [news, toggleNews] = useState([
+    {
+      id: 0,
+      date: "14.12.2020",
+      subtitle: "Внимание! Повышение тарифов",
+      text:
+        "Убавленный процентик банка,<br />Весьма пониженный тариф,<br />Статейки господина Бланка –<br />Всё это были, а не миф.",
+      realText:
+        "Тариф на тепловую энергию, для расчета за коммунальную услугу по отоплению, руб./Гкал:<br />1 818,29 р.<br /><br />Тариф на горячую воду, с открытой и закрытой централизованной системой, руб./м3:<br />109,10 р.",
+      show: false,
+    },
+    {
+      id: 1,
+      date: "20.12.2020",
+      subtitle: "Проведены работы во дворе",
+      text:
+        "Терпенье нужно, и геройство,<br />и даже гибель, может быть,<br />чтоб всей земли переустройство,<br />как подобает, завершить",
+      realText: "Посажены деревья у 4 парадной",
+      show: false,
+    },
+    {
+      id: 2,
+      date: "23.12.2020",
+      subtitle: "В парадной найдена сережка",
+      text:
+        "Моя барышня по садику гуляла,<br />По дорожке вечером ходила –<br />С бриллиантиком колечко потеряла,<br />С белой ручки его, видно, обронила",
+      realText: "Найденную сережку можно забрать в офисе ОБЭИРУ",
+      show: false,
+    },
+  ]);
+
+  const renderPopup = (id) => {
+    toggleNews(
+      news.map((item) => {
+        if (item.id === id) {
+          item.show = !item.show;
+        }
+        return item;
+      })
+    );
+  };
+
   return (
     <div className="page__container page__narrow">
       <Header loggedIn={loggedIn} onLogout={onLogout} />
@@ -30,7 +75,7 @@ const StartPage = ({ loggedIn, onLogout }) => {
             Сервис экспресс-заявок для проведения работ по благоустройству и
             обслуживанию вашего дома
           </p>
-          <img className="banner__icon banner__icon_news" src={news}></img>
+          <img className="banner__icon banner__icon_news" src={newsEmoji}></img>
           <img
             className="banner__icon banner__icon_lightning"
             src={lightning}
@@ -102,9 +147,24 @@ const StartPage = ({ loggedIn, onLogout }) => {
                 Всё это были, а не миф.
               </p>
               <p className="section__real-text"></p>
-              <button className="section__link" type="button">
+              <button
+                className="section__link"
+                type="button"
+                onClick={(evt) => {
+                  renderPopup(0);
+                }}
+              >
                 Подробнее
               </button>
+              <NewsPopup
+                show={news[0].show}
+                date={news[0].date}
+                title={news[0].subtitle}
+                text={news[0].realText}
+                close={() => {
+                  renderPopup(0);
+                }}
+              />
             </li>
             <li className="section__item section__item_news">
               <p className="section__date">20.12.2020</p>
@@ -120,9 +180,24 @@ const StartPage = ({ loggedIn, onLogout }) => {
                 как подобает, завершить
               </p>
               <p className="section__real-text"></p>
-              <button className="section__link" type="button">
+              <button
+                className="section__link"
+                type="button"
+                onClick={(evt) => {
+                  renderPopup(1);
+                }}
+              >
                 Подробнее
               </button>
+              <NewsPopup
+                show={news[1].show}
+                date={news[1].date}
+                title={news[1].subtitle}
+                text={news[1].realText}
+                close={() => {
+                  renderPopup(1);
+                }}
+              />
             </li>
             <li className="section__item section__item_news">
               <p className="section__date">23.12.2020</p>
@@ -137,9 +212,24 @@ const StartPage = ({ loggedIn, onLogout }) => {
                 <br />С белой ручки его, видно, обронила
               </p>
               <p className="section__real-text"></p>
-              <button className="section__link" type="button">
+              <button
+                className="section__link"
+                type="button"
+                onClick={(evt) => {
+                  renderPopup(2);
+                }}
+              >
                 Подробнее
               </button>
+              <NewsPopup
+                show={news[2].show}
+                date={news[2].date}
+                title={news[2].subtitle}
+                text={news[2].realText}
+                close={() => {
+                  renderPopup(2);
+                }}
+              />
             </li>
           </ul>
         </div>

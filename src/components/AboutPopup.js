@@ -1,7 +1,8 @@
+import React, { useEffect } from "react";
 import team1 from "../images/emoji/team1.svg";
 import team2 from "../images/emoji/team2.svg";
 
-function AboutPopup({ news, onClose }) {
+function AboutPopup(props) {
   // Обработчик клика по оверлею
   const handleOverlayPopupClick = (evt) => {
     if (!evt.target.closest(".popup")) {
@@ -26,7 +27,7 @@ function AboutPopup({ news, onClose }) {
   };
 
   return (
-    <div class="popup popup_show">
+    <div class="popup popup_show" onMouseDown={handleOverlayPopupClick}>
       <div class="popup__content popup__content_about">
         <button class="popup__close-btn">&#10006;</button>
         <h3 class="popup__title">О проекте</h3>

@@ -1,4 +1,4 @@
-function NewsPopup({ news, onClose }) {
+function NewsPopup(props) {
   // Обработчик клика по оверлею
   const handleOverlayPopupClick = (evt) => {
     if (!evt.target.closest(".popup")) {
@@ -16,23 +16,27 @@ function NewsPopup({ news, onClose }) {
   };
 
   const btnCloseClick = (evt) => {
-    if (evt.target.contains("popup__close-btn")) {
-      // здесь функция закрытия popup
-      // открывает popup класс popup_show
+    if (evt.target.classList.contains("popup__close-btn")) {
+      console.log("22");
+      props.close();
     }
   };
 
-  return (
-    <div className="popup popup_show">
-      <div className="popup__content popup__content_news">
-        <button className="popup__close-btn">&#10006;</button>
-        <h3 className="popup__title">Новости</h3>
-        <p className="popup__date">{news.date}</p>
-        <p className="popup__subtitle">{news.title}</p>
-        <p className="popup__text">{news.text}</p>
+  if (props.show) {
+    return (
+      <div className="popup popup_show">
+        <div className="popup__content popup__content_news">
+          <button className="popup__close-btn" onClick={btnCloseClick}>
+            &#10006;
+          </button>
+          <h3 className="popup__title">Новости</h3>
+          <p className="popup__date">{props.date}</p>
+          <p className="popup__subtitle">{props.title}</p>
+          <p className="popup__text">{props.text}</p>
+        </div>
       </div>
-    </div>
-  );
+    );
+  } else return null;
 }
 
 export default NewsPopup;
