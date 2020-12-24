@@ -80,6 +80,19 @@ const NewCall = ({ onAdd }) => {
 //  условие ложно, отображаются нули. Разобраться.
   return (
     <>
+    <div className="new-call__steps-container">
+      <div className="new-call__number-container">
+        <p className="new-call__step-number">1</p>
+      </div>
+      <div className="new-call__step-track"></div>
+      <div className="new-call__number-container">
+        <p className="new-call__step-number">2</p>
+      </div>
+      <div className="new-call__step-track"></div>
+      <div className="new-call__number-container">
+        <p className="new-call__step-number">3</p>
+      </div>
+    </div>
       { Boolean(!isLocationChecked) &&
         <>
           <h2 className="page__title">Составьте новое обращение</h2>
