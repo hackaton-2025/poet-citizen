@@ -5,12 +5,13 @@ import Header from "./Header";
 import Navigation from "./Navigation";
 import NewCall from "./NewCall";
 import Requests from "./Requests";
+import About from "./About";
 
 const Account = ({ loggedIn, onLogout }) => {
   const { path, url } = useRouteMatch();
 
   // TODO -- это временно для демонстрации
-  const [isEmpty, setEmptyState] = useState (true);
+  const [isEmpty, setEmptyState] = useState(true);
 
   return (
     <div className="page__container page__narrow">
@@ -18,17 +19,20 @@ const Account = ({ loggedIn, onLogout }) => {
       <main className="main">
         <Navigation url={url} />
         <section className="main__content">
-        <Switch>
-          <Route path={`${path}/calls`}>
-            <Requests isEmpty={isEmpty} />
-          </Route>
-          <Route path={`${path}/new-call`}>
-            <NewCall onAdd={setEmptyState} />
-          </Route>
-          <Route exact path={`${path}/`}>
-            <h2>Здесь будет профиль</h2>
-          </Route>
-        </Switch>
+          <Switch>
+            <Route path={`${path}/calls`}>
+              <Requests isEmpty={isEmpty} />
+            </Route>
+            <Route path={`${path}/new-call`}>
+              <NewCall onAdd={setEmptyState} />
+            </Route>
+            <Route exact path={`${path}/`}>
+              <h2>Здесь будет профиль</h2>
+            </Route>
+            <Route exact path={`${path}/about`}>
+              <About />
+            </Route>
+          </Switch>
         </section>
       </main>
       <Footer />

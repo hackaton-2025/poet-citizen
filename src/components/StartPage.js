@@ -2,6 +2,20 @@ import { Link } from "react-router-dom";
 import Footer from "./Footer";
 import Header from "./Header";
 
+import lightning from "../images/emoji/9889.png";
+import house from "../images/emoji/127969.png";
+import bulb from "../images/emoji/128161.png";
+import news from "../images/emoji/128195.png";
+import faucet from "../images/emoji/128688.png";
+import broom from "../images/emoji/129529.png";
+
+import uslugi1 from "../images/emoji/uslugi1.svg";
+import uslugi2 from "../images/emoji/uslugi2.svg";
+import uslugi3 from "../images/emoji/uslugi3.svg";
+import uslugi4 from "../images/emoji/uslugi4.svg";
+import uslugi5 from "../images/emoji/uslugi5.svg";
+import uslugi6 from "../images/emoji/uslugi6.svg";
+
 const StartPage = ({ loggedIn, onLogout }) => {
   return (
     <div className="page__container page__narrow">
@@ -16,12 +30,15 @@ const StartPage = ({ loggedIn, onLogout }) => {
             Сервис экспресс-заявок для проведения работ по благоустройству и
             обслуживанию вашего дома
           </p>
-          <p className="banner__icon banner__icon_news">&#128195;</p>
-          <p className="banner__icon banner__icon_lightning">&#9889;</p>
-          <p className="banner__icon banner__icon_bulb">&#128161;</p>
-          <p className="banner__icon banner__icon_house">&#127969;</p>
-          <p className="banner__icon banner__icon_broom">&#129529;</p>
-          <p className="banner__icon banner__icon_faucet">&#128688;</p>
+          <img className="banner__icon banner__icon_news" src={news}></img>
+          <img
+            className="banner__icon banner__icon_lightning"
+            src={lightning}
+          ></img>
+          <img className="banner__icon banner__icon_bulb" src={bulb}></img>
+          <img className="banner__icon banner__icon_house" src={house}></img>
+          <img className="banner__icon banner__icon_broom" src={broom}></img>
+          <img className="banner__icon banner__icon_faucet" src={faucet}></img>
         </div>
       </section>
       <section className="section section_content_services">
@@ -29,27 +46,39 @@ const StartPage = ({ loggedIn, onLogout }) => {
           <h2 className="section__title">Виды услуг</h2>
           <ul className="section__list">
             <li className="section__item section__item_services">
-              <div className="section__circle">&#128104;&#8205;&#127981;</div>
+              <div className="section__circle">
+                <img className="section__emoji" src={uslugi1}></img>
+              </div>
               <h3 className="section__subtitle">Плановый ремонт</h3>
             </li>
             <li className="section__item section__item_services">
-              <div className="section__circle">&#127795;</div>
+              <div className="section__circle">
+                <img className="section__emoji" src={uslugi2}></img>
+              </div>
               <h3 className="section__subtitle">Благоустройство двора</h3>
             </li>
             <li className="section__item section__item_services">
-              <div className="section__circle">&#128680;</div>
+              <div className="section__circle">
+                <img className="section__emoji" src={uslugi3}></img>
+              </div>
               <h3 className="section__subtitle">Аварийная работа</h3>
             </li>
             <li className="section__item section__item_services">
-              <div className="section__circle">&#128295;</div>
+              <div className="section__circle">
+                <img className="section__emoji" src={uslugi4}></img>
+              </div>
               <h3 className="section__subtitle">Технический надзор</h3>
             </li>
             <li className="section__item section__item_services">
-              <div className="section__circle">&#128179;</div>
+              <div className="section__circle">
+                <img className="section__emoji" src={uslugi5}></img>
+              </div>
               <h3 className="section__subtitle">Учет оплаты</h3>
             </li>
             <li className="section__item section__item_services">
-              <div className="section__circle">&#128465;</div>
+              <div className="section__circle">
+                <img className="section__emoji" src={uslugi6}></img>
+              </div>
               <h3 className="section__subtitle">Вывоз мусора</h3>
             </li>
           </ul>
@@ -121,7 +150,7 @@ const StartPage = ({ loggedIn, onLogout }) => {
           <p className="footer__email-title">Написать нам:</p>
           <Link to="/new-call" className="footer__email-link">
             info@obeiru.ru
-        </Link>
+          </Link>
         </div>
         <Link to="/about" className="footer__about">
           О проекте

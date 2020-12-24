@@ -1,3 +1,6 @@
+import team1 from "../images/emoji/team1.svg";
+import team2 from "../images/emoji/team2.svg";
+
 function AboutPopup({ news, onClose }) {
   // Обработчик клика по оверлею
   const handleOverlayPopupClick = (evt) => {
@@ -37,18 +40,13 @@ function AboutPopup({ news, onClose }) {
           обслуживание в случае возникновения проблемы.
         </p>
         <h3 class="popup__title popup__title_team">Команда</h3>
-        <p class="popup__smiles">
-          &#128113;&#8205;&#9792;&#65039; &#129489;
-          &#128113;&#8205;&#9794;&#65039;
-        </p>
+        <img class="popup__smiles" src={team1}></img>
         <p class="popup__subtext">
           Веб-разработчики:
           <br />
           Юлия Дорошина, Николай Смирнов, Алексей Обрядин
         </p>
-        <p class="popup__smiles">
-          &#129489; &#128105;&#8205;&#129459; &#128105;&#8205;&#129456;
-        </p>
+        <img class="popup__smiles" src={team2}></img>
         <p class="popup__subtext">
           Дизайнеры:
           <br />
