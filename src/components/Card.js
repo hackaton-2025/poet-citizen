@@ -1,5 +1,7 @@
 import cn from 'classnames';
 import { useEffect, useState } from "react";
+import loadImage from '../utils/loadImage';
+import renderPoem from '../utils/renderPoem';
 
 const Card = ({
   imageCode,
@@ -25,30 +27,24 @@ const Card = ({
 
   const [emojiUrl, setEmogi] = useState(null);
 
-  const loadEmoji = () => {
-    import(`../images/emoji/${imageCode}.png`)
-      .then((image) => {
-        setEmogi(image.default);
-      })
-      .catch((err) => console.log(err));
-  };
+  // const loadEmoji = () => {
+  //   import(`../images/emoji/${imageCode}.png`)
+  //     .then((image) => {
+  //       setEmogi(image.default);
+  //     })
+  //     .catch((err) => console.log(err));
+  // };
 
   useEffect(() => {
-    loadEmoji();
+    loadImage(imageCode, setEmogi);
   }, []);
+
 
   const handleCardClick = () => {
     if (onCardClick) {
       onCardClick(cardTitle);
     }
   };
-
-  const renderPoem = (poem) => {
-    const textArray = poem.split('\n')
-    return textArray.map((line, i) => (
-      <p key={i} className='card__poem-line'>{line}</p>
-    ));
-  }
 
   return (
     <>
@@ -64,7 +60,7 @@ const Card = ({
             <p className="card__title">{cardTitle}</p>
             {/* TODO -- предусмотреть в стилях троеточие при переполнении */}
             { cardAddress && <p className="card__paragrarh card__paragraph_type_address">{cardAddress}</p> }
-            { cardPoem &&  renderPoem(cardPoem) }
+            { cardPoem &&  renderPoem(cardPoem, 'card__poem-line') }
             { cardSign && <p className="card__signature">{cardSign}</p> }
             { cardPromise && <p className="card__paragraph card__paragraph_type_promise">{cardPromise}</p> }
           </div>
