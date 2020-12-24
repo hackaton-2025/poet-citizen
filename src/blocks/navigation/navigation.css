@@ -1,19 +1,17 @@
+@import url(./__header/navigation__header.css);
+@import url(./__title/navigation__title.css);
+@import url(./__container/navigation__container.css);
+@import url(./__link/navigation__link.css);
+@import url(./__link/_active/navigation__link_active.css);
+@import url(./__link-image/navigation__link-image.css);
+@import url(./__link-title/navigation__link-title.css);
+
 .navigation {
   width: 100%;
   display: flex;
   flex-direction: column;
-  background-color: #ffffff;
-  border-radius: 10px;
-  padding: 44px 0 92px 29px;
+  border-radius: 20px;
   box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(20px);
 }
-
-@import url(./__item-image/navigation__item-image.css);
-@import url(./__item-image/_type/navigation__item-image_type_information.css);
-@import url(./__item-image/_type/navigation__item-image_type_new-call.css);
-@import url(./__item-image/_type/navigation__item-image_type_profile.css);
-@import url(./__item-image/_type/navigation__item-image_type_user-calls.css);
-@import url(./__item-link/navigation__item-link.css);
-@import url(./__item-list/navigation__item-list.css);
-@import url(./__item/navigation__item.css);
-@import url(./__title/navigation__item-title.css);

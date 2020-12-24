@@ -1,0 +1,27 @@
+.popup__link {
+  outline: none;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 23px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+  padding: 12.5px 50.5px;
+  background: linear-gradient(94.08deg, #7e87f8 0%, #9b50fb 98.92%);
+  box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+}
+
+.popup__link:hover {
+  background: linear-gradient(
+    94.08deg,
+    rgb(126 135 248 / 0.3) 0%,
+    rgb(155 80 251 / 0.3) 98.92%
+  );
+}
+
+.popup__link:active {
+  box-shadow: none;
+}

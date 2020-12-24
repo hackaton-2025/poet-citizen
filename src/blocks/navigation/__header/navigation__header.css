@@ -1,0 +1,9 @@
+.navigation__header {
+  display: flex;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  justify-content: center;
+  align-items: center;
+  min-height: 85px;
+  background-color: #ffffff60;
+}

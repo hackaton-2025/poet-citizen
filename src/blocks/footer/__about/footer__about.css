@@ -1,0 +1,14 @@
+.footer__about {
+    font-size: 17px;
+    line-height: 23px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    margin: 0;
+    text-decoration: none;
+    transition: opacity .5s ease-in .1s;
+    color: #313131;
+}
+
+.footer__about:hover {
+    opacity: .4;
+}

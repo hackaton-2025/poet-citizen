@@ -1,174 +1,188 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import plungerLogo from '../images/create_call_plunger.svg';
-import cockroachLogo from '../images/create_call_cockroach.svg';
-import heatLogo from '../images/create_call_heat.svg';
-import floodLogo from '../images/create_call_flood.svg';
-import lampLogo from '../images/create_call_lamp.svg';
-import frozeLogo from '../images/create_call_froze.svg';
-import craneLogo from '../images/create_call_crane.svg';
-import flashLogo from '../images/create_call_flash.svg';
-import doorphoneLogo from '../images/create_call_doorphone.svg';
-import angryLogo from '../images/create_call_angry.svg';
-import disappointmentLogo from '../images/create_call_disappointment.svg';
-import apartamentLogo from '../images/create_call_apartament.svg';
-import entanceLogo from '../images/create_call_entrance.svg';
-import yardLogo from '../images/create_call_yard.svg';
-// Всех этих импортов не будет!!
+import { locations, problems, urgencies } from '../configs/callsConfig';
+import CurrentUserContext from '../contexts/CurrentUserContext';
+import Card from './Card';
 
-const NewCall = ({ onAdd }) => {
+// TODO -- когда-нибудь реорганизовать конфиг с вызовами и переписать логику -- не нравится
+// Возможно, тут следует использовать вложенные маршруты
+const NewCall = ({ onCallAdd }) => {
   const history = useHistory();
-  // TODO -- топорно, передалать!!
-  const [isTerritoryChecked, setTerritoryState] = useState(false);
+
+  const userAddress = useContext(CurrentUserContext).address;
+
+  const [promiseToCall, setPromiseToCall] = useState(null);
+  const promiseToCallText = 'Отправьте заявку и мы вам перезвоним!';
+
+  // Стейты для отрисовки содержимого аккаунта
+  const [isLocationChecked, setLocationState] = useState(false);
   const [isProblemChecked, setProblemState] = useState(false);
   const [isUrgencyChecked, setUrgencyState] = useState(false);
 
-  const handleTerritoryCheck = () => {
-    setTerritoryState(true);
-  }
+  // Стейт для хранения выбранных параметров запроса -- меняем при нажатии на карточку
+  const [checkedCallParams, setCheckedCallParams] = useState({});
 
-  const handleProblemCheck = () => {
+  // Стейт для хранения запросов, отфильтрованных по локации (предыдущий использовать не получится)
+  const [problemsForLocation, setProblemsForLocation] = useState([]);
+
+  const [finalProblem, setFinalProblem] = useState({});
+
+  const handleLocationCheck = (checkedLocation) => {
+    setCheckedCallParams({...checkedCallParams, location: checkedLocation});
+  };
+
+  const handleProblemCheck = (checkedProblem) => {
+    setCheckedCallParams({...checkedCallParams, problem: checkedProblem});
+    if (checkedProblem === 'Прочее') {
+      setPromiseToCall(promiseToCallText);
+    }
+  };
+
+  const handleUrgencyCheck = (checkedUrgency) => {
+    setCheckedCallParams({...checkedCallParams, urgency: checkedUrgency});
+  };
+
+  const handleLocationConfirm = () => {
+    setProblemsForLocation(problems.filter((problem) => problem.location.name === checkedCallParams.location));
+    setLocationState(true);
+  };
+
+  const handleProblemConfirm = () => {
+    setFinalProblem(problemsForLocation.filter((problem) => problem.name === checkedCallParams.problem));
     setProblemState(true);
-  }
+  };
 
-  const handleUrgencyCheck = () => {
+  const handleUrgencyConfirm = () => {
+    setFinalProblem({
+      ...finalProblem[0],
+      poem: finalProblem[0].poem.filter((poem) => poem.urgency.name === checkedCallParams.urgency)[0],
+    });
     setUrgencyState(true);
-  }
+  };
+
+  // TODO -- добавить кнопки назад
 
   const handleSend = () => {
+    // TODO -- добавить попап
     alert('Ваша заявка принята!');
-    onAdd(false);
+    onCallAdd(finalProblem);
     history.push('/me/calls');
-  }
+  };
+
+  const renderCards = ({ cards, cardSizeModificator, handleCardClick, checkedCard }) => {
+    if (cards) {
+      return (
+        cards.map((card, i) => (
+            <Card
+              key={i}
+              imageCode={card.emoji}
+              cardTitle={card.name}
+              sizeModificator={cardSizeModificator}
+              onCardClick={handleCardClick}
+              checkedCard={checkedCard}
+            />
+          )
+        )
+      );
+    }
+  };
+
 // TODO -- почему-то здесь при использовании оператора && вместо страниц, для которых
 //  условие ложно, отображаются нули. Разобраться.
   return (
     <>
-      { !isTerritoryChecked
-        ? <>
+    <div className="new-call__steps-container">
+      <div className="new-call__number-container">
+        <p className="new-call__step-number">1</p>
+      </div>
+      <div className="new-call__step-track"></div>
+      <div className="new-call__number-container">
+        <p className="new-call__step-number">2</p>
+      </div>
+      <div className="new-call__step-track"></div>
+      <div className="new-call__number-container">
+        <p className="new-call__step-number">3</p>
+      </div>
+    </div>
+      { Boolean(!isLocationChecked) &&
+        <>
           <h2 className="page__title">Составьте новое обращение</h2>
-          <p className="page__subtitle">Выберите место где возникла проблема</p>
           <div className="new-call__cards new-call__cards_type_place">
-            <button type="button" className="card card_type_place">
-              <img src={apartamentLogo} alt="#" className="card__emoji"></img>
-              <p className="card__title"> Кваритра</p>
-            </button>
-            <button type="button" className="card card_type_place">
-              <img src={entanceLogo} alt="#" className="card__emoji"></img>
-              <p className="card__title">Подъезд</p>
-            </button>
-            <button type="button" className="card card_type_place">
-              <img src={yardLogo} alt="#" className="card__emoji"></img>
-              <p className="card__title">Двор</p>
-            </button>
+            { renderCards({
+              cards: locations,
+              cardSizeModificator: "card_size_m",
+              handleCardClick: handleLocationCheck,
+              checkedCard: checkedCallParams.location,
+            }) }
           </div>
-          <button type="button" className="new-call__next-button" onClick={handleTerritoryCheck}>
+          <button
+            type="button"
+            className="new-call__next-button"
+            onClick={handleLocationConfirm}
+            disabled={!checkedCallParams.location}
+          >
             <p className="button__title">Далее</p>
           </button>
         </>
-        : ''
       }
-      { isTerritoryChecked & !isProblemChecked
-        ? <>
+      { Boolean(isLocationChecked & !isProblemChecked) &&
+        <>
           <h2 className="page__title">Выберите проблему</h2>
-          <p className="page__subtitle"></p>
           <div className="new-call__cards new-call__cards_type_problem">
-            <button type="button" className="card card_type_problem">
-              <img src={plungerLogo} alt="#" className="card__emoji"></img>
-              <p className="card__title">Засор канализации</p>
-            </button>
-            <button type="button" className="card card_type_problem">
-              <img src={cockroachLogo} alt="#" className="card__emoji"></img>
-              <p className="card__title">Требуется дизенсекция</p>
-            </button>
-            <button type="button" className="card card_type_problem">
-              <img src={heatLogo} alt="#" className="card__emoji"></img>
-              <p className="card__title">Высокая температура</p>
-            </button>
-            <button type="button" className="card card_type_problem">
-              <img src={floodLogo} alt="#" className="card__emoji"></img>
-              <p className="card__title">Протечка трубы</p>
-            </button>
-            <button type="button" className="card card_type_problem">
-              <img src={lampLogo} alt="#" className="card__emoji"></img>
-              <p className="card__title">Перегорела лампочка</p>
-            </button>
-            <button type="button" className="card card_type_problem">
-              <img src={frozeLogo} alt="#" className="card__emoji"></img>
-              <p className="card__title">Низкая температура</p>
-            </button>
-            <button type="button" className="card card_type_problem">
-              <img src={craneLogo} alt="#" className="card__emoji"></img>
-              <p className="card__title">Отсутствует вода</p>
-            </button>
-            <button type="button" className="card card_type_problem">
-              <img src={flashLogo} alt="#" className="card__emoji"></img>
-              <p className="card__title">Отсутствует эл. питание</p>
-            </button>
-            <button type="button" className="card card_type_problem">
-              <img src={doorphoneLogo} alt="#" className="card__emoji"></img>
-              <p className="card__title">Сломался домофон</p>
-            </button>
+            { renderCards({
+              cards: problemsForLocation,
+              cardSizeModificator: "card_size_s",
+              handleCardClick: handleProblemCheck,
+              checkedCard: checkedCallParams.problem,
+            }) }
           </div>
-          <button type="button" className="new-call__next-button" onClick={handleProblemCheck}>
+          <button
+            type="button"
+            className="new-call__next-button"
+            onClick={handleProblemConfirm}
+            disabled={!checkedCallParams.problem}
+          >
             <p className="button__title">Далее</p>
           </button>
         </>
-        : ''
       }
-      { isProblemChecked & !isUrgencyChecked
-        ? <>
+      { Boolean(isProblemChecked & !isUrgencyChecked) &&
+        <>
           <h2 className="page__title">Определите срочность проблемы</h2>
-          <p className="page__subtitle"></p>
           <div className="new-call__cards new-call__cards_type_actuality">
-            <button type="button" className="card card_type_actuality">
-              <img src={angryLogo} alt="#" className="card__emoji card__emoji_type_actuality"></img>
-              <p className="card__title card__title_type_actuality">Срочно</p>
-            </button>
-            <button type="button" className="card card_type_actuality">
-              <img src={disappointmentLogo} alt="#" className="card__emoji card__emoji_type_actuality"></img>
-              <p className="card__title card__title_type_actuality">Несрочно</p>
-            </button>
+            { renderCards({
+              cards: urgencies,
+              cardSizeModificator: "card_size_l",
+              handleCardClick: handleUrgencyCheck,
+              checkedCard: checkedCallParams.urgency,
+            }) }
           </div>
-          <button type="button" className="new-call__next-button" onClick={handleUrgencyCheck}>
+          <button
+            type="button"
+            className="new-call__next-button"
+            onClick={handleUrgencyConfirm}
+            disabled={!checkedCallParams.urgency}
+          >
             <p className="button__title">Далее</p>
           </button>
         </>
-        : ''
       }
-      { isTerritoryChecked & isProblemChecked & isUrgencyChecked
-        ? <>
-          <h2 className="int-title">Определите срочность проблемы</h2>
-          <p className="hint-subtitle"></p>
-          <div className="new-call__cards bew-call__cards_type_call">
-          <div className="new-call__call">
-            <div className="new-call__call-element">
-              <h3 className="new-call__call-title">Место</h3>
-              <img src={apartamentLogo} alt="" className="new-call__call-image new-call__call-image_type_place"></img>
-            </div>
-            <div className="new-call__call-element">
-              <h3 className="new-call__call-title">Проблема</h3>
-              <img src={floodLogo} alt="" className="new-call__call-image new-call__call-image_type_problem"></img>
-            </div>
-            <div className="new-call__call-element">
-              <h3 className="new-call__call-title">Срочность</h3>
-              <img src={angryLogo} alt="" className="new-call__call-image new-call__call-image_type_actuality"></img>
-            </div>
-            <div className="new-call__call-element new-call__call-element_type_adress">
-              <h3 className="new-call__call-title">Адрес</h3>
-              <p className="new-call__call-description new-call__call-description_type_adress">Заглушка</p>
-            </div>
-            <div className="new-call__call-element new-call__call-element_type_poem">
-              <h3 className="new-call__call-title">Описание</h3>
-              <p className="new-call__call-description new-call__call-description_type_poem">Заглушка</p>
-            </div>
-          </div>
+      { Boolean(isLocationChecked & isProblemChecked & isUrgencyChecked) &&
+        <>
+          <h2 className="page__title">Ваша заявка</h2>
+          <div className="new-call__cards new-call__cards_type_final">
+            <Card cardTitle="Место" imageCode={finalProblem.location.emoji} sizeModificator="card_size_xs" />
+            <Card cardTitle="Проблема" imageCode={finalProblem.emoji} sizeModificator="card_size_xs" />
+            <Card cardTitle="Срочность" imageCode={finalProblem.poem.urgency.emoji} sizeModificator="card_size_xs" />
+            <Card cardTitle="Адрес" cardAddress={userAddress} sizeModificator="card_size_xs" />
+            <Card cardTitle="Описание" cardSign={finalProblem.poem.author} cardPoem={finalProblem.poem.text}
+                  sizeModificator="card_size_xl" cardPromise={promiseToCall}
+            />
           </div>
           <button type="submit" className="new-call__next-button" onClick={handleSend}>
             <p className="button__title">Отправить</p>
           </button>
         </>
-      : ''
       }
     </>
   )

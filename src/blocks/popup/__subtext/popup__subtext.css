@@ -1,0 +1,12 @@
+.popup__subtext {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 21px;
+  line-height: 29px;
+  color: #000000;
+  margin: 0 0 30px 0;
+}
+
+.popup__subtext:last-of-type {
+  margin: 0;
+}

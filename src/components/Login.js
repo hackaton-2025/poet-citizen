@@ -1,14 +1,24 @@
+import { useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import useFormValidation from '../hooks/useFormWithValidation';
 import setCustomValidity from '../utils/setCustomValidity';
 import Form from './Form';
 
-const Login = ({ onLogin }) => {
+const Login = ({ onLogin, loggedIn }) => {
+
+  const history = useHistory();
+
+  useEffect(() => {
+    if (loggedIn) {
+      history.push('/');
+    }
+  }, [loggedIn]);
 
   const { values, errors, isFormValid, handleChange } = useFormValidation(setCustomValidity);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onLogin();
+    onLogin(values);
   }
 
   return (
@@ -18,7 +28,7 @@ const Login = ({ onLogin }) => {
       isFormValid={isFormValid}
       linkText="Создать аккаунт"
       path="/signup"
-      modificator="form_type_login"
+      typeModificator="form_type_login"
     >
       <h2 className="form__title">Личный кабинет</h2>
       <label className="form__label" htmlFor="email">Email</label>

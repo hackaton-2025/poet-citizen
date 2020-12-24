@@ -1,7 +1,7 @@
 .section {
   box-sizing: border-box;
-  padding-left: 165px;
-  padding-right: 165px;
+  padding-left: 0;
+  padding-right: 0;
   padding-bottom: 100px;
 }
 
@@ -10,10 +10,12 @@
 @import url(./__title/section__title.css);
 @import url(./__list/__list.css);
 @import url(./__item/section__item.css);
+@import url(./__circle/section__circle.css);
+@import url(./__subtitle/section__subtitle.css);
 @import url(./__item/_news/section__item_news.css);
-
-
-
-
-
-
+@import url(./__item/_services/section__item_services.css);
+@import url(./__subtitle/_news/section__subtitle_news.css);
+@import url(./__date/section__date.css);
+@import url(./__text/section__text.css);
+@import url(./__real-text/section__real-text.css);
+@import url(./__link/section__link.css);
