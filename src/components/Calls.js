@@ -1,8 +1,8 @@
-const Requests = ({ isEmpty }) => {
-
+const Calls = ({ calls }) => {
+console.log(calls)
   return (
     <div className="requests__list">
-      { isEmpty 
+      { calls.length === 0 
         ? <h1 className="requests__title">
           Нет ни одной заявки в работе :(
         </h1>
@@ -26,4 +26,4 @@ const Requests = ({ isEmpty }) => {
   );
 };
 
-export default Requests;
+export default Calls;

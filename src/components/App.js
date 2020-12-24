@@ -22,6 +22,10 @@ function App() {
     tel: "",
   });
 
+  const [userCalls, setUserCalls] = useState([]);
+
+  const [loggedIn, setLoggedIn] = useState(false);
+
   // Преобразует адрес к строковому виду. 
   // ВНИМАНИЕ: настроена под текущую валидацию.
   const getAddressStr = ({ street, house, entrance, floor, flat }) => {
@@ -31,8 +35,6 @@ function App() {
     return `ул. ${street}, д. ${house}` + entranceStr + floorStr + flatStr;
   };
   
-  const [loggedIn, setLoggedIn] = useState(false);
-
   // Проверяет, авторизован ли пользователь
   const tokenCheck = () => {
     const token = localStorage.getItem('id');
@@ -102,8 +104,14 @@ function App() {
   const handleLogout = () => {
     localStorage.removeItem('id');
     setLoggedIn(false);
+    setCurrentUser({
+      name: "",
+      email: "",
+      address: "",
+      tel: "",
+    });
     history.push('/')
-  }
+  };
 
   const handleCallAdd = (callData) => {
     const userId = localStorage.getItem('id');
@@ -112,7 +120,21 @@ function App() {
       data: callData,
     })
     .catch(err => console.log(err));
-  }
+  };
+
+  const getUserCalls = () => {
+    const userId = localStorage.getItem('id');
+    firebase.getCards(userId)
+      .then((cards) => {
+        console.log(cards)
+        setUserCalls(cards);
+      })
+      .catch(err => console.log(err));
+  };
+
+  useEffect(() => {
+    getUserCalls();
+  }, [])
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
@@ -130,6 +152,7 @@ function App() {
           loggedIn={loggedIn}
           onLogout={handleLogout}
           onCallAdd={handleCallAdd}
+          calls={userCalls}
         />
         <Route exact path="/">
           <StartPage loggedIn={loggedIn} onLogout={handleLogout} />

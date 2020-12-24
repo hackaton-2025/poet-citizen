@@ -4,13 +4,12 @@ import Footer from "./Footer";
 import Header from "./Header";
 import Navigation from "./Navigation";
 import NewCall from "./NewCall";
-import Requests from "./Requests";
+import Calls from "./Calls";
 import About from "./About";
 
-const Account = ({ loggedIn, onLogout, onCallAdd }) => {
+const Account = ({ loggedIn, onLogout, onCallAdd, calls }) => {
   const { path, url } = useRouteMatch();
 
-  // const [isEmpty, setEmptyState] = useState(true);
   
   return (
     <div className="page__container page__narrow">
@@ -20,8 +19,7 @@ const Account = ({ loggedIn, onLogout, onCallAdd }) => {
         <section className="main__content">
           <Switch>
             <Route path={`${path}/calls`}>
-    {/* // TODO -- это временно для демонстрации */}
-              <Requests isEmpty={false} />
+              <Calls calls={calls} />
             </Route>
             <Route path={`${path}/new-call`}>
               <NewCall onCallAdd={onCallAdd} />

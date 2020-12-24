@@ -16,11 +16,9 @@ const deleteCard = (cardKey) => {
 };
 
 const addNewCard = ({ userId, data, status = 'На рассмотрении' }) => {
-  // const cardKey = db.ref("requests/").push().key;
   const date = new Date();
   console.log(userId, data)
   return db.ref("requests/").push({
-    // cardKey: cardKey,
     owner: userId,
     data: data,
     status: status,
@@ -28,14 +26,23 @@ const addNewCard = ({ userId, data, status = 'На рассмотрении' }) 
   });
 };
 
-const getCards = (email) => {
+const getCards = (userId) => {
   const getCardsResult = db
     .ref("requests/")
-    .orderByChild("email")
-    .equalTo(email)
-    .once("value");
+    .orderByChild("owner")
+    .equalTo(userId)
+    .once("value")
+    .then((snapshot) => {
+      let items = [];
+
+      snapshot.forEach(childSnapshot => {
+        items.push(childSnapshot.val());
+      });
+
+      return items;
+    });
   return getCardsResult;
-}
+};
 
 const getUserByEmail = (email) => {
   const checkUserResult = db
