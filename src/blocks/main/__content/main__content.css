@@ -1,9 +1,9 @@
 .main__content {
-  border-radius: 10px;
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
   padding: 24px;
-  min-height: 600px;
+  min-height: 770px;
   box-sizing: border-box;
   background: rgba(255, 255, 255, 0.4);
   position: relative;
