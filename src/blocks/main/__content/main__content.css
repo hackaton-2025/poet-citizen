@@ -1,11 +1,9 @@
 .main__content {
-    background-color: #ffffff;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    padding: 70px 62px;
-    min-height: 600px;
-    box-sizing: border-box;
-  }
-
-  
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  min-height: 600px;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.4);
+}

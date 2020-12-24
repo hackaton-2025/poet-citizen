@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const Navigation = ({ url }) => {
   return (
@@ -26,7 +26,7 @@ const Navigation = ({ url }) => {
           </Link>
         </li>
         <li className="navigation__item">
-          <Link className="navigation__item-link" to="/about">
+          <Link className="navigation__item-link" to={`${url}/about`}>
             <div className="navigation__item-image navigation__item-image_type_information"></div>
             <p className="navigation__item-title">О проекте</p>
           </Link>
