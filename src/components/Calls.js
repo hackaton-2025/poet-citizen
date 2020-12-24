@@ -1,8 +1,6 @@
 import Call from "./Call"
 
 const Calls = ({ calls }) => {
-console.log(calls)
-
 
   return (
     <>

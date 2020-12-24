@@ -119,6 +119,9 @@ function App() {
       userId: userId,
       data: callData,
     })
+    .then(() => {
+      getUserCalls();
+    })
     .catch(err => console.log(err));
   };
 
