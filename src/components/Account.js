@@ -7,12 +7,11 @@ import NewCall from "./NewCall";
 import Requests from "./Requests";
 import About from "./About";
 
-const Account = ({ loggedIn, onLogout }) => {
+const Account = ({ loggedIn, onLogout, onCallAdd }) => {
   const { path, url } = useRouteMatch();
 
-  // TODO -- это временно для демонстрации
-  const [isEmpty, setEmptyState] = useState(true);
-
+  // const [isEmpty, setEmptyState] = useState(true);
+  
   return (
     <div className="page__container page__narrow">
       <Header loggedIn={loggedIn} onLogout={onLogout} />
@@ -21,10 +20,11 @@ const Account = ({ loggedIn, onLogout }) => {
         <section className="main__content">
           <Switch>
             <Route path={`${path}/calls`}>
-              <Requests isEmpty={isEmpty} />
+    {/* // TODO -- это временно для демонстрации */}
+              <Requests isEmpty={false} />
             </Route>
             <Route path={`${path}/new-call`}>
-              <NewCall onAdd={setEmptyState} />
+              <NewCall onCallAdd={onCallAdd} />
             </Route>
             <Route path={`${path}/profile`}>
               <h2>Здесь будет профиль</h2>

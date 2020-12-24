@@ -4,9 +4,10 @@ import { useEffect, useState } from "react";
 const Card = ({
   imageCode,
   cardTitle,
-  cardText,
+  cardAddress,
   cardSign,
   cardPoem,
+  cardPromise,
   sizeModificator,
   onCardClick = null,
   checkedCard,
@@ -25,7 +26,6 @@ const Card = ({
   const [emojiUrl, setEmogi] = useState(null);
 
   const loadEmoji = () => {
-    console.log(imageCode)
     import(`../images/emoji/${imageCode}.png`)
       .then((image) => {
         setEmogi(image.default);
@@ -44,8 +44,6 @@ const Card = ({
   };
 
   const renderPoem = (poem) => {
-    console.log(poem)
-    console.log(cardClassName)
     const textArray = poem.split('\n')
     return textArray.map((line, i) => (
       <p key={i} className='card__poem-line'>{line}</p>
@@ -65,9 +63,10 @@ const Card = ({
             { emojiUrl && <img src={emojiUrl} alt="Эмоджи" className="card__emoji" /> }
             <p className="card__title">{cardTitle}</p>
             {/* TODO -- предусмотреть в стилях троеточие при переполнении */}
-            { cardText && <p className="card__paragrarh">{cardText}</p> }
+            { cardAddress && <p className="card__paragrarh card__paragraph_type_address">{cardAddress}</p> }
             { cardPoem &&  renderPoem(cardPoem) }
             { cardSign && <p className="card__signature">{cardSign}</p> }
+            { cardPromise && <p className="card__paragraph card__paragraph_type_promise">{cardPromise}</p> }
           </div>
         )
       }

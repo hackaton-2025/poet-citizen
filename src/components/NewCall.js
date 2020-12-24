@@ -1,11 +1,18 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { locations, problems, urgencies } from '../configs/callsConfig';
+import CurrentUserContext from '../contexts/CurrentUserContext';
 import Card from './Card';
 
 // TODO -- когда-нибудь реорганизовать конфиг с вызовами и переписать логику -- не нравится
-const NewCall = ({ onAdd }) => {
+// Возможно, тут следует использовать вложенные маршруты
+const NewCall = ({ onCallAdd }) => {
   const history = useHistory();
+
+  const userAddress = useContext(CurrentUserContext).address;
+
+  const [promiseToCall, setPromiseToCall] = useState(null);
+  const promiseToCallText = 'Отправьте заявку и мы вам перезвоним!';
 
   // Стейты для отрисовки содержимого аккаунта
   const [isLocationChecked, setLocationState] = useState(false);
@@ -26,6 +33,9 @@ const NewCall = ({ onAdd }) => {
 
   const handleProblemCheck = (checkedProblem) => {
     setCheckedCallParams({...checkedCallParams, problem: checkedProblem});
+    if (checkedProblem === 'Прочее') {
+      setPromiseToCall(promiseToCallText);
+    }
   };
 
   const handleUrgencyCheck = (checkedUrgency) => {
@@ -53,8 +63,9 @@ const NewCall = ({ onAdd }) => {
   // TODO -- добавить кнопки назад
 
   const handleSend = () => {
+    // TODO -- добавить попап
     alert('Ваша заявка принята!');
-    onAdd(false);
+    onCallAdd(finalProblem);
     history.push('/me/calls');
   };
 
@@ -75,7 +86,7 @@ const NewCall = ({ onAdd }) => {
       );
     }
   };
-    
+
 // TODO -- почему-то здесь при использовании оператора && вместо страниц, для которых
 //  условие ложно, отображаются нули. Разобраться.
   return (
@@ -98,14 +109,18 @@ const NewCall = ({ onAdd }) => {
           <h2 className="page__title">Составьте новое обращение</h2>
           <div className="new-call__cards new-call__cards_type_place">
             { renderCards({
-                cards: locations,
-                cardSizeModificator: "card_size_m",
-                handleCardClick: handleLocationCheck,
-                checkedCard: checkedCallParams.location,
-              })
-            }
+              cards: locations,
+              cardSizeModificator: "card_size_m",
+              handleCardClick: handleLocationCheck,
+              checkedCard: checkedCallParams.location,
+            }) }
           </div>
-          <button type="button" className="new-call__next-button" onClick={handleLocationConfirm}>
+          <button
+            type="button"
+            className="new-call__next-button"
+            onClick={handleLocationConfirm}
+            disabled={!checkedCallParams.location}
+          >
             <p className="button__title">Далее</p>
           </button>
         </>
@@ -121,7 +136,12 @@ const NewCall = ({ onAdd }) => {
               checkedCard: checkedCallParams.problem,
             }) }
           </div>
-          <button type="button" className="new-call__next-button" onClick={handleProblemConfirm}>
+          <button
+            type="button"
+            className="new-call__next-button"
+            onClick={handleProblemConfirm}
+            disabled={!checkedCallParams.problem}
+          >
             <p className="button__title">Далее</p>
           </button>
         </>
@@ -137,7 +157,12 @@ const NewCall = ({ onAdd }) => {
               checkedCard: checkedCallParams.urgency,
             }) }
           </div>
-          <button type="button" className="new-call__next-button" onClick={handleUrgencyConfirm}>
+          <button
+            type="button"
+            className="new-call__next-button"
+            onClick={handleUrgencyConfirm}
+            disabled={!checkedCallParams.urgency}
+          >
             <p className="button__title">Далее</p>
           </button>
         </>
@@ -149,9 +174,9 @@ const NewCall = ({ onAdd }) => {
             <Card cardTitle="Место" imageCode={finalProblem.location.emoji} sizeModificator="card_size_xs" />
             <Card cardTitle="Проблема" imageCode={finalProblem.emoji} sizeModificator="card_size_xs" />
             <Card cardTitle="Срочность" imageCode={finalProblem.poem.urgency.emoji} sizeModificator="card_size_xs" />
-            <Card cardTitle="Адрес" cardText="Здесь будет адрес" sizeModificator="card_size_xs" />
+            <Card cardTitle="Адрес" cardAddress={userAddress} sizeModificator="card_size_xs" />
             <Card cardTitle="Описание" cardSign={finalProblem.poem.author} cardPoem={finalProblem.poem.text}
-                  sizeModificator="card_size_xl"
+                  sizeModificator="card_size_xl" cardPromise={promiseToCall}
             />
           </div>
           <button type="submit" className="new-call__next-button" onClick={handleSend}>

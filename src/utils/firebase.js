@@ -15,12 +15,13 @@ const deleteCard = (cardKey) => {
   db.ref("requests/" + cardKey).remove();
 };
 
-const addNewCard = ({ email, data, status = 'На рассмотрении' }) => {
-  const cardKey = db.ref("requests/").push().key;
+const addNewCard = ({ userId, data, status = 'На рассмотрении' }) => {
+  // const cardKey = db.ref("requests/").push().key;
   const date = new Date();
-  db.ref("requests/" + cardKey).set({
-    cardKey: cardKey,
-    email: email,
+  console.log(userId, data)
+  return db.ref("requests/").push({
+    // cardKey: cardKey,
+    owner: userId,
     data: data,
     status: status,
     date: date,
