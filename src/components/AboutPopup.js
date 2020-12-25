@@ -51,13 +51,13 @@ function AboutPopup({ isOpen, onClose, contentModificator }) {
           обслуживание в случае возникновения проблемы.
         </p>
         <h3 class="popup__title popup__title_team">Команда</h3>
-        <img class="popup__smiles" src={team1}></img>
+        <img class="popup__smiles" src={team1} alt="эмодзи"></img>
         <p class="popup__subtext">
           Веб-разработчики:
           <br />
           Юлия Дорошина, Николай Смирнов, Алексей Обрядин
         </p>
-        <img class="popup__smiles" src={team2}></img>
+        <img class="popup__smiles" src={team2} alt="эмодзи"></img>
         <p class="popup__subtext">
           Дизайнеры:
           <br />

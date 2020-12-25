@@ -1,0 +1,8 @@
+.profile {
+  font-family: "Open Sans", Arial, sans-serif;
+}
+
+@import url(./__title/profie__title.css);
+@import url(./__form/profile__form.css);
+@import url(./__label/profile__label.css);
+@import url(./__input/profile__input.css);

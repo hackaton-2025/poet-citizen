@@ -1,3 +1,11 @@
 .card_size_l {
-  height: 70px;
+  height: 140px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  transition: background-color .5s ease-in .1s;
+}
+
+.card_size_l:hover {
+  background-color: #ffffff;
 }
