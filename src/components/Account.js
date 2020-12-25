@@ -36,7 +36,6 @@ const Account = ({ loggedIn, onLogout, onCallAdd, calls }) => {
           </Switch>
         </section>
       </main>
-      <Footer />
     </div>
   );
 };
