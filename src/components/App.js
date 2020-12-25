@@ -26,6 +26,12 @@ function App() {
 
   const [loggedIn, setLoggedIn] = useState(false);
 
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const resetErrorMessage = () => {
+    setErrorMessage('');
+  }
+
   // Преобразует адрес к строковому виду. 
   // ВНИМАНИЕ: настроена под текущую валидацию.
   const getAddressStr = ({ street, house, entrance, floor, flat }) => {
@@ -87,6 +93,7 @@ function App() {
       .catch((err) => {
         // TODO -- выводить ошибку в поле для ошибки -- ждём, когда будет дизайн
         console.log(err.message);
+        setTimeout(resetErrorMessage, 5000);
       });
   };
 
@@ -145,7 +152,7 @@ function App() {
       <Background />
       <Switch>
         <Route path="/signin">
-          <Login onLogin={handleLogin} loggedIn={loggedIn} />
+          <Login onLogin={handleLogin} loggedIn={loggedIn} errorMessage />
         </Route>
         <Route path="/signup">
           <Register onRegister={handleRegister} />
