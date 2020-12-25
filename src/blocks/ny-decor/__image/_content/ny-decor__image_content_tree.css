@@ -1,5 +1,6 @@
 .ny-decor__image_content_tree {
-    /* transform: rotate(-5deg); */
-    top: -100px;
-    left: -70px;
+    top: -104px;
+    left: -76px;
+    width:  200px;
+    height: 200px;
 }
