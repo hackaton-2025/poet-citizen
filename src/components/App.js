@@ -136,7 +136,7 @@ function App() {
 
   useEffect(() => {
     getUserCalls();
-  }, [])
+  }, [loggedIn]);
 
   
 
