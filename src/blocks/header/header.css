@@ -1,6 +1,7 @@
 .header {
   padding: 20px 0;
   box-sizing: border-box;
+  font-family: "Open Sans", Arial, sans-serif;
 }
 
 @import url(./__user-profile/header__user-profile.css);
@@ -9,12 +10,3 @@
 @import url(./__content/header__content.css);
 @import url(./__contacts/header__contacts.css);
 @import url(./__btn/header__btn.css);
-
-
-
-
-
-
-
-
-

@@ -6,6 +6,7 @@
   gap: 30px;
   align-items: flex-start;
   flex-grow: 1;
+  font-family: "Open Sans", Arial, sans-serif;
 }
 
 @import url(./__content/main__content.css);

@@ -11,3 +11,7 @@
 @import url(./__poem-line/requests__poem-line.css);
 @import url(./__title/requests__title.css);
 @import url(./__title/_null/requests__title_null.css);
+
+.requests {
+  font-family: "Open Sans", Arial, sans-serif;
+}
