@@ -6,11 +6,11 @@ import Navigation from "./Navigation";
 import NewCall from "./NewCall";
 import Calls from "./Calls";
 import About from "./About";
+import Profile from "./Profile";
 
 const Account = ({ loggedIn, onLogout, onCallAdd, calls }) => {
   const { path, url } = useRouteMatch();
 
-  
   return (
     <div className="page__container page__narrow">
       <Header loggedIn={loggedIn} onLogout={onLogout} />
@@ -25,7 +25,7 @@ const Account = ({ loggedIn, onLogout, onCallAdd, calls }) => {
               <NewCall onCallAdd={onCallAdd} />
             </Route>
             <Route path={`${path}/profile`}>
-              <h2>Здесь будет профиль</h2>
+              <Profile />
             </Route>
             <Route path={`${path}/about`}>
               <About />
