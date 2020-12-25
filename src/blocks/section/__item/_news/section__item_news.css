@@ -1,8 +1,7 @@
 .section__item_news {
-  width: 371px;
+  width: 384px;
   height: 274px;
-  /* justify-content: space-around; */
-  cursor: pointer;
+  box-sizing: border-box;
   padding: 35px 24px;
   border-radius: 20px;
   background: linear-gradient(

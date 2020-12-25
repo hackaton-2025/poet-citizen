@@ -11,4 +11,10 @@
   color: #0038ff;
   text-align: left;
   outline: none;
+  cursor: pointer;
+  transition: opacity .2s linear;
+}
+
+.section__link:hover {
+  opacity: .4;
 }
