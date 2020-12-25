@@ -1,9 +1,10 @@
+import { useEffect } from 'react';
 import useFormValidation from '../hooks/useFormWithValidation';
 import setCustomValidity from '../utils/setCustomValidity';
 import thinkSmileImage from '../images/emoji/129300.png';
 import Form from './Form';
 
-const Register = ({ onRegister }) => {
+const Register = ({ onRegister, errorMessage, resetErrorMessage }) => {
 
   const { values, errors, isFormValid, handleChange } = useFormValidation(setCustomValidity);
 
@@ -11,6 +12,10 @@ const Register = ({ onRegister }) => {
     e.preventDefault();
     onRegister(values);
   }
+
+  useEffect(() => {
+    resetErrorMessage();
+  }, [values]);
 
   return (
     <Form
@@ -24,6 +29,7 @@ const Register = ({ onRegister }) => {
       title="Создать аккаунт"
       imageUrl={thinkSmileImage}
       imageAlt="Думающий эмоджи"
+      errorMessage={errorMessage}
     >
       <fieldset className="form__fieldset">
         <div className="form__input-container">

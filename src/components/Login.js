@@ -5,7 +5,7 @@ import setCustomValidity from '../utils/setCustomValidity';
 import Form from './Form';
 import helloEmoji from '../images/emoji/128075.png';
 
-const Login = ({ onLogin, loggedIn }) => {
+const Login = ({ onLogin, loggedIn, errorMessage, resetErrorMessage }) => {
 
   const history = useHistory();
 
@@ -21,18 +21,10 @@ const Login = ({ onLogin, loggedIn }) => {
     e.preventDefault();
     onLogin(values);
   }
-  
 
-  // onSubmit={handleSubmit}
-  // submitTitle="Регистрация"
-  // isFormValid={isFormValid}
-  // linkEnvText="Уже зарегистрированы?"
-  // linkText="Войти"
-  // path="/signin"
-  // typeModificator="form_type_register"
-  // title="Создать аккаунт"
-  // imageUrl={thinkSmileImage}
-  // imageAlt="Думающий эмоджи"
+  useEffect(() => {
+    resetErrorMessage();
+  }, [values]);
 
   return (
     <Form
@@ -46,6 +38,7 @@ const Login = ({ onLogin, loggedIn }) => {
       title="Личный кабинет"
       imageUrl={helloEmoji}
       imageAlt="Прветствующий эмоджи"
+      errorMessage={errorMessage}
     >
       <fieldset className="form__fieldset">
         <div className="form__input-container">

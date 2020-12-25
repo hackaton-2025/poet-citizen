@@ -91,9 +91,8 @@ function App() {
         history.push('/me/calls');
       })
       .catch((err) => {
-        // TODO -- выводить ошибку в поле для ошибки -- ждём, когда будет дизайн
         console.log(err.message);
-        setTimeout(resetErrorMessage, 5000);
+        setErrorMessage(err.message);
       });
   };
 
@@ -103,8 +102,8 @@ function App() {
         history.push('/signin');
       })
       .catch((err) => {
-        // TODO -- выводить ошибку в поле для ошибки -- ждём, когда будет дизайн
         console.log(err.message);
+        setErrorMessage(err.message);
       });
   };
 
@@ -152,10 +151,19 @@ function App() {
       <Background />
       <Switch>
         <Route path="/signin">
-          <Login onLogin={handleLogin} loggedIn={loggedIn} errorMessage />
+          <Login
+            onLogin={handleLogin}
+            loggedIn={loggedIn}
+            errorMessage={errorMessage}
+            resetErrorMessage={resetErrorMessage}
+          />
         </Route>
         <Route path="/signup">
-          <Register onRegister={handleRegister} />
+          <Register
+            onRegister={handleRegister}
+            errorMessage={errorMessage}
+            resetErrorMessage={resetErrorMessage}
+          />
         </Route>
         <ProtectedRoute
           path="/me"

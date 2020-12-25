@@ -11,10 +11,10 @@ const Form = ({
   linkText,
   path,
   typeModificator,
-  narrowClassName,
   title='Добро пожаловать!',
   imageUrl,
   imageAlt='',
+  errorMessage,
 }) => {
 
   const formContentClassName = cn("form__main-container", {[typeModificator]: typeModificator});
@@ -33,7 +33,8 @@ const Form = ({
           }
         </div>
           <div className={formContentClassName}>
-          {children}
+            { errorMessage && <p className="form__error">{errorMessage}</p> }
+            {children}
           <button
               type="submit"
               disabled={!isFormValid}
