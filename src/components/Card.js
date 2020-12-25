@@ -1,12 +1,15 @@
 import cn from 'classnames';
 import { useEffect, useState } from "react";
+import loadImage from '../utils/loadImage';
+import renderPoem from '../utils/renderPoem';
 
 const Card = ({
   imageCode,
   cardTitle,
-  cardText,
+  cardAddress,
   cardSign,
   cardPoem,
+  cardPromise,
   sizeModificator,
   onCardClick = null,
   checkedCard,
@@ -24,33 +27,24 @@ const Card = ({
 
   const [emojiUrl, setEmogi] = useState(null);
 
-  const loadEmoji = () => {
-    console.log(imageCode)
-    import(`../images/emoji/${imageCode}.png`)
-      .then((image) => {
-        setEmogi(image.default);
-      })
-      .catch((err) => console.log(err));
-  };
+  // const loadEmoji = () => {
+  //   import(`../images/emoji/${imageCode}.png`)
+  //     .then((image) => {
+  //       setEmogi(image.default);
+  //     })
+  //     .catch((err) => console.log(err));
+  // };
 
   useEffect(() => {
-    loadEmoji();
+    loadImage(imageCode, setEmogi);
   }, []);
+
 
   const handleCardClick = () => {
     if (onCardClick) {
       onCardClick(cardTitle);
     }
   };
-
-  const renderPoem = (poem) => {
-    console.log(poem)
-    console.log(cardClassName)
-    const textArray = poem.split('\n')
-    return textArray.map((line, i) => (
-      <p key={i} className='card__poem-line'>{line}</p>
-    ));
-  }
 
   return (
     <>
@@ -65,9 +59,10 @@ const Card = ({
             { emojiUrl && <img src={emojiUrl} alt="Эмоджи" className="card__emoji" /> }
             <p className="card__title">{cardTitle}</p>
             {/* TODO -- предусмотреть в стилях троеточие при переполнении */}
-            { cardText && <p className="card__paragrarh">{cardText}</p> }
-            { cardPoem &&  renderPoem(cardPoem) }
+            { cardAddress && <p className="card__paragrarh card__paragraph_type_address">{cardAddress}</p> }
+            { cardPoem &&  renderPoem(cardPoem, 'card__poem-line') }
             { cardSign && <p className="card__signature">{cardSign}</p> }
+            { cardPromise && <p className="card__paragraph card__paragraph_type_promise">{cardPromise}</p> }
           </div>
         )
       }

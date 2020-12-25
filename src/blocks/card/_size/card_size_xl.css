@@ -1,0 +1,5 @@
+.card_size_xl {
+  grid-column: 1/5;
+  flex-direction: column;
+  align-items: flex-start;
+}

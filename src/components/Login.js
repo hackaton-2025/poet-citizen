@@ -1,8 +1,18 @@
+import { useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import useFormValidation from '../hooks/useFormWithValidation';
 import setCustomValidity from '../utils/setCustomValidity';
 import Form from './Form';
 
-const Login = ({ onLogin }) => {
+const Login = ({ onLogin, loggedIn }) => {
+
+  const history = useHistory();
+
+  useEffect(() => {
+    if (loggedIn) {
+      history.push('/');
+    }
+  }, [loggedIn]);
 
   const { values, errors, isFormValid, handleChange } = useFormValidation(setCustomValidity);
 

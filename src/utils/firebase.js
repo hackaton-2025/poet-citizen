@@ -1,5 +1,6 @@
 import firebase from "firebase";
 import { FIREBASE_CONFIG } from "../configs/firebaseConfig.js";
+import formatDate from "./formatDate.js";
 
 // TODO -- возможно когда-нибудь это стоит переделать.
 // Нельзя в открытом виде хранить пароли, сообщать пользователю, что именно -- 
@@ -15,26 +16,33 @@ const deleteCard = (cardKey) => {
   db.ref("requests/" + cardKey).remove();
 };
 
-const addNewCard = ({ email, data, status = 'На рассмотрении' }) => {
-  const cardKey = db.ref("requests/").push().key;
-  const date = new Date();
-  db.ref("requests/" + cardKey).set({
-    cardKey: cardKey,
-    email: email,
+const addNewCard = ({ userId, data, status = 'На рассмотрении' }) => {
+  const date = formatDate(new Date())
+  return db.ref("requests/").push({
+    owner: userId,
     data: data,
     status: status,
     date: date,
   });
 };
 
-const getCards = (email) => {
+const getCards = (userId) => {
   const getCardsResult = db
     .ref("requests/")
-    .orderByChild("email")
-    .equalTo(email)
-    .once("value");
+    .orderByChild("owner")
+    .equalTo(userId)
+    .once("value")
+    .then((snapshot) => {
+      let items = [];
+
+      snapshot.forEach(childSnapshot => {
+        items.push(childSnapshot.val());
+      });
+
+      return items;
+    });
   return getCardsResult;
-}
+};
 
 const getUserByEmail = (email) => {
   const checkUserResult = db

@@ -2,10 +2,12 @@
 @import url(./__emoji/_type/card__emoji_type_actuality.css);
 @import url(./__title/card__title.css);
 @import url(./__title/_type/card__title_type_actuality.css);
+@import url(./__poem-line/card__poem-line.css);
 @import url(./_size/card_size_xs.css);
 @import url(./_size/card_size_s.css);
 @import url(./_size/card_size_m.css);
 @import url(./_size/card_size_l.css);
+@import url(./_size/card_size_xl.css);
 @import url(./_type/card_type_button.css);
 @import url(./_type/card_type_not_button.css);
 @import url(./_checked/card_checked.css);
@@ -13,7 +15,7 @@
 
 .card {
   display: flex;
-  align-items: center;
+  /* Направление и выравнивание флекс -- в модификаторах size */
   /* Фон в card_checked/unchecked */
   /* background-color: #E8EDFF; */
   border-radius: 10px;
