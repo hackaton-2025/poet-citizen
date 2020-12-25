@@ -19,10 +19,10 @@ import uslugi6 from "../images/emoji/uslugi6.svg";
 // TODO -- когда-нибудь отрефакторить это, вынести компоненты и т.д.
 const StartPage = ({ loggedIn, onLogout }) => {
   return (
-    <div className="page__container page__narrow">
+    <div className="page__container">
       <Header loggedIn={loggedIn} onLogout={onLogout} />
-      <section className="banner">
-        <div className="banner__content page__narrow">
+      <section className="banner page__narrow">
+        <div className="banner__content">
           <h1 className="banner__title">
             Экспресс заявки на проведение работ по благоустройству и
             обслуживанию объектов жилых комплексов
@@ -153,9 +153,9 @@ const StartPage = ({ loggedIn, onLogout }) => {
             info@obeiru.ru
           </Link>
         </div>
-        <Link to="/about" className="footer__about">
+        <button type="button" className="footer__about">
           О проекте
-        </Link>
+        </button>
         <div className="footer__copyright">
           <p className="footer__copyright-title">Яндекс.Практикум</p>
           <p className="footer__copyright-subtitle">Hackaton 2025</p>
