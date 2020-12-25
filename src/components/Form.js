@@ -11,18 +11,18 @@ const Form = ({
   linkText,
   path,
   typeModificator,
+  narrowClassName,
   title='Добро пожаловать!',
   imageUrl,
   imageAlt='',
 }) => {
 
-  const formClassName = cn("form", {[typeModificator]: typeModificator});
-
+  const formContentClassName = cn("form__main-container", {[typeModificator]: typeModificator});
 
   return (
     <div className="form-wrapper">
       <form
-        className={formClassName}
+        className="form"
         onSubmit={onSubmit}
       >
         <div className="form__header">
@@ -32,7 +32,7 @@ const Form = ({
             <img src={imageUrl} alt={imageAlt} className="form__image form__image_type_think-smile" />
           }
         </div>
-          <div className="form__main-container">
+          <div className={formContentClassName}>
           {children}
           <button
               type="submit"
