@@ -9,11 +9,6 @@
 @import url(./__next-button/_active/new-call__next-button_active.css);
 @import url(./__next-button/_disabled/new-call__next-button_disabled.css);
 @import url(./__prev-button/new-call__prev-button.css);
-@import url(./__steps-container/new-call__steps-container.css);
-@import url(./__step-container/new-call__step-container.css);
-@import url(./__number-container/new-call__number-container.css);
-@import url(./__step-number/new-call__step-number.css);
-@import url(./__step-track/new-call__step-track.css);
 
 .new-call {
   font-family: "Open Sans", Arial, sans-serif;

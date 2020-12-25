@@ -1,0 +1,16 @@
+@import url(./__number-container/steps__number-container.css);
+@import url(./__number/steps__number.css);
+@import url(./__track/steps__track.css);
+@import url(./__number-container/_type/steps__number-container_type_active.css);
+@import url(./__number-container/_type/steps__number-container_type_complete.css);
+.steps {
+    display: grid;
+    width: 340px;
+    grid-template-columns: 36px 1fr 36px 1fr 36px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    position: absolute;
+    top: 24px;
+    right: 24px;
+}
