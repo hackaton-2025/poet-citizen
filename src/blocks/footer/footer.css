@@ -1,11 +1,3 @@
-.footer  {
-  height: 120px;
-  padding: 35px 0;
-  box-sizing: border-box;
-  display: flex;
-  
-}
-
 @import url(./__email/footer__email.css);
 @import url(./__email-title/footer__email-title.css);
 @import url(./__email-link/footer__email-link.css);
@@ -13,3 +5,9 @@
 @import url(./__copyright/footer__copyright.css);
 @import url(./__copyright-title/footer__copyright-title.css);
 @import url(./__copyright-subtitle/footer__copyright-subtitle.css);
+@import url(./__content/footer__content.css);
+
+.footer {
+  font-family: "Open Sans", Arial, sans-serif;
+  background-color: #ffffff40;
+}

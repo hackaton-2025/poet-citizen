@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import treeSmileImage from '../images/form_christmas-tree.svg';
-import giftSmileImage from '../images/form_gift.svg';
+import giftSmileImage from '../images/form_gift.png';
 import makeParallaxEffect from '../utils/makeParallaxEffect';
 import throttle from '../utils/throttle';
 

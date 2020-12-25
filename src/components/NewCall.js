@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { locations, problems, urgencies } from '../configs/callsConfig';
 import CurrentUserContext from '../contexts/CurrentUserContext';
 import Card from './Card';
+import CheckoutButtons from './CheckoutButtons';
 
 // TODO -- когда-нибудь реорганизовать конфиг с вызовами и переписать логику -- не нравится
 // Возможно, тут следует использовать вложенные маршруты
@@ -53,10 +54,18 @@ const NewCall = ({ onCallAdd }) => {
   };
 
   const handleUrgencyConfirm = () => {
-    setFinalProblem({
-      ...finalProblem[0],
-      poem: finalProblem[0].poem.filter((poem) => poem.urgency.name === checkedCallParams.urgency)[0],
-    });
+    if (!checkedCallParams.urgency) {
+      setFinalProblem({
+        ...finalProblem[0],
+        poem: finalProblem[0].poem.filter((poem) => poem.urgency.name === checkedCallParams.urgency)[0],
+      });
+    } else {
+      setFinalProblem(problemsForLocation.filter((problem) => problem.name === checkedCallParams.problem));
+      setFinalProblem({
+        ...finalProblem[0],
+        poem: finalProblem[0].poem.filter((poem) => poem.urgency.name === checkedCallParams.urgency)[0],
+      });
+    }
     setUrgencyState(true);
   };
 
@@ -87,8 +96,6 @@ const NewCall = ({ onCallAdd }) => {
     }
   };
 
-// TODO -- почему-то здесь при использовании оператора && вместо страниц, для которых
-//  условие ложно, отображаются нули. Разобраться.
   return (
     <>
     <div className="new-call__steps-container">
@@ -106,7 +113,7 @@ const NewCall = ({ onCallAdd }) => {
     </div>
       { Boolean(!isLocationChecked) &&
         <>
-          <h2 className="page__title">Составьте новое обращение</h2>
+          <h2 className="page__title">Выберите место</h2>
           <div className="new-call__cards new-call__cards_type_place">
             { renderCards({
               cards: locations,
@@ -115,14 +122,11 @@ const NewCall = ({ onCallAdd }) => {
               checkedCard: checkedCallParams.location,
             }) }
           </div>
-          <button
-            type="button"
-            className="new-call__next-button"
-            onClick={handleLocationConfirm}
-            disabled={!checkedCallParams.location}
-          >
-            <p className="button__title">Далее</p>
-          </button>
+          <CheckoutButtons
+            isPrevButton={false}
+            isNextButtonActive={checkedCallParams.location}
+            onNextButtonClick={handleLocationConfirm}
+          />
         </>
       }
       { Boolean(isLocationChecked & !isProblemChecked) &&
@@ -136,19 +140,17 @@ const NewCall = ({ onCallAdd }) => {
               checkedCard: checkedCallParams.problem,
             }) }
           </div>
-          <button
-            type="button"
-            className="new-call__next-button"
-            onClick={handleProblemConfirm}
-            disabled={!checkedCallParams.problem}
-          >
-            <p className="button__title">Далее</p>
-          </button>
+          <CheckoutButtons
+            isPrevButton={true}
+            onPrevButtonClick={() => setLocationState(false)}
+            isNextButtonActive={checkedCallParams.problem}
+            onNextButtonClick={handleProblemConfirm}
+          />
         </>
       }
       { Boolean(isProblemChecked & !isUrgencyChecked) &&
         <>
-          <h2 className="page__title">Определите срочность проблемы</h2>
+          <h2 className="page__title">Выберите срочность</h2>
           <div className="new-call__cards new-call__cards_type_actuality">
             { renderCards({
               cards: urgencies,
@@ -157,14 +159,12 @@ const NewCall = ({ onCallAdd }) => {
               checkedCard: checkedCallParams.urgency,
             }) }
           </div>
-          <button
-            type="button"
-            className="new-call__next-button"
-            onClick={handleUrgencyConfirm}
-            disabled={!checkedCallParams.urgency}
-          >
-            <p className="button__title">Далее</p>
-          </button>
+          <CheckoutButtons
+            isPrevButton={true}
+            onPrevButtonClick={() => setProblemState(false)}
+            isNextButtonActive={checkedCallParams.urgency}
+            onNextButtonClick={handleUrgencyConfirm}
+          />
         </>
       }
       { Boolean(isLocationChecked & isProblemChecked & isUrgencyChecked) &&
@@ -179,9 +179,13 @@ const NewCall = ({ onCallAdd }) => {
                   sizeModificator="card_size_xl" cardPromise={promiseToCall}
             />
           </div>
-          <button type="submit" className="new-call__next-button" onClick={handleSend}>
-            <p className="button__title">Отправить</p>
-          </button>
+          <CheckoutButtons
+            isPrevButton={true}
+            onPrevButtonClick={() => setUrgencyState(false)}
+            isNextButtonActive={true}
+            onNextButtonClick={handleSend}
+            nextButtonType="submit"
+          />
         </>
       }
     </>

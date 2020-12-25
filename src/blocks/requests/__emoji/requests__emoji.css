@@ -1,0 +1,9 @@
+.requests__emoji {
+  width: 60px;
+  height: 60px;
+  margin: 0 16px 0 0;
+}
+
+.requests__emoji:last-of-type {
+  margin: 0;
+}

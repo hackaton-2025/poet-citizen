@@ -1,3 +1,6 @@
+.about {
+  font-family: "Open Sans", Arial, sans-serif;
+}
 @import url(./__title/about__title.css);
 @import url(./__subtitle/about__subtitle.css);
 @import url(./__item-container/about__item-container.css);

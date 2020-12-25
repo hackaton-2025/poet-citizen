@@ -2,6 +2,7 @@
 @import url(./__emoji/_type/card__emoji_type_actuality.css);
 @import url(./__title/card__title.css);
 @import url(./__title/_type/card__title_type_actuality.css);
+@import url(./__title/_type/card__title_type_final.css);
 @import url(./__poem-line/card__poem-line.css);
 @import url(./_size/card_size_xs.css);
 @import url(./_size/card_size_s.css);
@@ -12,14 +13,25 @@
 @import url(./_type/card_type_not_button.css);
 @import url(./_checked/card_checked.css);
 @import url(./_unchecked/card_unchecked.css);
+@import url(./__signature/card__signature.css);
+@import url(./__paragrarh/_type/card__paragrarh_type_adress.css);
 
 .card {
   display: flex;
   /* Направление и выравнивание флекс -- в модификаторах size */
   /* Фон в card_checked/unchecked */
   /* background-color: #E8EDFF; */
-  border-radius: 10px;
-  padding: 0 10px;
+  border-radius: 20px;
   border: none;
   cursor: pointer;
+  font-family: "Open Sans", Arial, sans-serif;
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-sizing: border-box;
+  color: #313131;
+}
+
+.card:focus {
+  outline: none;
 }

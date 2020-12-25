@@ -1,9 +1,10 @@
+import { useEffect } from 'react';
 import useFormValidation from '../hooks/useFormWithValidation';
 import setCustomValidity from '../utils/setCustomValidity';
-import thinkSmileImage from '../images/form_think_smile.svg';
+import thinkSmileImage from '../images/emoji/129300.png';
 import Form from './Form';
 
-const Register = ({ onRegister }) => {
+const Register = ({ onRegister, errorMessage, resetErrorMessage }) => {
 
   const { values, errors, isFormValid, handleChange } = useFormValidation(setCustomValidity);
 
@@ -12,20 +13,25 @@ const Register = ({ onRegister }) => {
     onRegister(values);
   }
 
+  useEffect(() => {
+    resetErrorMessage();
+  }, [values]);
+
   return (
     <Form
       onSubmit={handleSubmit}
-      submitTitle="Регистрация"
+      submitTitle="Создать аккаунт"
       isFormValid={isFormValid}
       linkEnvText="Уже зарегистрированы?"
       linkText="Войти"
       path="/signin"
-      typeModificator="form_type_register"
+      typeModificator="form__main-container_type_register"
       title="Создать аккаунт"
       imageUrl={thinkSmileImage}
       imageAlt="Думающий эмоджи"
+      errorMessage={errorMessage}
     >
-      <fieldset className="form__fieldset form__fieldset_type_contact ">
+      <fieldset className="form__fieldset">
         <div className="form__input-container">
           <label className="form__label" htmlFor="name">ФИО</label>
           <input
@@ -40,23 +46,8 @@ const Register = ({ onRegister }) => {
           />
           <span className="form__input-error">{errors.name || ''}</span>
         </div>
-        <div className="form__input-container">
-          <label className="form__label" htmlFor="tel">Номер телефона</label>
-          <input
-            id="tel"
-            name="tel"
-            type="tel"
-            minLength="10"
-            pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$"
-            required={true}
-            value={values.tel || ''}
-            onChange={handleChange}
-            className="form__input"
-          />
-          <span className="form__input-error">{errors.tel || ''}</span>
-        </div>
       </fieldset>
-      <fieldset className="form__fieldset form__fieldset_type_street">
+      <fieldset className="form__fieldset">
         <div className="form__input-container">
           <label className="form__label" htmlFor="street">Улица</label>
           <input
@@ -72,7 +63,7 @@ const Register = ({ onRegister }) => {
           <span className="form__input-error">{errors.street || ''}</span>
         </div>
       </fieldset>
-      <fieldset className="form__fieldset form__fieldset_type_adress">
+      <fieldset className="form__fieldset form__fieldset_type_four-columns">
         <div className="form__input-container">
           <label className="form__label" htmlFor="house">Дом</label>
           <input
@@ -127,7 +118,8 @@ const Register = ({ onRegister }) => {
           <span className="form__input-error">{errors.flat || ''}</span>
         </div>
       </fieldset>
-      <fieldset className="form__fieldset form__fieldset_type_login ">
+      <fieldset className="form__fieldset form__fieldset_type_two-columns ">
+      <div className="form__separator" />
         <div className="form__input-container">
           <label className="form__label" htmlFor="email">Email</label>
           <input
@@ -140,9 +132,25 @@ const Register = ({ onRegister }) => {
             onChange={handleChange}
             className="form__input"
           />
-
           <span className="form__input-error">{errors.email || ''}</span>
         </div>
+        <div className="form__input-container">
+          <label className="form__label" htmlFor="tel">Номер телефона</label>
+          <input
+            id="tel"
+            name="tel"
+            type="tel"
+            minLength="7"
+            pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$"
+            required={true}
+            value={values.tel || ''}
+            onChange={handleChange}
+            className="form__input"
+          />
+          <span className="form__input-error">{errors.tel || ''}</span>
+        </div>
+      </fieldset>
+      <fieldset className="form__fieldset">
         <div className="form__input-container">
           <label className="form__label" htmlFor="password">Пароль</label>
           <input
@@ -158,6 +166,7 @@ const Register = ({ onRegister }) => {
           <span className="form__input-error">{errors.password || ''}</span>
         </div>
       </fieldset>
+      
     </Form>
   )
 };
