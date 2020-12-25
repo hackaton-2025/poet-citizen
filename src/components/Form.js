@@ -14,15 +14,15 @@ const Form = ({
   title='Добро пожаловать!',
   imageUrl,
   imageAlt='',
+  errorMessage,
 }) => {
 
-  const formClassName = cn("form", {[typeModificator]: typeModificator});
-
+  const formContentClassName = cn("form__main-container", {[typeModificator]: typeModificator});
 
   return (
     <div className="form-wrapper">
       <form
-        className={formClassName}
+        className="form"
         onSubmit={onSubmit}
       >
         <div className="form__header">
@@ -32,8 +32,9 @@ const Form = ({
             <img src={imageUrl} alt={imageAlt} className="form__image form__image_type_think-smile" />
           }
         </div>
-          <div className="form__main-container">
-          {children}
+          <div className={formContentClassName}>
+            { errorMessage && <p className="form__error">{errorMessage}</p> }
+            {children}
           <button
               type="submit"
               disabled={!isFormValid}

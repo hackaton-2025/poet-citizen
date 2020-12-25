@@ -1,5 +1,0 @@
-.form__fieldset_type_login {
-    display: grid;
-    grid-template-columns: 58% 1fr;
-    gap: 20px;
-  }
