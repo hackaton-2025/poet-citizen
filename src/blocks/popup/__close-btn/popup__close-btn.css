@@ -1,13 +1,19 @@
 .popup__close-btn {
   padding: 0px;
-  margin: 0;
+  margin-top: 4px;
   border: 0;
   background: 0;
   color: #0038ff;
-  font-size: 20px;
+  font-size: 22px;
+  line-height: 1;
   position: absolute;
   top: 24px;
   right: 24px;
   outline: none;
   cursor: pointer;
+  transition: opacity .2s linear;
+}
+
+.popup__close-btn:hover {
+  opacity: .4;
 }

@@ -3,12 +3,17 @@
     line-height: 23px;
     font-weight: 600;
     letter-spacing: 0.03em;
-    margin: 0;
-    text-decoration: none;
-    transition: opacity .5s ease-in .1s;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    transition: opacity .2s linear;
     color: #313131;
 }
 
 .footer__about:hover {
     opacity: .4;
+}
+
+.footer__about:focus {
+  outline: none;
 }
