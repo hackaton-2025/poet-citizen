@@ -140,7 +140,7 @@ const Register = ({ onRegister, errorMessage, resetErrorMessage }) => {
             id="tel"
             name="tel"
             type="tel"
-            minLength="10"
+            minLength="7"
             pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$"
             required={true}
             value={values.tel || ''}

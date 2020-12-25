@@ -7,7 +7,9 @@ const setCustomValidity = (target) => {
       target.setCustomValidity('Это поле обязательно');
     } else if (target.name === 'name' & target.validity.patternMismatch) {
       target.setCustomValidity('Имя и фамилия могут содержать только буквы')
-    }  else if (target.name === 'tel' & target.validity.patternMismatch) {
+    } else if (target.name === 'tel' & target.validity.tooShort & !target.validity.patternMismatch) {
+      target.setCustomValidity(`Введенное значение должно быть длинее ${target.minLength} символов`);
+    } else if (target.name === 'tel' & target.validity.patternMismatch & !target.validity.tooShort) {
       target.setCustomValidity('Номер телефона может содержать только цифры и символы "+", "-"')
     } else if (target.validity.tooShort) {
       target.setCustomValidity(`Введенное значение должно быть длинее ${target.minLength} символов`);
