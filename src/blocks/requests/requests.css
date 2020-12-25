@@ -2,10 +2,16 @@
 @import url(./__header/requests__header.css);
 @import url(./__list/requests__list.css);
 @import url(./__item/requests__item.css);
+@import url(./__emoji/requests__emoji.css);
 @import url(./__name/requests__name.css);
 @import url(./__status/requests__status.css);
 @import url(./__subtitle/requests__subtitle.css);
 @import url(./__poem/requests__poem.css);
 @import url(./__poem-line/requests__poem-line.css);
+@import url(./__poem-line/requests__poem-line.css);
 @import url(./__title/requests__title.css);
 @import url(./__title/_null/requests__title_null.css);
+
+.requests {
+  font-family: "Open Sans", Arial, sans-serif;
+}

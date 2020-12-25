@@ -8,19 +8,24 @@ const Calls = ({ calls }) => {
         ? <p className="requests__title">
           Нет ни одной заявки в работе :(
         </p>
-        : <ul className="requests__list">
-          { calls.map((call, i) => (
-            <Call
-              key={i}
-              emojiLocationCode={call.data.location.emoji}
-              emojiProblemCode={call.data.emoji}
-              emojiUrgencyCode={call.data.poem.urgency.emoji}
-              status={call.status}
-              poem={call.data.poem.text}
-              date={call.date}
-            />
-          )) }
-        </ul>
+        : <div>
+           <p className="requests__title">
+          Ваши заявки
+        </p>
+            <ul className="requests__list">
+              { calls.map((call, i) => (
+                <Call
+                  key={i}
+                  emojiLocationCode={call.data.location.emoji}
+                  emojiProblemCode={call.data.emoji}
+                  emojiUrgencyCode={call.data.poem.urgency.emoji}
+                  status={call.status}
+                  poem={call.data.poem.text}
+                  date={call.date}
+                />
+              )) }
+            </ul>
+        </div>
       }
     </>
   );

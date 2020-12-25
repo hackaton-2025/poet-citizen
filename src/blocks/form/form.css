@@ -21,6 +21,7 @@
   background-color: rgba(255, 255, 255, 0.4);
   position: relative;
   width: 590px;
+  font-family: "Open Sans", Arial, sans-serif;
 }
 
 .form-wrapper {
@@ -33,4 +34,3 @@
   align-items: center;
   overflow: hidden;
 }
-

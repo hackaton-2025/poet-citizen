@@ -1,8 +1,8 @@
 .requests__title {
-    font-style: normal;
-    font-weight: 600;
-    color: #000000;
-    font-size: 24px;
-    line-height: 29px;
-    margin: 0 0 30px 0;
-  }
+  font-style: normal;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 38px;
+  color: #313131;
+  margin: 0 0 24px 0;
+}
