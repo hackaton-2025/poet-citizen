@@ -30,7 +30,7 @@ const urgencies = [urgent, notUrgent];
 const problems = [
   {
   // Двор
-    name: 'Несанкционированные надписи',
+    name: 'Надписи на стенах',
     emoji: '127912',
     location: outdoors,
     poem: [
@@ -53,7 +53,7 @@ const problems = [
     ],
   },
   {
-    name: 'Объявления на стенах дома',
+    name: 'Объявления на стенах',
     emoji: '128195',
     location: outdoors,
     poem: [
@@ -104,7 +104,7 @@ const problems = [
     ],
   },
   {
-    name: 'Наличие наледи на крыше',
+    name: 'Наледь на крыше',
     emoji: '129482',
     location: outdoors,
     poem: [
@@ -210,7 +210,7 @@ const problems = [
     ],
   },
   {
-    name: 'Неудовлетоврительное состояние площадки сбора мусора',
+    name: 'Не убрана площадка для мусора',
     emoji: '128465',
     location: outdoors,
     poem: [
@@ -289,7 +289,7 @@ const problems = [
 
   // Подъезд
   {
-    name: 'Несанкционированные надписи',
+    name: 'Надписи на стенах',
     emoji: '127912',
     location: house,
     poem: [
@@ -312,7 +312,7 @@ const problems = [
     ],
   },
   {
-    name: 'Протечка канализационной трубы',
+    name: 'Течь трубы водопровода',
     emoji: '127754',
     location: house,
     poem: [
@@ -421,7 +421,7 @@ const problems = [
     ],
   },
   {
-    name: 'Неудовлетоврительное состояние площадки сбора мусора',
+    name: 'Не убрана площадка для мусора',
     emoji: '128465',
     location: house,
     poem: [
@@ -595,7 +595,7 @@ const problems = [
     ],
   },
   {
-    name: 'Протечка канализационной трубы',
+    name: 'Течь трубы водопровода',
     emoji: '127754',
     location: flat,
     poem: [
@@ -618,7 +618,7 @@ const problems = [
     ],
   },
   {
-    name: 'Неудовлетворительное качество воды',
+    name: 'Плохое качество воды',
     emoji: '128689',
     location: flat,
     poem: [
@@ -748,7 +748,7 @@ const problems = [
     ],
   },
   {
-    name: 'Неисправность электрического питания',
+    name: 'Неисправность эл. питания',
     emoji: '9889',
     location: flat,
     poem: [

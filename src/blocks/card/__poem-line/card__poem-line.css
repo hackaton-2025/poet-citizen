@@ -1,3 +1,5 @@
 .card__poem-line {
   margin: 0;
+  font-size: 21px;
+  line-height: 28px;
 }
