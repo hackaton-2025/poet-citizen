@@ -179,7 +179,7 @@ const StartPage = ({ loggedIn, onLogout }) => {
       <AboutPopup
         isOpen={isAboutPopupOpen}
         onClose={closeAboutPopup}
-        contentModificator="popup__container_content_about"
+        
       />
     </>
   );
