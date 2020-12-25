@@ -113,7 +113,7 @@ const NewCall = ({ onCallAdd }) => {
     </div>
       { Boolean(!isLocationChecked) &&
         <>
-          <h2 className="page__title">Составьте новое обращение</h2>
+          <h2 className="page__title">Выберите место</h2>
           <div className="new-call__cards new-call__cards_type_place">
             { renderCards({
               cards: locations,
@@ -150,7 +150,7 @@ const NewCall = ({ onCallAdd }) => {
       }
       { Boolean(isProblemChecked & !isUrgencyChecked) &&
         <>
-          <h2 className="page__title">Определите срочность проблемы</h2>
+          <h2 className="page__title">Выберите срочность</h2>
           <div className="new-call__cards new-call__cards_type_actuality">
             { renderCards({
               cards: urgencies,
