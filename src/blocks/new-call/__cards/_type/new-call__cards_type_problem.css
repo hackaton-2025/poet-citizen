@@ -1,5 +1,4 @@
 .new-call__cards_type_problem {
-    display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 25px 20px;
+    gap: 25px 15px;
 }
