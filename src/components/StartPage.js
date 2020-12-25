@@ -1,6 +1,8 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import AboutPopup from "./AboutPopup";
 import Footer from "./Footer";
 import Header from "./Header";
+import newsItems from "../configs/news";
 
 import lightning from "../images/emoji/9889.png";
 import house from "../images/emoji/127969.png";
@@ -15,21 +17,28 @@ import uslugi3 from "../images/emoji/uslugi3.svg";
 import uslugi4 from "../images/emoji/uslugi4.svg";
 import uslugi5 from "../images/emoji/uslugi5.svg";
 import uslugi6 from "../images/emoji/uslugi6.svg";
-import { useState } from "react";
-import AboutPopup from "./AboutPopup";
+import NewsItem from "./NewsItem";
+import NewsPopup from "./NewsPopup";
 
 // TODO -- когда-нибудь отрефакторить это, вынести компоненты и т.д.
 const StartPage = ({ loggedIn, onLogout }) => {
 
   const [isAboutPopupOpen, setAboutPopupState] = useState(false);
+  const [isNewsPopupOpen, setNewsPopupState] = useState(false);
 
-  const openAboutPopup = () => {
-    setAboutPopupState(true);
-  };
+  const openAboutPopup = () => setAboutPopupState(true);
 
-  const closeAboutPopup = () => {
+  const openNewsPopup = (newsItem) => {
+    setNewsPopupState(true);
+    setOpenedNewsItem(newsItem);
+  }
+
+  const closeAllPopups = () => {
     setAboutPopupState(false);
+    setNewsPopupState(false)
   };
+
+  const [openedNewsItem, setOpenedNewsItem] = useState(null);
 
   return (
     <>
@@ -103,59 +112,9 @@ const StartPage = ({ loggedIn, onLogout }) => {
           <div className="page__narrow">
             <h2 className="section__title">Новости</h2>
             <ul className="section__list">
-              <li className="section__item section__item_news">
-                <p className="section__date">14.12.2020</p>
-                <h3 className="section__subtitle section__subtitle_news">
-                  Внимание! Повышение тарифов
-                </h3>
-                <p className="section__text">
-                  Убавленный процентик банка,
-                  <br />
-                  Весьма пониженный тариф,
-                  <br />
-                  Статейки господина Бланка –<br />
-                  Всё это были, а не миф.
-                </p>
-                <p className="section__real-text"></p>
-                <button className="section__link" type="button">
-                  Подробнее
-                </button>
-              </li>
-              <li className="section__item section__item_news">
-                <p className="section__date">20.12.2020</p>
-                <h3 className="section__subtitle section__subtitle_news">
-                  Проведены работы во дворе
-                </h3>
-                <p className="section__text">
-                  Терпенье нужно, и геройство,
-                  <br />и даже гибель, может быть,
-                  <br />
-                  чтоб всей земли переустройство,
-                  <br />
-                  как подобает, завершить
-                </p>
-                <p className="section__real-text"></p>
-                <button className="section__link" type="button">
-                  Подробнее
-                </button>
-              </li>
-              <li className="section__item section__item_news">
-                <p className="section__date">23.12.2020</p>
-                <h3 className="section__subtitle section__subtitle_news">
-                  В парадной найдена сережка
-                </h3>
-                <p className="section__text">
-                  Моя барышня по садику гуляла,
-                  <br />
-                  По дорожке вечером ходила –<br />С бриллиантиком колечко
-                  потеряла,
-                  <br />С белой ручки его, видно, обронила
-                </p>
-                <p className="section__real-text"></p>
-                <button className="section__link" type="button">
-                  Подробнее
-                </button>
-              </li>
+              { newsItems.map((newsItem) => (
+                <NewsItem newsItem={newsItem} onClick={openNewsPopup} />
+              )) }
             </ul>
           </div>
         </section>
@@ -178,8 +137,12 @@ const StartPage = ({ loggedIn, onLogout }) => {
       </div>
       <AboutPopup
         isOpen={isAboutPopupOpen}
-        onClose={closeAboutPopup}
-        contentModificator="popup__container_content_about"
+        onClose={closeAllPopups}
+      />
+      <NewsPopup 
+        isOpen={isNewsPopupOpen}
+        onClose={closeAllPopups}
+        newsItem={openedNewsItem}
       />
     </>
   );
