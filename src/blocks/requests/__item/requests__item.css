@@ -1,10 +1,10 @@
 .requests__item {
-    background: #e8edff;
-    border-radius: 10px;
-    padding: 20px 28px;
-    margin: 0 0 30px 0;
-  }
+  padding: 24px;
+  margin: 0 0 28px 0;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+}
 
-  .requests__item:last-child {
-    margin: 0;
-  }
+.requests__item:last-child {
+  margin: 0;
+}

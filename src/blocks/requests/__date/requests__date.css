@@ -1,7 +1,9 @@
 .requests__date {
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 22px;
-    margin: 0;
-  }
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 18px;
+  margin: 0;
+  color: #313131;
+  text-align: right;
+}
