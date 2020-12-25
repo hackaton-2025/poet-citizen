@@ -1,20 +1,7 @@
-.popup {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0 0 0 / 0.6);
-  font-family: "Open Sans", Arial, sans-serif;
-}
-
-@import url(./__content/popup__content.css);
-@import url(./__content/_news/popup__content_news.css);
-@import url(./__content/_about/popup__content_about.css);
-@import url(./__content/_dialog/popup__content_dialog.css);
+@import url(./__container/popup__container.css);
+@import url(./__container/_content/popup__container_content_news.css);
+@import url(./__container/_content/popup__container_content_about.css);
+@import url(./__container/_content/popup__container_content_dialog.css);
 @import url(./__close-btn/popup__close-btn.css);
 @import url(./__title/popup__title.css);
 @import url(./__title/_team/popup__title_team.css);
@@ -26,3 +13,20 @@
 @import url(./__subtext/popup__subtext.css);
 @import url(./__smiles/popup__smiles.css);
 @import url(./__link/popup__link.css);
+
+.popup {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0 0 0 / 0.6);
+  font-family: "Open Sans", Arial, sans-serif;
+  visibility: hidden;
+  opacity: 0;
+  transition: .4s opacity, .4s visibility;
+}
+
