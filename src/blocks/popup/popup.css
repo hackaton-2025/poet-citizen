@@ -8,6 +8,7 @@
   align-items: center;
   justify-content: center;
   background: rgba(0 0 0 / 0.6);
+  font-family: "Open Sans", Arial, sans-serif;
 }
 
 @import url(./__content/popup__content.css);

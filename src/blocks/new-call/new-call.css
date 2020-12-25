@@ -11,3 +11,7 @@
 @import url(./__number-container/new-call__number-container.css);
 @import url(./__step-number/new-call__step-number.css);
 @import url(./__step-track/new-call__step-track.css);
+
+.new-call {
+  font-family: "Open Sans", Arial, sans-serif;
+}

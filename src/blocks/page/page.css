@@ -1,6 +1,6 @@
 .page {
   height: 100%;
-  font-family: Inter, Arial, sans-serif;
+  font-family: "Open Sans", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
@@ -14,10 +14,3 @@
 @import url(./__narrow/page__narrow.css);
 @import url(./__subtitle/page__subtitle.css);
 @import url(./__title/page__title.css);
-
-
-
-
-
-
-
