@@ -1,7 +1,15 @@
 import { useEffect } from "react";
 import cn from 'classnames';
 
-const Popup = ({ isOpen, onClose, contentModificator, children }) => {
+const Popup = ({
+  isOpen,
+  onClose,
+  contentModificator,
+  children,
+  popupTitle,
+  isRedirect=false,
+  redirectText=''
+}) => {
 
   const popupClassName = cn(
     'popup',
@@ -37,8 +45,10 @@ const Popup = ({ isOpen, onClose, contentModificator, children }) => {
   return (
     <div className={popupClassName} onMouseDown={handleOverlayPopupClick}>
       <div className={popupContainerClassName}>
-        { onClose && <button class="popup__close-btn" onClick={onClose}>&#10006;</button> }
+        { !isRedirect && <button class="popup__close-btn" onClick={onClose}>&#10006;</button> }
+        <h3 class="popup__title">{popupTitle}</h3>
         { children }
+        { isRedirect && <button class="popup__link" onClick={onClose}>{redirectText}</button> }
       </div>
     </div>
   );

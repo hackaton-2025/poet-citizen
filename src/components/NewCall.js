@@ -4,6 +4,7 @@ import { locations, problems, urgencies } from '../configs/callsConfig';
 import CurrentUserContext from '../contexts/CurrentUserContext';
 import Card from './Card';
 import CheckoutButtons from './CheckoutButtons';
+import Popup from './Popup';
 
 // TODO -- когда-нибудь реорганизовать конфиг с вызовами и переписать логику -- не нравится
 // Возможно, тут следует использовать вложенные маршруты
@@ -16,6 +17,7 @@ const NewCall = ({ onCallAdd }) => {
   const promiseToCallText = 'Отправьте заявку и мы вам перезвоним!';
 
   // Стейты для отрисовки содержимого аккаунта
+  // TODO -- объединить стейты в один
   const [isLocationChecked, setLocationState] = useState(false);
   const [isProblemChecked, setProblemState] = useState(false);
   const [isUrgencyChecked, setUrgencyState] = useState(false);
@@ -23,9 +25,10 @@ const NewCall = ({ onCallAdd }) => {
   // Стейт для хранения выбранных параметров запроса -- меняем при нажатии на карточку
   const [checkedCallParams, setCheckedCallParams] = useState({});
 
-  // Стейт для хранения запросов, отфильтрованных по локации (предыдущий использовать не получится)
+  // Стейты для хранения запросов, отфильтрованных по параметру
+  // TODO -- объединить стейты в один
   const [problemsForLocation, setProblemsForLocation] = useState([]);
-
+  const [checkedProblem, setCheckedProblem] = useState({});
   const [finalProblem, setFinalProblem] = useState({});
 
   const handleLocationCheck = (checkedLocation) => {
@@ -49,34 +52,28 @@ const NewCall = ({ onCallAdd }) => {
   };
 
   const handleProblemConfirm = () => {
-    setFinalProblem(problemsForLocation.filter((problem) => problem.name === checkedCallParams.problem));
+    setCheckedProblem(problemsForLocation.filter((problem) => problem.name === checkedCallParams.problem)[0]);
     setProblemState(true);
   };
 
   const handleUrgencyConfirm = () => {
-    if (!checkedCallParams.urgency) {
-      setFinalProblem({
-        ...finalProblem[0],
-        poem: finalProblem[0].poem.filter((poem) => poem.urgency.name === checkedCallParams.urgency)[0],
-      });
-    } else {
-      setFinalProblem(problemsForLocation.filter((problem) => problem.name === checkedCallParams.problem));
-      setFinalProblem({
-        ...finalProblem[0],
-        poem: finalProblem[0].poem.filter((poem) => poem.urgency.name === checkedCallParams.urgency)[0],
-      });
-    }
+    setFinalProblem({
+      ...checkedProblem,
+      poem: checkedProblem.poem.filter((poem) => poem.urgency.name === checkedCallParams.urgency)[0],
+    });
     setUrgencyState(true);
   };
 
-  // TODO -- добавить кнопки назад
+  const [isInfoPopupOpen, setInfoPopupState] = useState(false);
 
   const handleSend = () => {
-    // TODO -- добавить попап
-    alert('Ваша заявка принята!');
     onCallAdd(finalProblem);
-    history.push('/me/calls');
+    setInfoPopupState(true);
   };
+  
+  const redirectToCalls = () => {
+    history.push('/me/calls');
+  }
 
   const renderCards = ({ cards, cardSizeModificator, handleCardClick, checkedCard }) => {
     if (cards) {
@@ -188,6 +185,14 @@ const NewCall = ({ onCallAdd }) => {
           />
         </>
       }
+      <Popup
+        isOpen={isInfoPopupOpen}
+        contentModificator="popup__container_content_dialog"
+        popupTitle="Ваша заявка успешно отправлена!"
+        isRedirect={true}
+        redirectText="Все завки"
+        onClose={redirectToCalls}
+      />
     </>
   )
 };

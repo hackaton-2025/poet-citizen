@@ -2,14 +2,4 @@
   height: 80px;
   align-items: center;
   padding: 10px 20px;
-  transition: background-color .2s linear;
-}
-
-.card_size_s:hover {
-  background-color: rgba(255, 255, 255, 0.6);
-}
-
-.card_size_s:focus {
-  background-color: #ffffff;
-  box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.15);
 }
