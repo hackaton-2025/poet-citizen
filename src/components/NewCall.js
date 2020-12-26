@@ -1,10 +1,10 @@
-import { useContext, useState, useRef } from 'react';
+import { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { locations, problems, urgencies } from '../configs/callsConfig';
 import CurrentUserContext from '../contexts/CurrentUserContext';
 import Card from './Card';
 import CheckoutButtons from './CheckoutButtons';
-// import Pagination from './Pagination';
+import Pagination from './Pagination';
 import Popup from './Popup';
 
 // TODO -- когда-нибудь реорганизовать конфиг с вызовами и переписать логику -- не нравится
@@ -16,6 +16,11 @@ const NewCall = ({ onCallAdd }) => {
 
   const [promiseToCall, setPromiseToCall] = useState(null);
   const promiseToCallText = 'Отправьте заявку и мы вам перезвоним!';
+
+  // Для пагинации
+  const [currentStep, setCurrentStep] = useState(1);
+  const setNextStep = () => setCurrentStep(currentStep + 1);
+  const setPrevStep = () => setCurrentStep(currentStep - 1);
 
   // Стейты для отрисовки содержимого аккаунта
   // TODO -- объединить стейты в один
@@ -50,11 +55,13 @@ const NewCall = ({ onCallAdd }) => {
   const handleLocationConfirm = () => {
     setProblemsForLocation(problems.filter((problem) => problem.location.name === checkedCallParams.location));
     setLocationState(true);
+    setNextStep();
   };
 
   const handleProblemConfirm = () => {
     setCheckedProblem(problemsForLocation.filter((problem) => problem.name === checkedCallParams.problem)[0]);
     setProblemState(true);
+    setNextStep();
   };
 
   const handleUrgencyConfirm = () => {
@@ -63,6 +70,7 @@ const NewCall = ({ onCallAdd }) => {
       poem: checkedProblem.poem.filter((poem) => poem.urgency.name === checkedCallParams.urgency)[0],
     });
     setUrgencyState(true);
+    setNextStep();
   };
 
   const [isInfoPopupOpen, setInfoPopupState] = useState(false);
@@ -72,8 +80,21 @@ const NewCall = ({ onCallAdd }) => {
     setInfoPopupState(true);
   };
   
-  const redirectToCalls = () => {
-    history.push('/me/calls');
+  const redirectToCalls = () => history.push('/me/calls');
+
+  const handleBackToLocationCheck = () => {
+    setLocationState(false);
+    setPrevStep();
+  };
+
+  const handleBackToProblemCheck = () => {
+    setProblemState(false);
+    setPrevStep();
+  };
+
+  const handleBackToUrgencyCheck = () => {
+    setUrgencyState(false);
+    setPrevStep();
   }
 
   const renderCards = ({ cards, cardSizeModificator, handleCardClick, checkedCard }) => {
@@ -94,26 +115,9 @@ const NewCall = ({ onCallAdd }) => {
     }
   };
 
-  const first = useRef();
-  const second = useRef();
-  const third = useRef();
-
   return (
     <>
-    {/* <Pagination stepsNum={3} /> */}
-      <div className="steps">
-        <div className="steps__number-container" ref={first}>
-          <p className="steps__number">1</p>
-        </div>
-        <div className="steps__track"></div>
-        <div className="steps__number-container" ref={second}>
-          <p className="steps__number">2</p>
-        </div>
-        <div className="steps__track"></div>
-        <div className="steps__number-container" ref = {third}>
-          <p className="steps__number">3</p>
-        </div>
-      </div>
+      <Pagination steps={[1, 2, 3]} currentStep={currentStep} />
       { Boolean(!isLocationChecked) &&
         <>
           <h2 className="page__title">Выберите место</h2>
@@ -145,7 +149,7 @@ const NewCall = ({ onCallAdd }) => {
           </div>
           <CheckoutButtons
             isPrevButton={true}
-            onPrevButtonClick={() => setLocationState(false)}
+            onPrevButtonClick={handleBackToLocationCheck}
             isNextButtonActive={checkedCallParams.problem}
             onNextButtonClick={handleProblemConfirm}
           />
@@ -164,7 +168,7 @@ const NewCall = ({ onCallAdd }) => {
           </div>
           <CheckoutButtons
             isPrevButton={true}
-            onPrevButtonClick={() => setProblemState(false)}
+            onPrevButtonClick={handleBackToProblemCheck}
             isNextButtonActive={checkedCallParams.urgency}
             onNextButtonClick={handleUrgencyConfirm}
           />
@@ -184,7 +188,7 @@ const NewCall = ({ onCallAdd }) => {
           </div>
           <CheckoutButtons
             isPrevButton={true}
-            onPrevButtonClick={() => setUrgencyState(false)}
+            onPrevButtonClick={handleBackToUrgencyCheck}
             isNextButtonActive={true}
             onNextButtonClick={handleSend}
             nextButtonType="submit"
