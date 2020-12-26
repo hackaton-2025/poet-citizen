@@ -21,3 +21,23 @@ background-color: rgb(255 255 255 / 0.6);
 .navigation__link:last-of-type {
   margin-bottom: 0;
 }
+
+@media all and (max-width:1024px) {
+  .navigation__link {
+    width: 213px;
+  }
+}
+
+@media all and (max-width:768px) {
+  .navigation__link {
+    width: 192px;
+    padding: 0 0 0 20px;
+  }
+}
+
+@media all and (max-width:425px) {
+  .navigation__link {
+    width: 328px;
+    padding: 0 0 0 20px;
+  }
+}

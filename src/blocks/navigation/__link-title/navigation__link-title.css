@@ -8,3 +8,14 @@
     margin: 0 0 0 24px;
   }
   
+  @media all and (max-width:768px) {
+    .navigation__link-title {
+      margin: 0 0 0 16px;
+    }
+  }
+
+  @media all and (max-width:425px) {
+    .navigation__link-title {
+      margin: 0 0 0 24px;
+    }
+  }

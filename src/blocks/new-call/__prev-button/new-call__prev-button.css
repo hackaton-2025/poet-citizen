@@ -16,12 +16,17 @@
     line-height: 24px;
     text-align: center;
     letter-spacing: 0.03em;
-    transition: border-color .2s linear;
+    transition: opacity .2s linear;
     outline: none;
     grid-area: button-prev;
 }
 
 .new-call__prev-button:hover {
-    border-color: #B479FF;
-    color: #B479FF;;
+    opacity: 0.4;
+}
+
+@media all and (max-width:425px) {
+    .new-call__prev-button{
+        justify-self: center;
+  }
 }

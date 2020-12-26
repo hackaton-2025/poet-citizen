@@ -1,5 +1,24 @@
 .new-call__cards_type_final {
+  display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 136px min-content;
   gap: 24px 16px;
+}
+
+@media all and (max-width:1024px) {
+  .new-call__cards_type_final {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 153px 153px min-content;
+    gap: 24px 24px;
+    margin-bottom: 171px;
+  }
+}
+
+@media all and (max-width:425px) {
+  .new-call__cards_type_final {
+    grid-template-columns: 1fr;
+    grid-template-rows: 153px 153px 153px 153px min-content;
+    gap: 24px;
+    margin-bottom: 48px;
+  }
 }

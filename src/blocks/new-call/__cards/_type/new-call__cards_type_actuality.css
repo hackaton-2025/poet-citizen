@@ -4,3 +4,23 @@
     grid-template-columns: repeat(2, 1fr);
     justify-content: center;
 }
+
+@media all and (max-width:1024px) {
+    .new-call__cards_type_actuality{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 71px;
+    }
+  }
+
+  @media all and (max-width:1024px) {
+    .new-call__cards_type_actuality{
+        margin-bottom: 410px;
+    }
+  }
+
+  @media all and (max-width:425px) {
+    .new-call__cards_type_actuality{
+        margin-bottom: 48px;
+    }
+  }

@@ -4,3 +4,15 @@
   align-items: flex-start;
   padding: 16px;
 }
+
+@media all and (max-width:1024px) {
+  .card_size_xl {
+      grid-column: 1/3;
+  }
+}
+
+@media all and (max-width: 425px) {
+  .card_size_xl {
+      grid-column: 1;
+  }
+}

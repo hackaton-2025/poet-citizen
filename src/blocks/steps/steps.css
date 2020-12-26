@@ -15,4 +15,17 @@
     justify-self: flex-end;
     align-self: flex-start;
     box-sizing: border-box;
+    margin-bottom: 49px;
 }
+
+@media all and (max-width:1024px) {
+    .steps {
+        justify-self: flex-start;
+    }
+  }
+
+  @media all and (max-width:425px) {
+    .steps {
+        width: 280px;
+    }
+  }
