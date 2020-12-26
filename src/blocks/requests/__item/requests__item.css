@@ -9,3 +9,22 @@
 .requests__item:last-child {
   margin: 0;
 }
+
+@media (max-width: 1024px) {
+  .requests__item {
+    padding: 16px;
+    margin: 0 0 24px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .requests__item {
+    margin: 0 0 16px 0;
+  }
+}
+
+@media (max-width: 425px) {
+  .requests__item {
+    margin: 0 0 24px 0;
+  }
+}

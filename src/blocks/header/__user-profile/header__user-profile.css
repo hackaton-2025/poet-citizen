@@ -1,7 +1,8 @@
 .header__user-profile {
-    border-radius: 10px;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    background-color: #ffffff;
-  }
+  border-radius: 10px;
+  padding: 15px 20px 15px 16px;
+  display: flex;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}

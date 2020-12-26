@@ -7,3 +7,12 @@
   border-radius: 20px;
   padding: 24px;
 }
+
+@media (max-width: 1024px) {
+  .about__item {
+    width: 100%;
+    flex-direction: column;
+    justify-content: start;
+    margin-bottom: 24px;
+  }
+}
