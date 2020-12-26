@@ -13,7 +13,7 @@ const Navigation = ({ url }) => {
         </NavLink>
         <NavLink to={`${url}/new-call`} className="navigation__link" activeClassName="navigation__link_active">
           <div className="navigation__link-image navigation__link-image_type_new-call" />
-          <p className="navigation__link-title">Составить<br></br>обращение</p>
+          <p className="navigation__link-title">Составить обращение</p>
         </NavLink>
         <NavLink to={`${url}/profile`} className="navigation__link" activeClassName="navigation__link_active">
           <div className="navigation__link-image navigation__link-image_type_profile" />

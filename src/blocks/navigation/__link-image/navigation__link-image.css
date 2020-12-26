@@ -4,7 +4,7 @@
 @import url(./_type/navigation__link-image_type_user-calls.css);
 
 .navigation__link-image {
-    width: 40px;
+    min-width: 40px;
     height: 47px;
     background-repeat: no-repeat;
     background-size: contain;
