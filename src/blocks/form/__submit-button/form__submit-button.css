@@ -8,6 +8,7 @@
     margin-bottom: 24px;
     color: #ffffff;
     padding: 0;
+    border: 0;
   }
 
   .form__submit-button:hover {

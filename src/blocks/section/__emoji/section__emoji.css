@@ -2,3 +2,17 @@
   width: 75px;
   height: 75px;
 }
+
+@media (max-width: 768px) {
+  .section__emoji {
+    width: 97px;
+    height: 97px;
+  }
+}
+
+@media (max-width: 425px) {
+  .section__emoji {
+    width: 76px;
+    height: 76px;
+  }
+}

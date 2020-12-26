@@ -9,9 +9,9 @@ const AboutPopup = ({ isOpen, onClose }) => {
       contentModificator="popup__container_content_about"
       isOpen={isOpen}
       onClose={onClose}
+      popupTitle="О проекте"
     >
-      <h3 class="popup__title">О проекте</h3>
-      <p class="popup__text popup__text_team">
+      <p className="popup__text popup__text_team">
         ОБЭРИУ – приложение для подачи экспресс заявок на проведение работ по
         благоустройству и обслуживанию объектов жилых комплексов.
         <br />
@@ -20,15 +20,15 @@ const AboutPopup = ({ isOpen, onClose }) => {
         просто, быстро и удобно оставлять запрос на благоустройство/
         обслуживание в случае возникновения проблемы.
       </p>
-      <h3 class="popup__title popup__title_team">Команда</h3>
-      <img class="popup__smiles" src={team1} alt="эмодзи"></img>
-      <p class="popup__subtext">
+      <h3 className="popup__title popup__title_team">Команда</h3>
+      <img className="popup__smiles" src={team1} alt="эмодзи"></img>
+      <p className="popup__subtext">
         Веб-разработчики:
         <br />
         Юлия Дорошина, Николай Смирнов, Алексей Обрядин
       </p>
-      <img class="popup__smiles" src={team2} alt="эмодзи"></img>
-      <p class="popup__subtext">
+      <img className="popup__smiles" src={team2} alt="эмодзи"></img>
+      <p className="popup__subtext">
         Дизайнеры:
         <br />
         Матвей Граб, Полина Родина, Алина Меркурьева

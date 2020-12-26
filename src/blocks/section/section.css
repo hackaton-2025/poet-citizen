@@ -2,17 +2,19 @@
 @import url(./_content/section_content_services.css);
 @import url(./__title/section__title.css);
 @import url(./__list/__list.css);
+@import url(./__list/_type/section__list_type_news.css);
 @import url(./__item/section__item.css);
 @import url(./__circle/section__circle.css);
 @import url(./__subtitle/section__subtitle.css);
-@import url(./__item/_news/section__item_news.css);
-@import url(./__item/_services/section__item_services.css);
-@import url(./__subtitle/_news/section__subtitle_news.css);
+@import url(./__item/_type/section__item_type_news.css);
+@import url(./__item/_type/section__item_type_services.css);
+@import url(./__subtitle/_type/section__subtitle_type_news.css);
 @import url(./__date/section__date.css);
 @import url(./__text/section__text.css);
 @import url(./__real-text/section__real-text.css);
 @import url(./__link/section__link.css);
 @import url(./__poem-line/section__poem-line.css);
+@import url(./__emoji/section__emoji.css);
 
 .section {
   box-sizing: border-box;
@@ -20,4 +22,16 @@
   padding-right: 0;
   padding-bottom: 100px;
   font-family: "Open Sans", Arial, sans-serif;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding-bottom: 80px;
+  }
+}
+
+@media (max-width: 425px) {
+  .section {
+    padding-bottom: 131px;
+  }
 }

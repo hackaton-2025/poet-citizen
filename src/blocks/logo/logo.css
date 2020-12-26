@@ -7,3 +7,15 @@
   border-radius: 10px;
   font-family: "Open Sans", Arial, sans-serif;
 }
+
+@media (max-width: 768px) {
+  .logo {
+    width: 136px;
+  }
+}
+
+@media (max-width: 425px) {
+  .logo {
+    width: 113px;
+  }
+}
