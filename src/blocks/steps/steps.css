@@ -9,8 +9,7 @@
     grid-template-columns: 36px 1fr 36px 1fr 36px;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
-    position: absolute;
-    top: 24px;
-    right: 24px;
+    grid-area: steps;
+    justify-self: flex-end;
+    align-self: flex-start;
 }
