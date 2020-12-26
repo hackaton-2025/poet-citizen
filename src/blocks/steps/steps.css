@@ -3,6 +3,8 @@
 @import url(./__track/steps__track.css);
 @import url(./__number-container/_type/steps__number-container_type_active.css);
 @import url(./__number-container/_type/steps__number-container_type_complete.css);
+@import url(./__number-container/_type/steps__number-container_type_disabled.css);
+
 .steps {
     display: grid;
     width: 352px;
