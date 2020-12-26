@@ -3,3 +3,22 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+
+@media all and (max-width:1024px) {
+  .page__narrow {
+    max-width: calc(1024px - 120px * 2);
+  }
+}
+
+@media all and (max-width:768px) {
+  .page__narrow {
+    max-width: calc(768px - 24px * 2);
+  }
+}
+
+@media all and (max-width:425px) {
+  .page__narrow {
+    max-width: 100%;
+  }
+}

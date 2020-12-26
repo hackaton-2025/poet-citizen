@@ -11,5 +11,26 @@
   align-items: flex-start;
   flex-grow: 1;
   font-family: "Open Sans", Arial, sans-serif;
+  margin: 0 auto;
 }
 
+@media all and (max-width:1024px) {
+  .main {
+    grid-template-columns: 245px 1fr;
+  }
+}
+
+@media all and (max-width:768px) {
+  .main {
+    grid-template-columns: 224px 1fr;
+    padding-bottom: 303px;
+  }
+}
+
+@media all and (max-width:425px) {
+  .main {
+    display: flex;
+    width: 100%;
+    padding-bottom: 50px;
+  }
+}

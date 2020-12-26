@@ -17,6 +17,7 @@
     transition: background-image .2s linear;
     outline: none;
     grid-area: button-nxt;
+    box-shadow: none;
   }
 
   .new-call__next-button:hover {
