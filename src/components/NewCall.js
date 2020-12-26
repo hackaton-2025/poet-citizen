@@ -23,8 +23,10 @@ const NewCall = ({ onCallAdd }) => {
   // Стейт для хранения выбранных параметров запроса -- меняем при нажатии на карточку
   const [checkedCallParams, setCheckedCallParams] = useState({});
 
-  // Стейт для хранения запросов, отфильтрованных по локации (предыдущий использовать не получится)
+  // Стейт для хранения запросов, отфильтрованных по локации
   const [problemsForLocation, setProblemsForLocation] = useState([]);
+
+  const [checkedProblem, setCheckedProblem] = useState({});
 
   const [finalProblem, setFinalProblem] = useState({});
 
@@ -49,27 +51,17 @@ const NewCall = ({ onCallAdd }) => {
   };
 
   const handleProblemConfirm = () => {
-    setFinalProblem(problemsForLocation.filter((problem) => problem.name === checkedCallParams.problem));
+    setCheckedProblem(problemsForLocation.filter((problem) => problem.name === checkedCallParams.problem)[0]);
     setProblemState(true);
   };
 
   const handleUrgencyConfirm = () => {
-    if (!checkedCallParams.urgency) {
-      setFinalProblem({
-        ...finalProblem[0],
-        poem: finalProblem[0].poem.filter((poem) => poem.urgency.name === checkedCallParams.urgency)[0],
-      });
-    } else {
-      setFinalProblem(problemsForLocation.filter((problem) => problem.name === checkedCallParams.problem));
-      setFinalProblem({
-        ...finalProblem[0],
-        poem: finalProblem[0].poem.filter((poem) => poem.urgency.name === checkedCallParams.urgency)[0],
-      });
-    }
+    setFinalProblem({
+      ...checkedProblem,
+      poem: checkedProblem.poem.filter((poem) => poem.urgency.name === checkedCallParams.urgency)[0],
+    });
     setUrgencyState(true);
   };
-
-  // TODO -- добавить кнопки назад
 
   const handleSend = () => {
     // TODO -- добавить попап
