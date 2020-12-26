@@ -1,9 +1,18 @@
 .section__list {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-column-gap: calc((100% - (173px * 6)) / 5);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .section__list {
+    grid-template-columns: repeat(3, 1fr);
+    grid-row-gap: 33px;
+    max-width: 784px;
+    grid-column-gap: calc((100% - (173px * 3)) / 2);
+    margin: 0 auto;
   }
+}

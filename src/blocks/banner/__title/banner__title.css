@@ -7,3 +7,9 @@
   color: #313131;
   margin: 0 0 36px 0;
 }
+
+@media (max-width: 1024px) {
+  .banner__title {
+    max-width: 466px;
+  }
+}

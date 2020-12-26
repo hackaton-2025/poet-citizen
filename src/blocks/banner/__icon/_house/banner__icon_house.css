@@ -1,5 +1,16 @@
 .banner__icon_house {
   top: 28px;
   right: 146px;
+  width: 95px;
+  height: 95px;
   transform: rotate(25deg);
+}
+
+@media (max-width: 1024px) {
+  .banner__icon_house {
+    width: 75px;
+    height: 75px;
+    top: 35px;
+    right: 62px;
+  }
 }

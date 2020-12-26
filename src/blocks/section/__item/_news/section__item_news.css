@@ -1,6 +1,7 @@
 .section__item_news {
-  width: 384px;
-  height: 274px;
+  max-width: 384px;
+  width: 100%;
+  height: auto;
   box-sizing: border-box;
   padding: 35px 24px;
   border-radius: 20px;

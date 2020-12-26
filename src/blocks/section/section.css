@@ -2,6 +2,7 @@
 @import url(./_content/section_content_services.css);
 @import url(./__title/section__title.css);
 @import url(./__list/__list.css);
+@import url(./__list/_news/section__list_news.css);
 @import url(./__item/section__item.css);
 @import url(./__circle/section__circle.css);
 @import url(./__subtitle/section__subtitle.css);

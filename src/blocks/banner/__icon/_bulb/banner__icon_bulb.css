@@ -1,5 +1,14 @@
 .banner__icon_bulb {
   left: 161px;
   bottom: 40px;
+  width: 75px;
+  height: 75px;
   transform: rotate(28deg);
+}
+
+@media (max-width: 1024px) {
+  .banner__icon_bulb {
+    left: 57px;
+    bottom: 33px;
+  }
 }

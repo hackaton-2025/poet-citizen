@@ -4,6 +4,14 @@
   font-family: "Open Sans", Arial, sans-serif;
 }
 
+@media (max-width: 1024px) {
+  .header {
+    max-width: 784px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
 @import url(./__user-profile/header__user-profile.css);
 @import url(./__user-profile-logout/header__user-profile-logout.css);
 @import url(./__user-profile-enter/header__user-profile-enter.css);
