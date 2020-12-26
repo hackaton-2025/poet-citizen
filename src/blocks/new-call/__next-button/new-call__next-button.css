@@ -16,6 +16,7 @@
     letter-spacing: 0.03em;
     transition: background-image .2s linear;
     outline: none;
+    grid-area: button-nxt;
   }
 
   .new-call__next-button:hover {

@@ -16,7 +16,7 @@ const Account = ({ loggedIn, onLogout, onCallAdd, calls }) => {
       <Header loggedIn={loggedIn} onLogout={onLogout} />
       <main className="main">
         <Navigation url={url} />
-        <section className="main__content">
+        <section className="main__content main__content_grid_new-call">
           <Switch>
             <Route path={`${path}/calls`}>
               <Calls calls={calls} />

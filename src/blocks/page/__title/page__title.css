@@ -3,4 +3,5 @@
     line-height: 38px;
     font-weight: 700px;
     margin: 0 0 48px 0;
+    grid-area: title;
   }
