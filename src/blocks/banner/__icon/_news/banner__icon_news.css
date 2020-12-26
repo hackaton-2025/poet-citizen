@@ -14,3 +14,10 @@
     left: 54px;
   }
 }
+
+@media (max-width: 768px) {
+  .banner__icon_news {
+    top: 32px;
+    left: 22px;
+  }
+}

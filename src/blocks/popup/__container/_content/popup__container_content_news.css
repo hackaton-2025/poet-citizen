@@ -7,3 +7,17 @@
     max-width: 514px;
   }
 }
+
+@media (max-width: 768px) {
+  .popup__container_content_news {
+    max-width: 469px;
+  }
+}
+
+@media (max-width: 425px) {
+  .popup__container_content_news {
+    max-width: 328px;
+    top: 10%;
+    margin: 0 auto;
+  }
+}

@@ -11,3 +11,10 @@
     bottom: 169px;
   }
 }
+
+@media (max-width: 768px) {
+  .banner__icon_broom {
+    right: 12px;
+    bottom: 169px;
+  }
+}

@@ -12,3 +12,10 @@
     bottom: 33px;
   }
 }
+
+@media (max-width: 768px) {
+  .banner__icon_bulb {
+    left: 25px;
+    bottom: 33px;
+  }
+}

@@ -1,19 +1,25 @@
 .footer__about {
-    font-size: 17px;
-    line-height: 23px;
-    font-weight: 600;
-    letter-spacing: 0.03em;
-    padding: 0;
-    border: none;
-    background-color: transparent;
-    transition: opacity .2s linear;
-    color: #313131;
+  font-size: 17px;
+  line-height: 23px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  transition: opacity 0.2s linear;
+  color: #313131;
 }
 
 .footer__about:hover {
-    opacity: .4;
+  opacity: 0.4;
 }
 
 .footer__about:focus {
   outline: none;
+}
+
+@media (max-width: 425px) {
+  .footer__about {
+    text-align: left;
+  }
 }

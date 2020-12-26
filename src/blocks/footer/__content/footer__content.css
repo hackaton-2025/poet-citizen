@@ -11,3 +11,20 @@
     max-width: 784px;
   }
 }
+
+@media (max-width: 768px) {
+  .footer__content {
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 425px) {
+  .footer__content {
+    padding: 36px 16px;
+    height: 199px;
+    max-width: 330px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+  }
+}

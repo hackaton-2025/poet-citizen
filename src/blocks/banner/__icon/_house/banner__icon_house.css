@@ -14,3 +14,10 @@
     right: 62px;
   }
 }
+
+@media (max-width: 768px) {
+  .banner__icon_house {
+    top: 35px;
+    right: 30px;
+  }
+}

@@ -12,3 +12,10 @@
     left: 18px;
   }
 }
+
+@media (max-width: 768px) {
+  .banner__icon_lightning {
+    top: 180px;
+    left: 8px;
+  }
+}

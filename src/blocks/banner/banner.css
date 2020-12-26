@@ -19,6 +19,21 @@
   }
 }
 
+@media (max-width: 768px) {
+  .banner {
+    margin-top: 56px;
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 425px) {
+  .banner {
+    padding: 48px 0;
+    margin-top: 66px;
+    max-width: 328px;
+  }
+}
+
 @import url(./__content/banner__content.css);
 @import url(./__title/banner__title.css);
 @import url(./__subtitle/banner__subtitle.css);

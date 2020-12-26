@@ -73,37 +73,37 @@ const StartPage = ({ loggedIn, onLogout }) => {
           <div className="page__narrow">
             <h2 className="section__title">Виды услуг</h2>
             <ul className="section__list">
-              <li className="section__item section__item_services">
+              <li className="section__item section__item_type_services">
                 <div className="section__circle">
                   <img className="section__emoji" src={uslugi1}></img>
                 </div>
                 <h3 className="section__subtitle">Плановый ремонт</h3>
               </li>
-              <li className="section__item section__item_services">
+              <li className="section__item section__item_type_services">
                 <div className="section__circle">
                   <img className="section__emoji" src={uslugi2}></img>
                 </div>
                 <h3 className="section__subtitle">Благоустройство двора</h3>
               </li>
-              <li className="section__item section__item_services">
+              <li className="section__item section__item_type_services">
                 <div className="section__circle">
                   <img className="section__emoji" src={uslugi3}></img>
                 </div>
                 <h3 className="section__subtitle">Аварийная работа</h3>
               </li>
-              <li className="section__item section__item_services">
+              <li className="section__item section__item_type_services">
                 <div className="section__circle">
                   <img className="section__emoji" src={uslugi4}></img>
                 </div>
                 <h3 className="section__subtitle">Технический надзор</h3>
               </li>
-              <li className="section__item section__item_services">
+              <li className="section__item section__item_type_services">
                 <div className="section__circle">
                   <img className="section__emoji" src={uslugi5}></img>
                 </div>
                 <h3 className="section__subtitle">Учет оплаты</h3>
               </li>
-              <li className="section__item section__item_services">
+              <li className="section__item section__item_type_services">
                 <div className="section__circle">
                   <img className="section__emoji" src={uslugi6}></img>
                 </div>
@@ -115,7 +115,7 @@ const StartPage = ({ loggedIn, onLogout }) => {
         <section className="section section_content_news">
           <div className="page__narrow">
             <h2 className="section__title">Новости</h2>
-            <ul className="section__list section__list_news">
+            <ul className="section__list section__list_type_news">
               {newsItems.map((newsItem) => (
                 <NewsItem newsItem={newsItem} onClick={openNewsPopup} />
               ))}

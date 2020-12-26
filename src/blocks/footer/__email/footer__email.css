@@ -1,5 +1,18 @@
 .footer__email {
-    display: flex;
-    flex-direction: column;
-    margin: 0 65px 0 85px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 65px 0 85px;
+}
+
+@media (max-width: 768px) {
+  .footer__email {
+    margin: 0 26px 0 45px;
+  }
+}
+
+@media (max-width: 425px) {
+  .footer__email {
+    margin: 0;
+    text-align: right;
+  }
 }

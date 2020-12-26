@@ -12,3 +12,10 @@
     bottom: 36px;
   }
 }
+
+@media (max-width: 768px) {
+  .banner__icon_faucet {
+    right: 47px;
+    bottom: 36px;
+  }
+}
