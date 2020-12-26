@@ -20,7 +20,6 @@
   display: flex;
   border-radius: 20px;
   border: none;
-  cursor: pointer;
   font-family: "Open Sans", Arial, sans-serif;
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.4);
