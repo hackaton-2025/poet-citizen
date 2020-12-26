@@ -7,3 +7,9 @@
 .requests__emoji:last-of-type {
   margin: 0;
 }
+
+@media (max-width: 1024px) {
+  .requests__emoji {
+    margin: 0 8px 0 0;
+  }
+}
