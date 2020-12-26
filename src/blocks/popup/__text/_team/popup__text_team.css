@@ -2,3 +2,9 @@
   font-size: 21px;
   line-height: 29px;
 }
+
+@media (max-width: 1024px) {
+  .popup__text_team {
+    line-height: 28px;
+  }
+}

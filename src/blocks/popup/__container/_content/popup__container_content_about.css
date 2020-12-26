@@ -1,3 +1,9 @@
 .popup__container_content_about {
   max-width: 800px;
 }
+
+@media (max-width: 1024px) {
+  .popup__container_content_about {
+    max-width: 784px;
+  }
+}

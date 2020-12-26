@@ -1,3 +1,9 @@
 .popup__container_content_news {
-  width: 568px;
+  max-width: 568px;
+}
+
+@media (max-width: 1024px) {
+  .popup__container_content_news {
+    max-width: 514px;
+  }
 }
