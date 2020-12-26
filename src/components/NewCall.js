@@ -98,17 +98,17 @@ const NewCall = ({ onCallAdd }) => {
 
   return (
     <>
-    <div className="new-call__steps-container">
-      <div className="new-call__number-container">
-        <p className="new-call__step-number">1</p>
+    <div className="steps">
+      <div className="steps__number-container">
+        <p className="steps__number">1</p>
       </div>
-      <div className="new-call__step-track"></div>
-      <div className="new-call__number-container">
-        <p className="new-call__step-number">2</p>
+      <div className="steps__track"></div>
+      <div className="steps__number-container">
+        <p className="steps__number">2</p>
       </div>
-      <div className="new-call__step-track"></div>
-      <div className="new-call__number-container">
-        <p className="new-call__step-number">3</p>
+      <div className="steps__track"></div>
+      <div className="steps__number-container">
+        <p className="steps__number">3</p>
       </div>
     </div>
       { Boolean(!isLocationChecked) &&
