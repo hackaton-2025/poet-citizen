@@ -1,6 +1,6 @@
 .new-call__cards_type_actuality {
     display: grid;
-    gap: 25px 20px;
+    gap: 24px 16px;
     grid-template-columns: repeat(2, 1fr);
     justify-content: center;
 }

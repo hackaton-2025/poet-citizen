@@ -5,11 +5,12 @@
 @import url(./__number-container/_type/steps__number-container_type_complete.css);
 .steps {
     display: grid;
-    width: 340px;
+    width: 352px;
     grid-template-columns: 36px 1fr 36px 1fr 36px;
     align-items: center;
     justify-content: center;
     grid-area: steps;
     justify-self: flex-end;
     align-self: flex-start;
+    box-sizing: border-box;
 }
