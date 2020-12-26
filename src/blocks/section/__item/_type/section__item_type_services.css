@@ -1,0 +1,19 @@
+.section__item_type_services {
+  width: 173px;
+  height: auto;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: default;
+}
+
+@media (max-width: 768px) {
+  .section__item_type_services {
+    width: 223px;
+  }
+}
+
+@media (max-width: 425px) {
+  .section__item_type_services {
+    width: 173px;
+  }
+}

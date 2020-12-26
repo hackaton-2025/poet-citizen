@@ -20,13 +20,20 @@
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   align-items: center;
   justify-content: center;
   background: rgba(0 0 0 / 0.6);
   font-family: "Open Sans", Arial, sans-serif;
   visibility: hidden;
   opacity: 0;
-  transition: .4s opacity, .4s visibility;
+  z-index: 3;
+  transition: 0.4s opacity, 0.4s visibility;
 }
 
+@media (max-width: 425px) {
+  .popup {
+    overflow: auto;
+    display: block;
+  }
+}

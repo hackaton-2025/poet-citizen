@@ -1,5 +1,23 @@
 .banner__icon_news {
   top: 40px;
   left: 135px;
+  width: 95px;
+  height: 80px;
   transform: rotate(-29deg);
+}
+
+@media (max-width: 1024px) {
+  .banner__icon_news {
+    width: 75px;
+    height: 75px;
+    top: 36px;
+    left: 54px;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner__icon_news {
+    top: 32px;
+    left: 22px;
+  }
 }
