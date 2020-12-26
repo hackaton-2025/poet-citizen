@@ -1,9 +1,10 @@
-import { useContext, useState } from 'react';
+import { useContext, useState, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 import { locations, problems, urgencies } from '../configs/callsConfig';
 import CurrentUserContext from '../contexts/CurrentUserContext';
 import Card from './Card';
 import CheckoutButtons from './CheckoutButtons';
+// import Pagination from './Pagination';
 import Popup from './Popup';
 
 // TODO -- когда-нибудь реорганизовать конфиг с вызовами и переписать логику -- не нравится
@@ -93,21 +94,26 @@ const NewCall = ({ onCallAdd }) => {
     }
   };
 
+  const first = useRef();
+  const second = useRef();
+  const third = useRef();
+
   return (
     <>
-    <div className="steps">
-      <div className="steps__number-container">
-        <p className="steps__number">1</p>
+    {/* <Pagination stepsNum={3} /> */}
+      <div className="steps">
+        <div className="steps__number-container" ref={first}>
+          <p className="steps__number">1</p>
+        </div>
+        <div className="steps__track"></div>
+        <div className="steps__number-container" ref={second}>
+          <p className="steps__number">2</p>
+        </div>
+        <div className="steps__track"></div>
+        <div className="steps__number-container" ref = {third}>
+          <p className="steps__number">3</p>
+        </div>
       </div>
-      <div className="steps__track"></div>
-      <div className="steps__number-container">
-        <p className="steps__number">2</p>
-      </div>
-      <div className="steps__track"></div>
-      <div className="steps__number-container">
-        <p className="steps__number">3</p>
-      </div>
-    </div>
       { Boolean(!isLocationChecked) &&
         <>
           <h2 className="page__title">Выберите место</h2>
