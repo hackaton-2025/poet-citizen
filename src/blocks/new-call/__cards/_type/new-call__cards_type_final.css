@@ -1,5 +1,5 @@
 .new-call__cards_type_final {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 136px min-content;
-  gap: 16px 24px;
+  gap: 24px 16px;
 }
