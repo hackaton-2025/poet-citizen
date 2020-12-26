@@ -9,8 +9,8 @@ const AboutPopup = ({ isOpen, onClose }) => {
       contentModificator="popup__container_content_about"
       isOpen={isOpen}
       onClose={onClose}
+      popupTitle="О проекте"
     >
-      <h3 class="popup__title">О проекте</h3>
       <p class="popup__text popup__text_team">
         ОБЭРИУ – приложение для подачи экспресс заявок на проведение работ по
         благоустройству и обслуживанию объектов жилых комплексов.
