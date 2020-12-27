@@ -13,7 +13,9 @@
 @import url(./_checked/card_checked.css);
 @import url(./_unchecked/card_unchecked.css);
 @import url(./__signature/card__signature.css);
-@import url(./__paragrarh/_type/card__paragrarh_type_adress.css);
+@import url(./__paragraph/card__paragraph.css);
+@import url(./__paragraph/_type/card__paragraph_type_address.css);
+@import url(./__paragraph/_type/card__paragraph_type_promise.css);
 
 .card {
   width: 100%;
