@@ -1,7 +1,19 @@
+@import url(./__user-profile/header__user-profile.css);
+@import url(./__user-profile/_mobile/header__user-profile_mobile_visible.css);
+@import url(./__user-profile/_mobile/header__user-profile_mobile_hidden.css);
+@import url(./__user-profile-logout/header__user-profile-logout.css);
+@import url(./__user-profile-enter/header__user-profile-enter.css);
+@import url(./__content/header__content.css);
+@import url(./__contacts/header__contacts.css);
+@import url(./__btn/header__btn.css);
+@import url(./__menu-btn/header__menu-btn.css);
+@import url(./_menu-opened/header_menu-opened.css);
+
 .header {
   padding: 20px 0;
   box-sizing: border-box;
   font-family: "Open Sans", Arial, sans-serif;
+  transition: background-color .2s linear;
 }
 
 @media (max-width: 1024px) {
@@ -18,16 +30,21 @@
   }
 }
 
-@media (max-width: 425px) {
+@media screen and (max-width: 767px) {
+  .header {
+    max-width: 100%;
+    /* здесь высота из-за того, что лого и юзер-профайл разной высоты  
+    и при открытии/закрытии меню прыгала высота хедера */
+    min-height: 98px;
+    /* паддинги из-за неправильной реализации адаптива */
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media screen and (max-width: 425px) {
   .header {
     padding: 8px 0;
     max-width: 328px;
   }
 }
-
-@import url(./__user-profile/header__user-profile.css);
-@import url(./__user-profile-logout/header__user-profile-logout.css);
-@import url(./__user-profile-enter/header__user-profile-enter.css);
-@import url(./__content/header__content.css);
-@import url(./__contacts/header__contacts.css);
-@import url(./__btn/header__btn.css);

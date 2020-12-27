@@ -1,9 +1,24 @@
 .card__title {
     margin: 0;
-    font-size: 19px;
-    line-height: 26px;
+    font-size: 21px;
+    line-height: 29px;
     text-align: center;
+    font-weight: normal;
 }
+
+@media all and (max-width:1024px) {
+    .card__title {
+        font-size: 19px;
+        line-height: 27px;
+    }
+  }
+
+  @media all and (max-width:425px) {
+    .card__title {
+        width: 150px;
+    }
+  }
+
 
 
 

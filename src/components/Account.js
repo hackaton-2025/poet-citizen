@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Redirect, Route, Switch, useRouteMatch } from "react-router-dom";
-import Footer from "./Footer";
 import Header from "./Header";
 import Navigation from "./Navigation";
 import NewCall from "./NewCall";
@@ -8,14 +7,26 @@ import Calls from "./Calls";
 import About from "./About";
 import Profile from "./Profile";
 
-const Account = ({ loggedIn, onLogout, onCallAdd, calls }) => {
+const Account = ({
+  loggedIn,
+  onLogout,
+  onCallAdd,
+  calls,
+  isMobileMenuOpen,
+  onHamburgerClick
+}) => {
   const { path, url } = useRouteMatch();
 
   return (
     <div className="page__container page__narrow">
-      <Header loggedIn={loggedIn} onLogout={onLogout} />
+      <Header
+        loggedIn={loggedIn}
+        onLogout={onLogout}
+        isMenuOpen={isMobileMenuOpen}
+        onHamburgerClick={onHamburgerClick}
+      />
       <main className="main">
-        <Navigation url={url} />
+        <Navigation url={url} isMobileOpened={isMobileMenuOpen} />
         <section className="main__content main__content_grid_new-call">
           <Switch>
             <Route path={`${path}/calls`}>

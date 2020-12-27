@@ -1,7 +1,7 @@
 import Popup from "./Popup";
 
 function NewsPopup({ newsItem, isOpen, onClose }) {
-  console.log(Boolean(newsItem))
+  
   return (
     <Popup
       isOpen={isOpen}
