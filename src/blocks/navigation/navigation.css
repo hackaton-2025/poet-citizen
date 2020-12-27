@@ -5,6 +5,8 @@
 @import url(./__link/_active/navigation__link_active.css);
 @import url(./__link-image/navigation__link-image.css);
 @import url(./__link-title/navigation__link-title.css);
+@import url(./_mobile/navigation_mobile_opened.css);
+@import url(./_mobile/navigation_mobile_closed.css);
 
 .navigation {
   width: 100%;
@@ -25,10 +27,13 @@
   }
 }
 
-@media all and (max-width:425px) {
+@media all and (max-width:767px) {
   .navigation {
-    min-height: 601px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 5;
     border-radius: 0;
-    
+    transition: .2s linear;
   }
 }

@@ -1,8 +1,18 @@
 import { NavLink } from "react-router-dom";
+import cn from "classnames";
 
-const Navigation = ({ url }) => {
+const Navigation = ({ url, isMobileOpened }) => {
+
+  const navigationClassName = cn(
+    "navigation",
+    {
+      "navigation_mobile_opened": isMobileOpened,
+      "navigation_mobile_closed": !isMobileOpened,
+    },
+  );
+
   return (
-    <nav className="navigation">
+    <nav className={navigationClassName}>
       <div className="navigation__header">
         <h2 className="navigation__title">Мой аккаунт</h2>
       </div>

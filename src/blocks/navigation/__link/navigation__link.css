@@ -35,9 +35,12 @@ background-color: rgb(255 255 255 / 0.6);
   }
 }
 
-@media all and (max-width:425px) {
+@media all and (max-width: 767px) {
   .navigation__link {
-    width: 328px;
+    width: 100%;
+    max-width: 328px;
     padding: 0 0 0 20px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
