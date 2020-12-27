@@ -1,5 +1,6 @@
 .header__user-profile-enter {
   font-size: 18px;
+  line-height: 22px;
   text-decoration: none;
   margin-right: 13px;
   margin-top: 0;
@@ -9,4 +10,9 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  transition: color .2s linear;
+}
+
+.header__user-profile-enter:hover {
+  color:#9B50FB;
 }

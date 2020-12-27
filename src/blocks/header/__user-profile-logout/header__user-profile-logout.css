@@ -7,4 +7,10 @@
   padding: 0;
   border: none;
   background-color: transparent;
+  cursor: pointer;
+  transition: background-image .2s linear;
+}
+
+.header__user-profile-logout:hover {
+  background-image: url(../../../images/header__profile-logout_hover.svg);
 }

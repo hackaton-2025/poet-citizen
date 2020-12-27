@@ -10,7 +10,7 @@
   }
 
   @media all and (max-width:425px) {
-    .navigation__link {
+    .navigation__container {
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
     }

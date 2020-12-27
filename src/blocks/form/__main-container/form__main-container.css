@@ -12,3 +12,10 @@
     z-index: 3;
     backdrop-filter: blur(2px);
 }
+
+@media all and (max-width:425px) {
+    .form__main-container {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+}
