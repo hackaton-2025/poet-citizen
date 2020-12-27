@@ -12,3 +12,10 @@
   }
 }
 
+@media all and (max-width:767px) {
+  .page__title {
+      margin: 0 0 8px 0;
+      justify-self: center;
+}
+}
+

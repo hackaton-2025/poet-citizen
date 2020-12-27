@@ -13,7 +13,7 @@
     }
   }
 
-  @media all and (max-width:425px) {
+  @media all and (max-width:767px) {
     .card__title {
         width: 150px;
     }

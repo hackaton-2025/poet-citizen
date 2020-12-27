@@ -14,7 +14,7 @@
   }
 }
 
-@media all and (max-width:425px) {
+@media all and (max-width:767px) {
   .new-call__cards_type_final {
     grid-template-columns: 1fr;
     grid-template-rows: 153px 153px 153px 153px min-content;

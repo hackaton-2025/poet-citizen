@@ -5,4 +5,11 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding: 0 16px;
+  }
+
+  @media all and (max-width:767px) {
+    .page__container {
+        padding: 0;
+    }
   }

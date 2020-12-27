@@ -23,7 +23,7 @@ const Navigation = ({ url, isMobileOpened }) => {
         </NavLink>
         <NavLink to={`${url}/new-call`} className="navigation__link" activeClassName="navigation__link_active">
           <div className="navigation__link-image navigation__link-image_type_new-call" />
-          <p className="navigation__link-title">Составить обращение</p>
+          <p className="navigation__link-title">Составить заявку</p>
         </NavLink>
         <NavLink to={`${url}/profile`} className="navigation__link" activeClassName="navigation__link_active">
           <div className="navigation__link-image navigation__link-image_type_profile" />

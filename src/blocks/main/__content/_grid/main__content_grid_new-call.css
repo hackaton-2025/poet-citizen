@@ -16,7 +16,7 @@
   }
 
 
-  @media all and (max-width:425px) {
+  @media all and (max-width:767px) {
     .main__content_grid_new-call {
         grid-template-rows: repeat(auto, max-content);
         grid-template-areas: "title"

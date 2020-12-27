@@ -1,13 +1,21 @@
-import Call from "./Call"
+import Call from "./Call";
+import emptyLogo from "./../images/emoji/requests__empty.svg"
 
 const Calls = ({ calls }) => {
 
   return (
     <>
       { calls.length === 0 
-        ? <p className="requests__title">
-          Нет ни одной заявки в работе :(
-        </p>
+        ? 
+        <div className="requests__container">
+          <img src={emptyLogo} alt="Эмоджи" className="requests__emoji requests__emoji_type_request-empty"></img>
+          <h2 className="requests__title requests__title_type_request-empty ">
+        Нет ни одной заявки в работе</h2>
+        <p className="requests__subtitle requests__subtitle_type_empty-request">
+        Составьте обращение - здесь повявится информация по вашей заявке
+      </p>
+      </div>
+      
         : <div>
            <p className="requests__title">
           Ваши заявки
