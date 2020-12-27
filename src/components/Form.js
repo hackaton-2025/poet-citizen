@@ -1,6 +1,8 @@
 import cn from 'classnames';
 import { Link } from 'react-router-dom';
-import NYDecoration from './NYDecoration';
+import Parallaxed from './Parallaxed';
+import treeSmileImage from '../images/form_christmas-tree.svg';
+import giftSmileImage from '../images/form_gift.png';
 
 const Form = ({
   onSubmit,
@@ -51,7 +53,10 @@ const Form = ({
             </p>
           }
         </div>
-        <NYDecoration />
+        <Parallaxed>
+          <img src={treeSmileImage} alt="Эмоджи с ёлкой" className="ny-decor__image ny-decor__image_content_tree" />
+          <img src={giftSmileImage} alt="Эмоджи с подарком" className="ny-decor__image ny-decor__image_content_gift" />
+        </Parallaxed>
       </form>
     </div>
   );

@@ -1,3 +1,5 @@
+import throttle from "./throttle";
+
 const makeParallaxEffect = (e, elementRef) => {
   let windowWidth = window.innerWidth;
   let windowHeight = window.innerHeight;
@@ -12,4 +14,9 @@ const makeParallaxEffect = (e, elementRef) => {
   elementRef.style.transform = `translate(${x * xMultiplier}%, ${y * yMultiplier}px)`
 };
 
-export default makeParallaxEffect;
+const makeThrottledParallax = (e, elementRef, ms) => throttle(makeParallaxEffect(e, elementRef), ms);
+
+export {
+  makeParallaxEffect,
+  makeThrottledParallax,
+};
