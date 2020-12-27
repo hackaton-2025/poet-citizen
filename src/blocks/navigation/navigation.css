@@ -16,4 +16,19 @@
   backdrop-filter: blur(20px);
   font-family: "Open Sans", Arial, sans-serif;
   border: 1px solid rgb(255 255 255 / 0.4);
+  min-height: 770px;
+}
+
+@media all and (max-width:1024px) {
+  .navigation {
+    min-height: 601px;
+  }
+}
+
+@media all and (max-width:425px) {
+  .navigation {
+    min-height: 601px;
+    border-radius: 0;
+    
+  }
 }

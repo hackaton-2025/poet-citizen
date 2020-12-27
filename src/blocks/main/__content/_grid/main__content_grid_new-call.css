@@ -4,3 +4,26 @@
                        "cards cards cards cards"
                       "button-prev ... ... button-nxt";
 }
+
+@media all and (max-width:1024px) {
+    .main__content_grid_new-call {
+        grid-template-rows: auto;
+        grid-template-areas: "title title"
+                             "steps steps"
+                             "cards cards"
+                            "button-prev button-nxt";
+    }
+  }
+
+
+  @media all and (max-width:425px) {
+    .main__content_grid_new-call {
+        grid-template-rows: repeat(auto, max-content);
+        grid-template-areas: "title"
+                             "steps"
+                             "cards"
+                             "button-nxt"
+                            "button-prev";
+                            
+    }
+  }

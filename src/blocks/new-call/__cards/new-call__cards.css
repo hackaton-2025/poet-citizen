@@ -4,6 +4,6 @@
 @import url(./_type/new-call__cards_type_final.css);
 
 .new-call__cards {
-  display: grid;
   grid-area: cards;
 }
+
