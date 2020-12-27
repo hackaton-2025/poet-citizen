@@ -28,9 +28,9 @@
 
 @media (max-width: 425px) {
   .banner {
-    padding: 48px 0;
+    padding: 48px 16px;
     margin-top: 24px;
-    max-width: 328px;
+    max-width: 294px;
   }
 }
 

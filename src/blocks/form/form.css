@@ -37,7 +37,7 @@
 }
 
 
-@media all and (max-width:425px) {
+@media all and (max-width:767px) {
   .form {
       border-radius: 0;
   }
