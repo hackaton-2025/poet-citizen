@@ -1,12 +1,12 @@
 
 import { useEffect, useState } from 'react';
 import { Switch, Route, Redirect, useHistory } from 'react-router-dom';
+import { useMediaQuery } from "react-responsive";
 import ProtectedRoute from '../hocs/ProtectedRoute';
 import CurrentUserContext from '../contexts/CurrentUserContext';
 import Background from "./Background";
 import StartPage from './StartPage';
 import Account from './Account';
-import About from './About';
 import Login from './Login';
 import Register from './Register';
 import firebase from '../utils/firebase';
@@ -144,7 +144,19 @@ function App() {
     getUserCalls();
   }, [loggedIn]);
 
-  
+  // Для мобильного меню
+  const [isMobileMenuOpen, setMobileMenuState] = useState(false);
+  const handleMobileMenuOpen = () => {
+    setMobileMenuState(!isMobileMenuOpen);
+  };
+
+  const isMobile = useMediaQuery({query: "(max-width: 767px)"});
+
+  useEffect(() => {
+    if (!isMobile) {
+      setMobileMenuState(false);
+    }
+  }, [isMobile]);
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
@@ -172,9 +184,17 @@ function App() {
           onLogout={handleLogout}
           onCallAdd={handleCallAdd}
           calls={userCalls}
+          isMobileMenuOpen={isMobileMenuOpen}
+          onHamburgerClick={handleMobileMenuOpen}
         />
         <Route exact path="/">
-          <StartPage loggedIn={loggedIn} onLogout={handleLogout} />
+          <StartPage
+            loggedIn={loggedIn}
+            onLogout={handleLogout}
+            isMobile={isMobile}
+            isMobileMenuOpen={isMobileMenuOpen}
+            onHamburgerClick={handleMobileMenuOpen}
+          />
         </Route>
         <Route>
           {loggedIn ? <Redirect to="/" /> : <Redirect to="/signin" />}

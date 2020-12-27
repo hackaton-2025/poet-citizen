@@ -12,6 +12,7 @@
   flex-grow: 1;
   font-family: "Open Sans", Arial, sans-serif;
   margin: 0 auto;
+  position: relative;
 }
 
 @media all and (max-width:1024px) {
@@ -27,7 +28,7 @@
   }
 }
 
-@media all and (max-width:425px) {
+@media all and (max-width:767px) {
   .main {
     display: flex;
     flex-direction: column;

@@ -15,7 +15,7 @@
     min-height: 601px;
   }
 }
-@media all and (max-width:425px) {
+@media all and (max-width:767px) {
   .main__content {
     width: calc(100% - 16px*2);
     margin: 0 auto;

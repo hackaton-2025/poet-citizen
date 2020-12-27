@@ -8,10 +8,3 @@
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
   }
-
-  @media all and (max-width:425px) {
-    .navigation__container {
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
-    }
-    }
