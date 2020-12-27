@@ -19,7 +19,7 @@
     }
   }
 
-  @media all and (max-width:425px) {
+  @media all and (max-width:767px) {
     .new-call__cards_type_actuality{
         margin-bottom: 48px;
     }

@@ -12,6 +12,11 @@
   outline: none;
   cursor: pointer;
   transition: opacity .2s linear;
+  background-image: url(../../../images/popup__button-close.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 24px;
+  height: 24px;
 }
 
 .popup__close-btn:hover {

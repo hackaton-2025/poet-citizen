@@ -1,0 +1,8 @@
+.requests__container {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    grid-template-areas: "img title" 
+    "subtitle subtitle";
+    gap: 10px 16px;
+    max-width: 550px;
+}
