@@ -59,7 +59,7 @@ const Card = ({
             <p className="card__title card__title_type_final">{cardTitle}</p>
             { emojiUrl && <img src={emojiUrl} alt="Эмоджи" className="card__emoji card__emoji_type_final" /> }
             {/* TODO -- предусмотреть в стилях троеточие при переполнении */}
-            { cardAddress && <p className="card__paragrarh card__paragraph_type_address">{cardAddress}</p> }
+            { cardAddress && <p className="card__paragraph card__paragraph_type_address">{cardAddress}</p> }
             { cardPoem &&  renderPoem(cardPoem, 'card__poem-line') }
             { cardSign && <p className="card__signature">{cardSign}</p> }
             { cardPromise && <p className="card__paragraph card__paragraph_type_promise">{cardPromise}</p> }

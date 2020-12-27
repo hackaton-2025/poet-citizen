@@ -12,7 +12,7 @@
   }
 }
 
-@media all and (max-width:425px) {
+@media all and (max-width:767px) {
     .card__emoji {
         margin-right: 16px;
         width: 60px;

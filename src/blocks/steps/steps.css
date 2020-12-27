@@ -24,8 +24,9 @@
     }
   }
 
-  @media all and (max-width:425px) {
+  @media all and (max-width:767px) {
     .steps {
         width: 280px;
+        justify-self: center;
     }
   }
