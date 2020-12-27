@@ -97,7 +97,7 @@ const Register = ({ onRegister, errorMessage, resetErrorMessage }) => {
             id="floor"
             name="floor"
             type="text"
-            pattern="^(\d{1,2})"
+            pattern="^(\d{1,3})"
             value={values.floor || ''}
             onChange={handleChange}
             className="form__input"

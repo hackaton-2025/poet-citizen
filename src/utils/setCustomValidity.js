@@ -12,7 +12,7 @@ const setCustomValidity = (target) => {
     } else if (target.name === 'tel' & target.validity.patternMismatch & !target.validity.tooShort) {
       target.setCustomValidity('Номер телефона может содержать только цифры и символы "+", "-"')
     } else if (target.validity.tooShort) {
-      target.setCustomValidity(`Введенное значение должно быть длинее ${target.minLength} символов`);
+      target.setCustomValidity(`Введенное значение должно быть длиннее ${target.minLength} символов`);
     } else if (target.validity.tooLong) {
       target.setCustomValidity(`Введенное значение должно быть короче ${target.maxLength} символов`)
     } else if (target.name === 'email' & target.validity.patternMismatch) {
