@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
 import newsItems from "../configs/news";
@@ -19,6 +19,7 @@ import uslugi6 from "../images/emoji/uslugi6.svg";
 import NewsItem from "./NewsItem";
 import NewsPopup from "./NewsPopup";
 import Navigation from "./Navigation";
+import Parallaxed from "./Parallaxed";
 
 // TODO -- когда-нибудь отрефакторить это, вынести компоненты и т.д.
 const StartPage = ({ loggedIn, onLogout, isMobile, isMobileMenuOpen, onHamburgerClick }) => {
@@ -33,6 +34,8 @@ const StartPage = ({ loggedIn, onLogout, isMobile, isMobileMenuOpen, onHamburger
 
   const [openedNewsItem, setOpenedNewsItem] = useState(null);
 
+  const bannerRef = useRef();
+
   return (
     <>
       <div className="page__container">
@@ -44,7 +47,7 @@ const StartPage = ({ loggedIn, onLogout, isMobile, isMobileMenuOpen, onHamburger
         />
         <main className="start-page">  
           {isMobile && <Navigation url={"/me"} isMobileOpened={isMobileMenuOpen} /> }
-          <section className="banner page__narrow">
+          <section className="banner page__narrow" ref={node => (bannerRef.current = node)}>
             <div className="banner__content">
               <h1 className="banner__title">
                 «Снимаю комнату с камином, Дела в порядок привожу, Гулять хожу на
@@ -56,18 +59,48 @@ const StartPage = ({ loggedIn, onLogout, isMobile, isMobileMenuOpen, onHamburger
                 Сервис экспресс-заявок для проведения работ по благоустройству и
                 обслуживанию вашего дома
               </p>
-              <img className="banner__icon banner__icon_news" src={news}></img>
-              <img
-                className="banner__icon banner__icon_lightning"
-                src={lightning}
-              ></img>
-              <img className="banner__icon banner__icon_bulb" src={bulb}></img>
-              <img className="banner__icon banner__icon_house" src={house}></img>
-              <img className="banner__icon banner__icon_broom" src={broom}></img>
-              <img
-                className="banner__icon banner__icon_faucet"
-                src={faucet}
-              ></img>
+              <Parallaxed multiplier={8}>
+                <img
+                  className="banner__icon banner__icon_news"
+                  alt="Эмоджи новости"
+                  src={news}
+                />
+              </Parallaxed>
+              <Parallaxed multiplier={5}>
+                <img
+                  className="banner__icon banner__icon_lightning"
+                  alt="Эмоджи молния"
+                  src={lightning}
+                />
+              </Parallaxed>
+              <Parallaxed multiplier={17}>
+                <img
+                  className="banner__icon banner__icon_bulb"
+                  alt="Эмоджи лампа"
+                  src={bulb}
+                />
+              </Parallaxed>
+              <Parallaxed multiplier={8}>
+                <img
+                  className="banner__icon banner__icon_house"
+                  alt="Эмоджи дом"
+                  src={house}
+                />
+              </Parallaxed>
+              <Parallaxed multiplier={5}>
+                <img
+                  className="banner__icon banner__icon_broom"
+                  alt="Эмоджи вантуз"
+                  src={broom}
+                />
+              </Parallaxed>
+              <Parallaxed>
+                <img
+                  className="banner__icon banner__icon_faucet"
+                  alt="Эмоджи кран"
+                  src={faucet}
+                />
+              </Parallaxed>
             </div>
           </section>
           <section className="section section_content_services">
@@ -76,37 +109,37 @@ const StartPage = ({ loggedIn, onLogout, isMobile, isMobileMenuOpen, onHamburger
               <ul className="section__list">
                 <li className="section__item section__item_type_services">
                   <div className="section__circle">
-                    <img className="section__emoji" src={uslugi1}></img>
+                    <img className="section__emoji" alt="Эмоджи слесарь" src={uslugi1} />
                   </div>
                   <h3 className="section__subtitle">Плановый ремонт</h3>
                 </li>
                 <li className="section__item section__item_type_services">
                   <div className="section__circle">
-                    <img className="section__emoji" src={uslugi2}></img>
+                    <img className="section__emoji" alt="Эмоджи дерево" src={uslugi2} />
                   </div>
                   <h3 className="section__subtitle">Благоустройство двора</h3>
                 </li>
                 <li className="section__item section__item_type_services">
                   <div className="section__circle">
-                    <img className="section__emoji" src={uslugi3}></img>
+                    <img className="section__emoji" alt="Эмоджи авария" src={uslugi3} />
                   </div>
                   <h3 className="section__subtitle">Аварийная работа</h3>
                 </li>
                 <li className="section__item section__item_type_services">
                   <div className="section__circle">
-                    <img className="section__emoji" src={uslugi4}></img>
+                    <img className="section__emoji" alt="Эмоджи разводной ключ" src={uslugi4} />
                   </div>
                   <h3 className="section__subtitle">Технический надзор</h3>
                 </li>
                 <li className="section__item section__item_type_services">
                   <div className="section__circle">
-                    <img className="section__emoji" src={uslugi5}></img>
+                    <img className="section__emoji" alt="Эмоджи банковская карта" src={uslugi5} />
                   </div>
                   <h3 className="section__subtitle">Учет оплаты</h3>
                 </li>
                 <li className="section__item section__item_type_services">
                   <div className="section__circle">
-                    <img className="section__emoji" src={uslugi6}></img>
+                    <img className="section__emoji" alt="Эмоджи мусорное ведро" src={uslugi6} />
                   </div>
                   <h3 className="section__subtitle">Вывоз мусора</h3>
                 </li>
