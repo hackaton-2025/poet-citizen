@@ -1,9 +1,10 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import useFormValidation from '../hooks/useFormWithValidation';
 import setCustomValidity from '../utils/setCustomValidity';
 import Form from './Form';
 import helloEmoji from '../images/emoji/128075.png';
+import FormInput from './FormInput';
 
 const Login = ({ onLogin, loggedIn, errorMessage, resetErrorMessage }) => {
 
@@ -41,34 +42,26 @@ const Login = ({ onLogin, loggedIn, errorMessage, resetErrorMessage }) => {
       errorMessage={errorMessage}
     >
       <fieldset className="form__fieldset">
-        <div className="form__input-container">
-          <label className="form__label" htmlFor="email">Email</label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
-            required={true}
-            value={values.email || ''}
-            onChange={handleChange}
-            className="form__input"
-          />
-          <span className="form__input-error">{errors.email || ''}</span>
-        </div>
-        <div className="form__input-container">  
-          <label className="form__label" htmlFor="password">Пароль</label>
-          <input
-            id="password"
-            name="password"
-            type="password"
-            minLength="6"
-            required={true}
-            value={values.password || ''}
-            onChange={handleChange}
-            className="form__input"
-          />
-          <span className="form__input-error">{errors.password || ''}</span>
-        </div>
+        <FormInput
+          name="email"
+          type="email"
+          labelText="Email"
+          pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+          required={true}
+          value={values.email || ''}
+          error={errors.email}
+          onChange={handleChange}
+        />
+        <FormInput
+          name="password"
+          labelText="Пароль"
+          type="password"
+          minLength="6"
+          required={true}
+          value={values.password || ''}
+          error={errors.password}
+          onChange={handleChange}
+        />
       </fieldset>
     </Form>
   )

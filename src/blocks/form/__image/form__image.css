@@ -6,3 +6,10 @@
     top: 32px;
     right: 24px; */
 }
+
+
+@media all and (max-width:425px) {
+    .form__image {
+      display: none;
+    }
+  }

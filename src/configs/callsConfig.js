@@ -179,7 +179,7 @@ const problems = [
     ],
   },
   {
-    name: 'Некачественная уборка',
+    name: 'Плохая уборка',
     emoji: '129529',
     location: outdoors,
     poem: [
@@ -312,7 +312,7 @@ const problems = [
     ],
   },
   {
-    name: 'Течь трубы водопровода',
+    name: 'Протечка трубы',
     emoji: '127754',
     location: house,
     poem: [
@@ -335,7 +335,7 @@ const problems = [
     ],
   },
   {
-    name: 'Некачественная уборка',
+    name: 'Плохая уборка',
     emoji: '129529',
     location: house,
     poem: [
@@ -595,7 +595,7 @@ const problems = [
     ],
   },
   {
-    name: 'Течь трубы водопровода',
+    name: 'Протечка трубы',
     emoji: '127754',
     location: flat,
     poem: [
@@ -748,7 +748,7 @@ const problems = [
     ],
   },
   {
-    name: 'Неисправность эл. питания',
+    name: 'Нет эл.питания',
     emoji: '9889',
     location: flat,
     poem: [

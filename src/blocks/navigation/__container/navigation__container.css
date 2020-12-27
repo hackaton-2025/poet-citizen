@@ -2,10 +2,16 @@
     display: flex;
     flex-direction: column;
     list-style: none;
-    min-height: 685px;
     box-sizing: border-box;
     padding: 24px 16px;
     margin: 0;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
   }
+
+  @media all and (max-width:425px) {
+    .navigation__container {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    }

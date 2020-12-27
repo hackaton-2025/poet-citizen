@@ -4,6 +4,7 @@
 @import url(./__fieldset/form__fieldset.css);
 @import url(./__input-container/form__input-container.css);
 @import url(./__input/form__input.css);
+@import url(./__input/_on-load/form__input_on-load.css);
 @import url(./__input/_valid/form__input_valid.css);
 @import url(./__input/_invalid/form__input_invalid.css);
 @import url(./__input-error/form__input-error.css);
@@ -33,4 +34,11 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
+}
+
+
+@media all and (max-width:425px) {
+  .form {
+      border-radius: 0;
+  }
 }

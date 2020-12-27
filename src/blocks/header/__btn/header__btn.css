@@ -1,10 +1,13 @@
 .header__btn {
+  width: 200px;
+  height: 50px;
+  box-sizing: border-box;
     outline: none;
     background-image: linear-gradient(94.08deg, #7E87F8 0%, #9B50FB 98.92%);
     box-shadow: 0px 6px 17px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
     border: none;
-    padding: 14px 64px;
+    padding: 12px 24px;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
@@ -13,14 +16,51 @@
     color: #ffffff;
     cursor: pointer;
     text-decoration: none;
-    transition: background-image .5s ease-in .1s;
+    position: relative;
+    z-index: 1;
   }
 
-  .header__btn:hover {
+  /*.header__btn:hover {
     background-image:  linear-gradient(94.08deg, #7E87F8 100%, #9B50FB 98.92%);
   }
 
   .header__btn:hover {
     outline: none;
     box-shadow: none;
+  }*/
+
+  /*создаю псевдоэлемент и скрываю значением opacity 0, при наведении показываю. Только так можно сделать транзишн на градиент*/
+  .header__btn:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image:  linear-gradient(94.08deg, #7E87F8 100%, #9B50FB 98.92%);
+    transition: opacity  .2s linear;
+    z-index: -1;
+    opacity: 0;
+    border-radius: 10px;
   }
+
+  .header__btn:hover:before {
+    opacity: 1;
+    outline: none;
+    box-shadow: none;
+  }
+
+
+  @media all and (max-width:768px) {
+    .header__btn {
+      width: 225px;
+    }
+    }
+
+    @media all and (max-width:425px) {
+      .header__btn {
+        width: 200px;
+      }
+    }
+
+    
