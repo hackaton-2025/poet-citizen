@@ -1,0 +1,11 @@
+.logo__img {
+  width: 35px;
+  height: 35px;
+  background: url(../../../images/emoji/129529.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: rotate(225deg);
+  margin: -10px 0 0 auto;
+  position: relative;
+  z-index: 5;
+}

@@ -21,7 +21,13 @@ const Header = ({ loggedIn, onLogout }) => {
           </>
           : <>
             <div className="header__contacts">
-              <div className="logo" />
+              <div className="logo">
+              <div className="logo__container">
+                <h1 className="logo__title">ОБЭРИУ</h1>
+              <div className="logo__img" />
+              </div>
+              </div>
+              
             </div>
             <Link to="/signin" className="header__btn">
               Личный кабинет
