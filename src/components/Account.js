@@ -1,6 +1,4 @@
-import { useState } from "react";
 import { Redirect, Route, Switch, useRouteMatch } from "react-router-dom";
-import Footer from "./Footer";
 import Header from "./Header";
 import Navigation from "./Navigation";
 import NewCall from "./NewCall";
