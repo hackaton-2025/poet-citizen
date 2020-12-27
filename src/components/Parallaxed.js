@@ -1,18 +1,20 @@
 import { useEffect, useRef } from 'react';
 import { makeThrottledParallax } from '../utils/parallaxEffect';
 
-const Parallaxed = ({children}) => {
+const Parallaxed = ({ elementToListen=window, children, multiplier = 10 }) => {
 
   const decorRef = useRef({}); 
   
   useEffect(() => {
     
-    const handleMouseMove = (e) => makeThrottledParallax(e, decorRef.current, 3000);
+    const handleMouseMove = (e) => makeThrottledParallax({
+      e, elementRef: decorRef.current, ms: 3000, xMultiplier: multiplier
+    });
 
-    window.addEventListener('mousemove', handleMouseMove);
+    elementToListen.addEventListener('mousemove', handleMouseMove);
     
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
+      elementToListen.removeEventListener('mousemove', handleMouseMove);
     }
   }, []);
   
