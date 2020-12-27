@@ -24,7 +24,7 @@ const FormInput = ({
 
   return (
     <div className="form__input-container">
-      <label className="form__label" htmlFor="email">{labelText}</label>
+      <label className="form__label" htmlFor={name}>{labelText}</label>
       <input
         id={name}
         name={name}
