@@ -22,20 +22,15 @@ import NewsPopup from "./NewsPopup";
 
 // TODO -- когда-нибудь отрефакторить это, вынести компоненты и т.д.
 const StartPage = ({ loggedIn, onLogout }) => {
-  const [isAboutPopupOpen, setAboutPopupState] = useState(false);
   const [isNewsPopupOpen, setNewsPopupState] = useState(false);
 
-  const openAboutPopup = () => setAboutPopupState(true);
 
   const openNewsPopup = (newsItem) => {
     setNewsPopupState(true);
     setOpenedNewsItem(newsItem);
   };
 
-  const closeAllPopups = () => {
-    setAboutPopupState(false);
-    setNewsPopupState(false);
-  };
+  const closeNewsPopup = () => setNewsPopupState(false);
 
   const [openedNewsItem, setOpenedNewsItem] = useState(null);
 
@@ -122,31 +117,11 @@ const StartPage = ({ loggedIn, onLogout }) => {
             </ul>
           </div>
         </section>
-        <Footer>
-          <div className="logo" />
-          <div className="footer__email">
-            <p className="footer__email-title">Написать нам:</p>
-            <a href="mailto:oberiu.info@ya.ru" className="footer__email-link">
-              oberiu.info@ya.ru
-            </a>
-          </div>
-          <button
-            type="button"
-            className="footer__about"
-            onClick={openAboutPopup}
-          >
-            О проекте
-          </button>
-          <div className="footer__copyright">
-            <p className="footer__copyright-title">Яндекс.Практикум</p>
-            <p className="footer__copyright-subtitle">Hackaton 2025</p>
-          </div>
-        </Footer>
+        <Footer />
       </div>
-      <AboutPopup isOpen={isAboutPopupOpen} onClose={closeAllPopups} />
       <NewsPopup
         isOpen={isNewsPopupOpen}
-        onClose={closeAllPopups}
+        onClose={closeNewsPopup}
         newsItem={openedNewsItem}
       />
     </>

@@ -1,3 +1,10 @@
+@import url(./__user-profile/header__user-profile.css);
+@import url(./__user-profile-logout/header__user-profile-logout.css);
+@import url(./__user-profile-enter/header__user-profile-enter.css);
+@import url(./__content/header__content.css);
+@import url(./__contacts/header__contacts.css);
+@import url(./__btn/header__btn.css);
+
 .header {
   padding: 20px 0;
   box-sizing: border-box;
@@ -24,10 +31,3 @@
     max-width: 328px;
   }
 }
-
-@import url(./__user-profile/header__user-profile.css);
-@import url(./__user-profile-logout/header__user-profile-logout.css);
-@import url(./__user-profile-enter/header__user-profile-enter.css);
-@import url(./__content/header__content.css);
-@import url(./__contacts/header__contacts.css);
-@import url(./__btn/header__btn.css);
