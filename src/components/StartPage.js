@@ -150,8 +150,8 @@ const StartPage = ({ loggedIn, onLogout, isMobile, isMobileMenuOpen, onHamburger
             <div className="page__narrow">
               <h2 className="section__title">Новости</h2>
               <ul className="section__list section__list_type_news">
-                {newsItems.map((newsItem) => (
-                  <NewsItem newsItem={newsItem} onClick={openNewsPopup} />
+                {newsItems.map((newsItem, i) => (
+                  <NewsItem key={i} newsItem={newsItem} onClick={openNewsPopup} />
                 ))}
               </ul>
             </div>
