@@ -1,6 +1,6 @@
 .card__title_type_final {
-    font-size: 22px;
-    line-height: 28px;
+    font-size: 21px;
+    line-height: 29px;
     margin-bottom: 16px;
     /*В финальной карточке в карточке стиха XL нужен отступ 25px, а в XS 16px, не нашел где поменять класс тайтлу карточки XL*/
 }

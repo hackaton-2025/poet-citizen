@@ -210,7 +210,7 @@ const problems = [
     ],
   },
   {
-    name: 'Не убрана площадка для мусора',
+    name: 'Неубранный мусор',
     emoji: '128465',
     location: outdoors,
     poem: [
@@ -261,7 +261,7 @@ const problems = [
     ],
   },
   {
-    name: 'Прочее',
+    name: 'Прочие проблемы',
     emoji: '10071',
     location: outdoors,
     poem: [
@@ -421,7 +421,7 @@ const problems = [
     ],
   },
   {
-    name: 'Не убрана площадка для мусора',
+    name: 'Неубранный мусор',
     emoji: '128465',
     location: house,
     poem: [
@@ -545,7 +545,7 @@ const problems = [
   },
 
   {
-    name: 'Прочее',
+    name: 'Прочие проблемы',
     emoji: '10071',
     location: house,
     poem: [
@@ -866,7 +866,7 @@ const problems = [
     ],
   },
   {
-    name: 'Прочее',
+    name: 'Прочие проблемы',
     emoji: '10071',
     location: flat,
     poem: [
