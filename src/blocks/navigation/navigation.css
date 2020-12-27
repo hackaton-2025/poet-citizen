@@ -29,7 +29,7 @@
 
 @media all and (max-width:767px) {
   .navigation {
-    height: 100%;
+    height: calc(100% + 32px);
     position: absolute;
     top: 0;
     z-index: 5;

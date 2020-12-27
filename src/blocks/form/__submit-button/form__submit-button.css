@@ -46,7 +46,7 @@
     box-shadow: none;
   }
 
-  @media all and (max-width:425px) {
+  @media all and (max-width:767px) {
     .form__submit-button {
         margin:8px 0 16px 0;
     }

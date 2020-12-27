@@ -18,7 +18,7 @@
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 767px) {
   .footer__content {
     padding: 36px 16px;
     height: 199px;

@@ -10,7 +10,7 @@
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 767px) {
   .footer__email {
     margin: 0;
     text-align: right;
