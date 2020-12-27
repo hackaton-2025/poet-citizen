@@ -12,6 +12,7 @@
   background: linear-gradient(94.08deg, #7e87f8 0%, #9b50fb 98.92%);
   box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
+  border: none  ;
 }
 
 .popup__link:hover {

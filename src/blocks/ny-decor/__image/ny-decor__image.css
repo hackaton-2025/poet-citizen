@@ -4,3 +4,9 @@
 .ny-decor__image {
   position: absolute;
 }
+
+@media all and (max-width:425px) {
+  .ny-decor__image {
+    display: none;
+  }
+}

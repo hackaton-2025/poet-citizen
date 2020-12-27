@@ -200,7 +200,7 @@ const NewCall = ({ onCallAdd }) => {
         contentModificator="popup__container_content_dialog"
         popupTitle="Ваша заявка успешно отправлена!"
         isRedirect={true}
-        redirectText="Все завки"
+        redirectText="Все заявки"
         onClose={redirectToCalls}
       />
     </>

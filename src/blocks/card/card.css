@@ -1,9 +1,7 @@
 @import url(./__emoji/card__emoji.css);
 @import url(./__emoji/_type/card__emoji_type_final.css);
 @import url(./__title/card__title.css);
-@import url(./__title/_type/card__title_type_actuality.css);
 @import url(./__title/_type/card__title_type_final.css);
-@import url(./__title/_type/card__title_type_problem.css);
 @import url(./__poem-line/card__poem-line.css);
 @import url(./_size/card_size_xs.css);
 @import url(./_size/card_size_s.css);

@@ -34,3 +34,10 @@
   align-items: center;
   overflow: hidden;
 }
+
+
+@media all and (max-width:425px) {
+  .form {
+      border-radius: 0;
+  }
+}
