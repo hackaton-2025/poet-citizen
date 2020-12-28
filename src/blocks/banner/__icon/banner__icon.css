@@ -4,7 +4,7 @@
   z-index: -1;
 }
 
-@media (max-width: 425px) {
+@media (max-width: 767px) {
   .banner__icon {
     display: none;
   }

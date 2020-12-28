@@ -6,31 +6,33 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 74px 0;
+  padding-top: 74px;
+  padding-bottom: 74px;
   margin-top: 24px;
   font-family: "Open Sans", Arial, sans-serif;
   border: 1px solid rgb(255 255 255 / 0.4);
+  overflow: hidden;
 }
 
 @media (max-width: 1024px) {
   .banner {
-    margin-top: 112px;
+    /* margin-top: 112px; */
     max-width: 784px;
   }
 }
 
 @media (max-width: 768px) {
   .banner {
-    margin-top: 64px;
+    /* margin-top: 64px; */
     max-width: 720px;
   }
 }
 
 @media (max-width: 425px) {
   .banner {
-    padding: 48px 0;
+    padding: 48px 16px;
     margin-top: 24px;
-    max-width: 328px;
+    max-width: 294px;
   }
 }
 

@@ -36,15 +36,11 @@
     /* здесь высота из-за того, что лого и юзер-профайл разной высоты  
     и при открытии/закрытии меню прыгала высота хедера */
     min-height: 98px;
-    /* паддинги из-за неправильной реализации адаптива */
-    padding-left: 16px;
-    padding-right: 16px;
   }
 }
 
 @media screen and (max-width: 425px) {
   .header {
-    padding: 8px 0;
-    max-width: 328px;
+    padding: 8px 16px;
   }
 }

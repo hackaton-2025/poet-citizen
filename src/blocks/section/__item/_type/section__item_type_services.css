@@ -12,7 +12,7 @@
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 767px) {
   .section__item_type_services {
     width: 173px;
   }
