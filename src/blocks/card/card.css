@@ -19,7 +19,6 @@
 
 .card {
   width: 100%;
-  display: flex;
   border-radius: 20px;
   border: none;
   font-family: "Open Sans", Arial, sans-serif;
@@ -32,4 +31,14 @@
 
 .card:focus {
   outline: none;
+}
+
+@media screen and (max-width: 767px) {
+  .card {
+    margin-bottom: 24px;
+  }
+
+  .card:last-of-type {
+    margin-bottom: 0;
+  }
 }

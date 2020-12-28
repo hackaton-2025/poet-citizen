@@ -17,14 +17,14 @@
 @media (max-width: 1024px) {
   .banner {
     /* margin-top: 112px; */
-    max-width: 784px;
+    /* max-width: 784px; */
   }
 }
 
 @media (max-width: 768px) {
   .banner {
     /* margin-top: 64px; */
-    max-width: 720px;
+    /* max-width: 720px; */
   }
 }
 
@@ -32,7 +32,8 @@
   .banner {
     padding: 48px 16px;
     margin-top: 24px;
-    max-width: 294px;
+    width: auto
+    /* max-width: 294px; */
   }
 }
 

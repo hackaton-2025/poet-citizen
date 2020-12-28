@@ -1,5 +1,6 @@
 .card_size_s {
   height: 80px;
+  display: flex;
   align-items: center;
   padding: 10px 20px;
 }
@@ -27,6 +28,12 @@
 
 @media all and (max-width:425px) {
   .card_size_s {
-    justify-content:flex-start;
+    /* justify-content: space-
+    between; */
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    justify-items: center;
+    padding-left: 8px;
+    padding-right: 8px;
   }
 }

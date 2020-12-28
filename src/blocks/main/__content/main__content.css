@@ -17,7 +17,7 @@
 }
 @media all and (max-width:767px) {
   .main__content {
-    width: calc(100% - 16px*2);
+    width: 100%;
     margin: 0 auto;
   }
 }

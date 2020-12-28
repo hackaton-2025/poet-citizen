@@ -4,21 +4,22 @@
     gap: 24px 16px;
 }
 
-@media all and (max-width:1024px) {
+@media screen and (max-width:1024px) {
     .new-call__cards_type_place {
         display: flex;
         flex-direction: column;
         margin-bottom: 170px;
+        gap: 0;
     }
   }
 
-  @media all and (max-width:768px) {
+  @media screen and (max-width:768px) {
     .new-call__cards_type_place {
         margin-bottom: 294px;
     }
   }
 
-  @media all and (max-width:767px) {
+  @media screen and (max-width:767px) {
     .new-call__cards_type_place {
         margin-bottom: 48px;
     }

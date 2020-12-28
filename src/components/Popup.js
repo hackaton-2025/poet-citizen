@@ -45,7 +45,7 @@ const Popup = ({
   return (
     <div className={popupClassName} onMouseDown={handleOverlayPopupClick}>
       <div className={popupContainerClassName}>
-        { !isRedirect && <button className="popup__close-btn" onClick={onClose}>&#10006;</button> }
+        { !isRedirect && <button className="popup__close-btn" onClick={onClose} /> }
         <h3 className="popup__title">{popupTitle}</h3>
         { children }
         { isRedirect && <button className="popup__link" onClick={onClose}>{redirectText}</button> }
