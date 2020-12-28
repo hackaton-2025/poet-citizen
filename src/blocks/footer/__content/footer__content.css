@@ -7,7 +7,7 @@
   align-items: flex-start;
 }
 
-@media (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .footer__content {
     padding: 36px 16px;
     height: 199px;

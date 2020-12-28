@@ -6,13 +6,13 @@
     grid-area: title;
   }
 
-  @media all and (max-width:1024px) {
+  @media screen and (max-width:1024px) {
     .page__title {
         margin: 0 0 8px 0;
   }
 }
 
-@media all and (max-width:767px) {
+@media screen and (max-width:767px) {
   .page__title {
       margin: 0 0 8px 0;
       justify-self: center;

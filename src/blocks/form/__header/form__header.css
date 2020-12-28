@@ -14,7 +14,7 @@
                           'title  emoji';
 }
 
-@media all and (max-width:767px) {
+@media screen and (max-width:767px) {
     .form__header {
         border-top-right-radius: 0;
         border-top-left-radius: 0;

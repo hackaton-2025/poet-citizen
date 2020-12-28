@@ -21,13 +21,13 @@
   min-height: 770px;
 }
 
-@media all and (max-width:1024px) {
+@media screen and (max-width:1024px) {
   .navigation {
     min-height: 601px;
   }
 }
 
-@media all and (max-width:767px) {
+@media screen and (max-width:767px) {
   .navigation {
     height: calc(100% + 32px);
     position: absolute;

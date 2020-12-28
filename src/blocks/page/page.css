@@ -1,3 +1,9 @@
+@import url(./__button/page__button.css);
+@import url(./__container/page__container.css);
+@import url(./__narrow/page__narrow.css);
+@import url(./__subtitle/page__subtitle.css);
+@import url(./__title/page__title.css);
+
 .page {
   height: 100%;
   font-family: "Open Sans", Arial, sans-serif;
@@ -8,9 +14,3 @@
   -moz-text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
 }
-
-@import url(./__button/page__button.css);
-@import url(./__container/page__container.css);
-@import url(./__narrow/page__narrow.css);
-@import url(./__subtitle/page__subtitle.css);
-@import url(./__title/page__title.css);

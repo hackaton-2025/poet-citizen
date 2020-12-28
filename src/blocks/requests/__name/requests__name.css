@@ -2,7 +2,7 @@
   margin: 0;
 }
 
-@media (max-width: 425px) {
+@media screen and (max-width: 425px) {
   .requests__name {
     order: 3;
   }

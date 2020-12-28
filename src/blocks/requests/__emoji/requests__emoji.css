@@ -8,7 +8,7 @@
   margin: 0;
 }
 
-@media (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   .requests__emoji {
     margin: 0 8px 0 0;
   }

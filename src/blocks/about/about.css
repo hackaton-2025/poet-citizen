@@ -1,9 +1,10 @@
-.about {
-  font-family: "Open Sans", Arial, sans-serif;
-}
 @import url(./__title/about__title.css);
 @import url(./__subtitle/about__subtitle.css);
 @import url(./__item-container/about__item-container.css);
 @import url(./__item/about__item.css);
 @import url(./__text/about__text.css);
 @import url(./__emoji/about__emoji.css);
+
+.about {
+  font-family: "Open Sans", Arial, sans-serif;
+}

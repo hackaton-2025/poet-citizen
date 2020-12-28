@@ -8,13 +8,13 @@
   text-align: right;
 }
 
-@media (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   .requests__date {
     max-width: 156px;
   }
 }
 
-@media (max-width: 425px) {
+@media screen and (max-width: 425px) {
   .requests__date {
     text-align: left;
     margin-bottom: 16px;

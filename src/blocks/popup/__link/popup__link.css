@@ -18,21 +18,6 @@
   cursor: pointer;
 }
 
-/*
-.popup__link:hover {
-  background: linear-gradient(
-    94.08deg,
-    rgb(126 135 248 / 0.3) 0%,
-    rgb(155 80 251 / 0.3) 98.92%
-  );
-}
-
-.popup__link:active {
-  box-shadow: none;
-}
-*/
-
-
 .popup__link:before {
   position: absolute;
   content: "";

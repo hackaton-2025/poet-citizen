@@ -1,4 +1,4 @@
-@media all and (max-width:767px) {
+@media screen and (max-width:767px) {
   .navigation_mobile_closed {
     visibility: hidden;
     opacity: 0;

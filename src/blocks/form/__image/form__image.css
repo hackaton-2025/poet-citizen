@@ -2,13 +2,10 @@
     grid-area: emoji;
     width: 80px;
     height: 80px;
-    /* position: absolute;
-    top: 32px;
-    right: 24px; */
 }
 
 
-@media all and (max-width:767px) {
+@media screen and (max-width:767px) {
     .form__image {
       display: none;
     }

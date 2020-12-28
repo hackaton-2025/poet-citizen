@@ -6,13 +6,13 @@
   cursor: default;
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .section__item_type_services {
     width: 223px;
   }
 }
 
-@media (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .section__item_type_services {
     width: 173px;
   }

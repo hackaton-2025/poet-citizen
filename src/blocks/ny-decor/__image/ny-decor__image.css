@@ -5,7 +5,7 @@
   position: absolute;
 }
 
-@media all and (max-width:767px) {
+@media screen and (max-width:767px) {
   .ny-decor__image {
     display: none;
   }

@@ -19,7 +19,7 @@
     z-index: 1;
   }
 
-  @media all and (max-width:767px) {
+  @media screen and (max-width:767px) {
     .new-call__next-button{
       width: 100%;
         margin-bottom: 16px;

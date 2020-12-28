@@ -7,12 +7,7 @@
   margin: 0 auto;
 }
 
-@media (max-width: 1024px) {
-  .section__list {
-  }
-}
-
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .section__list {
     justify-items: center;
   }

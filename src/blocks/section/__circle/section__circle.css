@@ -14,14 +14,14 @@
   border: 1px solid rgb(255 255 255 / 0.4);
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .section__circle {
     width: 223px;
     height: 223px;
   }
 }
 
-@media (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .section__circle {
     width: 173px;
     height: 173px;

@@ -5,14 +5,14 @@
   height: 67px;
 }
 
-@media (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   .banner__icon_broom {
     right: 19px;
     bottom: 169px;
   }
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .banner__icon_broom {
     right: 12px;
     bottom: 169px;

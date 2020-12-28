@@ -4,13 +4,13 @@
   z-index: 1;
 }
 
-@media (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   .banner__content {
     max-width: 466px;
   }
 }
 
-@media (max-width: 425px) {
+@media screen and (max-width: 425px) {
   .banner__content {
     max-width: 296px;
   }

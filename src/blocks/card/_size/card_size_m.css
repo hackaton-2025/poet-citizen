@@ -6,7 +6,7 @@
   padding: 0 20px;
 }
 
-@media all and (max-width:1024px) {
+@media screen and (max-width:1024px) {
   .card_size_m {
       justify-content: center;
       margin-bottom: 24px;
@@ -17,19 +17,19 @@
   }
 }
 
-@media all and (max-width:768px) {
+@media screen and (max-width:768px) {
   .card_size_m {
       height: 104px;
   }
 }
 
-@media all and (max-width:767px) {
+@media screen and (max-width:767px) {
   .card_size_m {
       height: 140px;
   }
 }
 
-@media all and (max-width:425px) {
+@media screen and (max-width:425px) {
   .card_size_m {
       padding-left: 12px;
       padding-right: 12px;
