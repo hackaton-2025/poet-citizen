@@ -25,13 +25,13 @@
   font-family: "Open Sans", Arial, sans-serif;
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .section {
     padding-bottom: 80px;
   }
 }
 
-@media (max-width: 425px) {
+@media screen and (max-width: 425px) {
   .section {
     padding-bottom: 131px;
   }

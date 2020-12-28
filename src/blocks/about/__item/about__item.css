@@ -8,7 +8,7 @@
   padding: 24px;
 }
 
-@media (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   .about__item {
     width: 100%;
     flex-direction: column;

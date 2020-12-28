@@ -5,7 +5,7 @@
   height: 615px;
 }
 
-@media (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   .about__item-container {
     height: auto;
     width: 100%;

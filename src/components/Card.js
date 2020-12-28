@@ -27,14 +27,6 @@ const Card = ({
 
   const [emojiUrl, setEmogi] = useState(null);
 
-  // const loadEmoji = () => {
-  //   import(`../images/emoji/${imageCode}.png`)
-  //     .then((image) => {
-  //       setEmogi(image.default);
-  //     })
-  //     .catch((err) => console.log(err));
-  // };
-
   useEffect(() => {
     loadImage(imageCode, setEmogi);
   }, []);

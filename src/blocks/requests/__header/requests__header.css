@@ -6,7 +6,7 @@
   margin: 0 0 16px 0;
 }
 
-@media (max-width: 425px) {
+@media screen and (max-width: 425px) {
   .requests__header {
     flex-direction: column;
     align-items: flex-start;

@@ -15,25 +15,18 @@
 @import url(./__link/popup__link.css);
 
 .popup {
-  display: flex;
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100%;
-  align-items: center;
-  justify-content: center;
+  padding-left: 16px;
+  padding-right: 16px;
+  box-sizing: border-box;
   background: rgba(0 0 0 / 0.6);
   font-family: "Open Sans", Arial, sans-serif;
   visibility: hidden;
   opacity: 0;
   z-index: 3;
   transition: 0.4s opacity, 0.4s visibility;
-}
-
-@media (max-width: 425px) {
-  .popup {
-    overflow: auto;
-    display: block;
-  }
 }

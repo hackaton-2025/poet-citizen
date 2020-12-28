@@ -15,20 +15,20 @@
   position: relative;
 }
 
-@media all and (max-width:1024px) {
+@media screen and (max-width:1024px) {
   .main {
     grid-template-columns: 245px 1fr;
   }
 }
 
-@media all and (max-width:768px) {
+@media screen and (max-width:768px) {
   .main {
     grid-template-columns: 224px 1fr;
     padding-bottom: 303px;
   }
 }
 
-@media all and (max-width:767px) {
+@media screen and (max-width:767px) {
   .main {
     display: flex;
     flex-direction: column;

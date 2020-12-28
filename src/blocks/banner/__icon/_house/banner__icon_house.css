@@ -6,7 +6,7 @@
   transform: rotate(25deg);
 }
 
-@media (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   .banner__icon_house {
     width: 75px;
     height: 75px;
@@ -15,7 +15,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .banner__icon_house {
     top: 35px;
     right: 30px;

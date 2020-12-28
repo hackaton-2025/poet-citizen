@@ -3,13 +3,13 @@
   padding-top: 100px;
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .section_content_services {
     padding-top: 80px;
   }
 }
 
-@media (max-width: 425px) {
+@media screen and (max-width: 425px) {
   .section_content_services {
     padding-top: 131px;
   }

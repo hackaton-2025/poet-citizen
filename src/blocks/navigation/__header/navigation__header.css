@@ -11,7 +11,7 @@
   box-sizing: border-box;
 }
 
-@media all and (max-width:767px) {
+@media screen and (max-width:767px) {
   .navigation__header {
     display: none;
   }

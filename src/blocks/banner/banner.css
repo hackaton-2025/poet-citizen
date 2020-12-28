@@ -1,3 +1,17 @@
+@import url(./__content/banner__content.css);
+@import url(./__title/banner__title.css);
+@import url(./__subtitle/banner__subtitle.css);
+@import url(./__btn-container/banner__btn-container.css);
+@import url(./__btn/banner__btn.css);
+@import url(./__btn/_transparent/banner__btn_transparent.css);
+@import url(./__icon/banner__icon.css);
+@import url(./__icon/_news/banner__icon_news.css);
+@import url(./__icon/_lightning/banner__icon_lightning.css);
+@import url(./__icon/_bulb/banner__icon_bulb.css);
+@import url(./__icon/_house/banner__icon_house.css);
+@import url(./__icon/_broom/banner__icon_broom.css);
+@import url(./__icon/_faucet/banner__icon_faucet.css);
+
 .banner {
   width: 100%;
   background: rgba(255, 255, 255, 0.4);
@@ -14,39 +28,10 @@
   overflow: hidden;
 }
 
-@media (max-width: 1024px) {
-  .banner {
-    /* margin-top: 112px; */
-    /* max-width: 784px; */
-  }
-}
-
-@media (max-width: 768px) {
-  .banner {
-    /* margin-top: 64px; */
-    /* max-width: 720px; */
-  }
-}
-
-@media (max-width: 425px) {
+@media screen and (max-width: 425px) {
   .banner {
     padding: 48px 16px;
     margin-top: 24px;
     width: auto
-    /* max-width: 294px; */
   }
 }
-
-@import url(./__content/banner__content.css);
-@import url(./__title/banner__title.css);
-@import url(./__subtitle/banner__subtitle.css);
-@import url(./__btn-container/banner__btn-container.css);
-@import url(./__btn/banner__btn.css);
-@import url(./__btn/_transparent/banner__btn_transparent.css);
-@import url(./__icon/banner__icon.css);
-@import url(./__icon/_news/banner__icon_news.css);
-@import url(./__icon/_lightning/banner__icon_lightning.css);
-@import url(./__icon/_bulb/banner__icon_bulb.css);
-@import url(./__icon/_house/banner__icon_house.css);
-@import url(./__icon/_broom/banner__icon_broom.css);
-@import url(./__icon/_faucet/banner__icon_faucet.css);
