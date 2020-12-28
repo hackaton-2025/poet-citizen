@@ -9,3 +9,9 @@
   z-index: -5;
   font-family: "Open Sans", Arial, sans-serif;
 }
+
+@media screen and (max-width: 767px) {
+  .ny-decor {
+    display: none;
+  }
+}

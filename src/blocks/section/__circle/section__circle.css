@@ -21,7 +21,7 @@
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 767px) {
   .section__circle {
     width: 173px;
     height: 173px;

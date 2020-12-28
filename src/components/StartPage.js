@@ -45,9 +45,9 @@ const StartPage = ({ loggedIn, onLogout, isMobile, isMobileMenuOpen, onHamburger
           isMenuOpen={isMobileMenuOpen}
           onHamburgerClick={onHamburgerClick}
         />
-        <main className="start-page">  
+        <main className="start-page  page__narrow">  
           {isMobile && <Navigation url={"/me"} isMobileOpened={isMobileMenuOpen} /> }
-          <section className="banner page__narrow" ref={node => (bannerRef.current = node)}>
+          <section className="banner" ref={node => (bannerRef.current = node)}>
             <div className="banner__content">
               <h1 className="banner__title">
                 «Снимаю комнату с камином, Дела в порядок привожу, Гулять хожу на
@@ -104,7 +104,7 @@ const StartPage = ({ loggedIn, onLogout, isMobile, isMobileMenuOpen, onHamburger
             </div>
           </section>
           <section className="section section_content_services">
-            <div className="page__narrow">
+            <div>
               <h2 className="section__title">Виды услуг</h2>
               <ul className="section__list">
                 <li className="section__item section__item_type_services">
@@ -147,7 +147,7 @@ const StartPage = ({ loggedIn, onLogout, isMobile, isMobileMenuOpen, onHamburger
             </div>
           </section>
           <section className="section section_content_news">
-            <div className="page__narrow">
+            <div>
               <h2 className="section__title">Новости</h2>
               <ul className="section__list section__list_type_news">
                 {newsItems.map((newsItem, i) => (

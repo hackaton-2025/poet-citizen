@@ -23,6 +23,7 @@
     grid-row-gap: 32px;
     max-width: 720px;
     grid-column-gap: calc((100% - (223px * 3)) / 2);
+    justify-items: center;
   }
 }
 

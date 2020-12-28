@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Redirect, Route, Switch, useRouteMatch } from "react-router-dom";
 import Header from "./Header";
 import Navigation from "./Navigation";
@@ -18,14 +17,14 @@ const Account = ({
   const { path, url } = useRouteMatch();
 
   return (
-    <div className="page__container page__narrow">
+    <div className="page__container">
       <Header
         loggedIn={loggedIn}
         onLogout={onLogout}
         isMenuOpen={isMobileMenuOpen}
         onHamburgerClick={onHamburgerClick}
       />
-      <main className="main">
+      <main className="main page__narrow">
         <Navigation url={url} isMobileOpened={isMobileMenuOpen} />
         <section className="main__content main__content_grid_new-call">
           <Switch>
