@@ -9,6 +9,11 @@
 @media all and (max-width:1024px) {
   .card_size_m {
       justify-content: center;
+      margin-bottom: 24px;
+  }
+
+  .card_size_m:last-of-type {
+    margin-bottom: 0;
   }
 }
 

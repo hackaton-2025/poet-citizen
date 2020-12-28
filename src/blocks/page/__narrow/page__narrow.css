@@ -5,23 +5,5 @@
   box-sizing: border-box;
   padding-left: 16px;
   padding-right: 16px;
-}
-
-
-@media all and (max-width:1024px) {
-  .page__narrow {
-    max-width: calc(1024px - 120px * 2);
-  }
-}
-
-@media all and (max-width:768px) {
-  .page__narrow {
-    max-width: calc(768px - 24px * 2);
-  }
-}
-
-@media all and (max-width:767px) {
-  .page__narrow {
-    max-width: 100%;
-  }
+  width: 100%;
 }

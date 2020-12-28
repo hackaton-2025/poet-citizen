@@ -106,7 +106,7 @@ const StartPage = ({ loggedIn, onLogout, isMobile, isMobileMenuOpen, onHamburger
           <section className="section section_content_services">
             <div>
               <h2 className="section__title">Виды услуг</h2>
-              <ul className="section__list">
+              <ul className="section__list section__list_type_services">
                 <li className="section__item section__item_type_services">
                   <div className="section__circle">
                     <img className="section__emoji" alt="Эмоджи слесарь" src={uslugi1} />
