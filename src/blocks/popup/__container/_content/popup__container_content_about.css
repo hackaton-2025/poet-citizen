@@ -4,20 +4,20 @@
 
 @media (max-width: 1024px) {
   .popup__container_content_about {
-    max-width: 784px;
+    /* max-width: 784px; */
   }
 }
 
 @media (max-width: 768px) {
   .popup__container_content_about {
-    max-width: 720px;
+    /* max-width: 720px; */
   }
 }
 
 @media (max-width: 425px) {
   .popup__container_content_about {
-    max-width: 330px;
+    /* max-width: 330px;
     top: 10%;
-    margin: 0 auto;
+    margin: 0 auto; */
   }
 }
