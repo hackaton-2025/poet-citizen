@@ -95,7 +95,7 @@ const Register = ({ onRegister, errorMessage, resetErrorMessage }) => {
           onChange={handleChange}
         />
       </fieldset>
-      <fieldset className="form__fieldset form__fieldset_type_two-columns ">
+      <fieldset className="form__fieldset form__fieldset_type_two-one-columns ">
         <div className="form__separator" />
         <FormInput
           name="email"

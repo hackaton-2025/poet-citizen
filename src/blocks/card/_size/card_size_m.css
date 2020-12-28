@@ -1,5 +1,6 @@
 .card_size_m {
   height: 140px;
+  display: flex;
   align-items: center;
   justify-content: center;
   padding: 0 20px;
@@ -20,6 +21,13 @@
 @media all and (max-width:767px) {
   .card_size_m {
       height: 140px;
+  }
+}
+
+@media all and (max-width:425px) {
+  .card_size_m {
+      padding-left: 12px;
+      padding-right: 12px;
   }
 }
 

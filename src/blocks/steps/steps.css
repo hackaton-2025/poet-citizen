@@ -18,15 +18,21 @@
     margin-bottom: 49px;
 }
 
-@media all and (max-width:1024px) {
+@media screen and (max-width:1024px) {
     .steps {
         justify-self: flex-start;
     }
   }
 
-  @media all and (max-width:767px) {
+  @media screen and (max-width:767px) {
     .steps {
         width: 280px;
         justify-self: center;
+    }
+  }
+
+  @media screen and (max-width:425px) {
+    .steps {
+        width: 196px;
     }
   }

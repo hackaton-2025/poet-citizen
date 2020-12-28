@@ -6,20 +6,16 @@
     font-weight: normal;
 }
 
-@media all and (max-width:1024px) {
-    .card__title {
-        font-size: 19px;
-        line-height: 27px;
-    }
+@media screen and (max-width: 1024px) {
+  .card__title {
+    font-size: 19px;
+    line-height: 27px;
   }
+}
 
-  @media all and (max-width:767px) {
-    .card__title {
-        width: 150px;
-    }
+@media screen and (max-width: 7674px) {
+  .card__title {
+    font-size: 17px;
+    line-height: 23px;
   }
-
-
-
-
-
+}
