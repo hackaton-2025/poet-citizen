@@ -1,6 +1,6 @@
 .new-call__next-button_active {
   cursor: pointer;
-  background-color: linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), linear-gradient(94.08deg, #7E87F8 0%, #9B50FB 98.92%);
+  background-image: linear-gradient(94.08deg, #7E87F8 0%, #9B50FB 98.92%);;
 }
 
 .new-call__next-button_active:before {
@@ -10,7 +10,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background-image:  linear-gradient(94.08deg, #7E87F8 100%, #9B50FB 98.92%);
+  background-image:  linear-gradient(0deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), linear-gradient(94.08deg, #7E87F8 0%, #9B50FB 98.92%);;
   transition: opacity  .2s linear;
   z-index: -1;
   opacity: 0;
