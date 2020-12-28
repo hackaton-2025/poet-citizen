@@ -28,7 +28,7 @@ const CheckoutButtons = ({
           className="new-call__prev-button"
           onClick={onPrevButtonClick}
         >
-          <img src={prevIcon} alt="Стрелка назад" /> Назад
+          <img src={prevIcon} alt="Стрелка назад" className="new-call__button-img_type_prev"/> Назад
         </button>
       )}
       <button
@@ -37,7 +37,7 @@ const CheckoutButtons = ({
         onClick={onNextButtonClick}
         disabled={!isNextButtonActive}
       >
-        { nextButtonType === "button" && <>{"Далее"} <img src={NextIcon} alt="Стрелка вперёд" /></> }
+        { nextButtonType === "button" && <>{"Далее"} <img src={NextIcon} alt="Стрелка вперёд" className="new-call__button-img_type_next"/></> }
         { nextButtonType === "submit" && "Отправить" }
       </button>
     </>
