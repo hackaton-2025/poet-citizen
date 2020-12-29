@@ -9,6 +9,8 @@
 @import url(./__next-button/_active/new-call__next-button_active.css);
 @import url(./__next-button/_disabled/new-call__next-button_disabled.css);
 @import url(./__prev-button/new-call__prev-button.css);
+@import url(./__button-img/_type/new-call__button-img_type_next.css);
+@import url(./__button-img/_type/new-call__button-img_type_prev.css);
 
 .new-call {
   font-family: "Open Sans", Arial, sans-serif;

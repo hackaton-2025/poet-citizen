@@ -398,7 +398,7 @@ const problems = [
     ],
   },
   {
-    name: 'Постороние запахи',
+    name: 'Посторонние запахи',
     emoji: '129314',
     location: house,
     poem: [
@@ -697,7 +697,7 @@ const problems = [
     ],
   },
   {
-    name: 'Постороние запахи',
+    name: 'Посторонние запахи',
     emoji: '129314',
     location: flat,
     poem: [
@@ -748,7 +748,7 @@ const problems = [
     ],
   },
   {
-    name: 'Нет эл.питания',
+    name: 'Нет эл. питания',
     emoji: '9889',
     location: flat,
     poem: [

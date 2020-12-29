@@ -8,6 +8,7 @@
   background-color: transparent;
   transition: opacity 0.2s linear;
   color: #313131;
+  cursor: pointer;
 }
 
 .footer__about:hover {
