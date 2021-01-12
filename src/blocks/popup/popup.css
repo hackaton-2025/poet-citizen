@@ -1,0 +1,32 @@
+@import url(./__container/popup__container.css);
+@import url(./__container/_content/popup__container_content_news.css);
+@import url(./__container/_content/popup__container_content_about.css);
+@import url(./__container/_content/popup__container_content_dialog.css);
+@import url(./__close-btn/popup__close-btn.css);
+@import url(./__title/popup__title.css);
+@import url(./__title/_team/popup__title_team.css);
+@import url(./__title/_dialog/popup__title_dialog.css);
+@import url(./__date/popup__date.css);
+@import url(./__subtitle/popup__subtitle.css);
+@import url(./__text/popup__text.css);
+@import url(./__text/_team/popup__text_team.css);
+@import url(./__subtext/popup__subtext.css);
+@import url(./__smiles/popup__smiles.css);
+@import url(./__link/popup__link.css);
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+  box-sizing: border-box;
+  background: rgba(0 0 0 / 0.6);
+  font-family: "Open Sans", Arial, sans-serif;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 3;
+  transition: 0.4s opacity, 0.4s visibility;
+}

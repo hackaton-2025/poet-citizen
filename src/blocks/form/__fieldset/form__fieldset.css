@@ -1,0 +1,10 @@
+@import url(./_type/form__fieldset_type_two-columns.css);
+@import url(./_type/form__fieldset_type_four-columns.css);
+@import url(./_type/form__fieldset_type_two-one-columns.css);
+
+.form__fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+  position: relative;
+}

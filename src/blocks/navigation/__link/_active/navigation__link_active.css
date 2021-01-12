@@ -1,0 +1,4 @@
+.navigation__link_active {
+  background-color: #fff;
+  box-shadow: -2px 2px 4px #00000015;
+}

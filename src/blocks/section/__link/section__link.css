@@ -1,0 +1,20 @@
+.section__link {
+  padding: 0;
+  margin: 0;
+  background: 0;
+  border: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 23px;
+  letter-spacing: 0.03em;
+  color: #0038ff;
+  text-align: left;
+  outline: none;
+  cursor: pointer;
+  transition: opacity .2s linear;
+}
+
+.section__link:hover {
+  opacity: .4;
+}

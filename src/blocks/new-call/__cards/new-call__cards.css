@@ -1,0 +1,9 @@
+@import url(./_type/new-call__cards_type_actuality.css);
+@import url(./_type/new-call__cards_type_place.css);
+@import url(./_type/new-call__cards_type_problem.css);
+@import url(./_type/new-call__cards_type_final.css);
+
+.new-call__cards {
+  grid-area: cards;
+}
+

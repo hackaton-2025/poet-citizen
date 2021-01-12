@@ -1,0 +1,21 @@
+
+.navigation__link-title {
+    font-size: 17px;
+    line-height: 23px;
+    letter-spacing: 0.03em;
+    color :#313131;
+    text-decoration: none;
+    margin: 0 0 0 24px;
+  }
+  
+  @media screen and (max-width:768px) {
+    .navigation__link-title {
+      margin: 0 0 0 16px;
+    }
+  }
+
+  @media screen and (max-width:425px) {
+    .navigation__link-title {
+      margin: 0 0 0 24px;
+    }
+  }

@@ -1,0 +1,17 @@
+.profile__input {
+  max-width: 540px;
+  outline: none;
+  cursor: default;
+  padding: 8px 24px;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgb(255 255 255 / 0.4);
+  box-sizing: border-box;
+  border-radius: 4px;
+  margin: 0 0 34px 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 23px;
+  letter-spacing: 0.03em;
+  color: #000000;
+}

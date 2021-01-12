@@ -1,0 +1,26 @@
+.main__content {
+  border-radius: 20px;
+  display: grid;
+  padding: 24px;
+  min-height: 770px;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.4);
+  position: relative;
+  border: 1px solid rgb(255 255 255 / 0.4);
+  grid-template-columns: 1fr;
+}
+
+@media screen and (max-width:1024px) {
+  .main__content {
+    min-height: 601px;
+  }
+}
+@media screen and (max-width:767px) {
+  .main__content {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+
+

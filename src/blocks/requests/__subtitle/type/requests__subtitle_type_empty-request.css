@@ -1,0 +1,5 @@
+.requests__subtitle_type_empty-request {
+    font-size: 21px;
+    line-height: 29px;
+    grid-area: subtitle;
+}

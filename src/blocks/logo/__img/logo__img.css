@@ -1,0 +1,12 @@
+.logo__img {
+  width: 35px;
+  height: 35px;
+  background: url(../../../images/emoji/129529.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: rotate(225deg);
+  margin: -10px 0 0 auto;
+  position: relative;
+  /* Я не поняла, зачем здесь был z-index 5, совсем убирать не стала, чтобы не отвалилось */
+  z-index: 1;
+}

@@ -1,0 +1,11 @@
+.form__main-container_type_login {
+  padding-left: 78px;
+  padding-right: 78px;
+}
+
+@media screen and (max-width:1024px) {
+  .form__main-container_type_login {
+    padding-left: 25px;
+  padding-right: 25px;
+  }
+}

@@ -1,0 +1,17 @@
+@import url(./__image/ny-decor__image.css);
+
+.ny-decor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -5;
+  font-family: "Open Sans", Arial, sans-serif;
+}
+
+@media screen and (max-width: 767px) {
+  .ny-decor {
+    display: none;
+  }
+}

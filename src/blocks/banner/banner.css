@@ -1,0 +1,37 @@
+@import url(./__content/banner__content.css);
+@import url(./__title/banner__title.css);
+@import url(./__subtitle/banner__subtitle.css);
+@import url(./__btn-container/banner__btn-container.css);
+@import url(./__btn/banner__btn.css);
+@import url(./__btn/_transparent/banner__btn_transparent.css);
+@import url(./__icon/banner__icon.css);
+@import url(./__icon/_news/banner__icon_news.css);
+@import url(./__icon/_lightning/banner__icon_lightning.css);
+@import url(./__icon/_bulb/banner__icon_bulb.css);
+@import url(./__icon/_house/banner__icon_house.css);
+@import url(./__icon/_broom/banner__icon_broom.css);
+@import url(./__icon/_faucet/banner__icon_faucet.css);
+
+.banner {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 74px;
+  padding-bottom: 74px;
+  margin-top: 24px;
+  font-family: "Open Sans", Arial, sans-serif;
+  border: 1px solid rgb(255 255 255 / 0.4);
+  overflow: hidden;
+}
+
+@media screen and (max-width: 425px) {
+  .banner {
+    padding: 48px 16px;
+    margin-top: 24px;
+    width: auto
+  }
+}

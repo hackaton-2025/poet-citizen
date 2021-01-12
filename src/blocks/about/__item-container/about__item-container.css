@@ -1,0 +1,15 @@
+.about__item-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 615px;
+}
+
+@media screen and (max-width: 1024px) {
+  .about__item-container {
+    height: auto;
+    width: 100%;
+    flex-direction: column;
+    justify-content: start;
+  }
+}

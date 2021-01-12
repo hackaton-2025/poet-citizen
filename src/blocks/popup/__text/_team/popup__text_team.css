@@ -1,0 +1,10 @@
+.popup__text_team {
+  font-size: 21px;
+  line-height: 29px;
+}
+
+@media screen and (max-width: 1024px) {
+  .popup__text_team {
+    line-height: 28px;
+  }
+}

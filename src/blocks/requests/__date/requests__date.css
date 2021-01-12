@@ -1,0 +1,22 @@
+.requests__date {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 18px;
+  margin: 0;
+  color: #313131;
+  text-align: right;
+}
+
+@media screen and (max-width: 1024px) {
+  .requests__date {
+    max-width: 156px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .requests__date {
+    text-align: left;
+    margin-bottom: 16px;
+  }
+}

@@ -1,0 +1,15 @@
+.requests__emoji {
+  width: 60px;
+  height: 60px;
+  margin: 0 16px 0 0;
+}
+
+.requests__emoji:last-of-type {
+  margin: 0;
+}
+
+@media screen and (max-width: 1024px) {
+  .requests__emoji {
+    margin: 0 8px 0 0;
+  }
+}

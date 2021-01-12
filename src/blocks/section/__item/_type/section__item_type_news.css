@@ -1,0 +1,14 @@
+.section__item_type_news {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  padding: 35px 24px;
+  border-radius: 20px;
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 0.4)
+    ),
+    rgba(255, 255, 255, 0.4);
+  border: 1px solid rgb(255 255 255 / 0.4);
+}

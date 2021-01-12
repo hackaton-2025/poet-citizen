@@ -1,0 +1,9 @@
+.requests__name {
+  margin: 0;
+}
+
+@media screen and (max-width: 425px) {
+  .requests__name {
+    order: 3;
+  }
+}

@@ -1,0 +1,10 @@
+.banner__subtitle {
+  margin: 0;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 23px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: #313131;
+}

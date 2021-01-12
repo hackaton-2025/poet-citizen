@@ -1,0 +1,10 @@
+.navigation__container {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    box-sizing: border-box;
+    padding: 24px 16px;
+    margin: 0 auto;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }

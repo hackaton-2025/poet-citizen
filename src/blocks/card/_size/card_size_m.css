@@ -1,0 +1,38 @@
+.card_size_m {
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+@media screen and (max-width:1024px) {
+  .card_size_m {
+      justify-content: center;
+      margin-bottom: 24px;
+  }
+
+  .card_size_m:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .card_size_m {
+      height: 104px;
+  }
+}
+
+@media screen and (max-width:767px) {
+  .card_size_m {
+      height: 140px;
+  }
+}
+
+@media screen and (max-width:425px) {
+  .card_size_m {
+      padding-left: 12px;
+      padding-right: 12px;
+  }
+}
+

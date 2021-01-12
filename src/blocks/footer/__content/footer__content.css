@@ -1,0 +1,18 @@
+.footer__content {
+  height: 120px;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+}
+
+@media screen and (max-width: 767px) {
+  .footer__content {
+    padding: 36px 16px;
+    height: 199px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+  }
+}

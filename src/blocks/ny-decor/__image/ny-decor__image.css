@@ -1,0 +1,12 @@
+@import url(./_content/ny-decor__image_content_gift.css);
+@import url(./_content/ny-decor__image_content_tree.css);
+
+.ny-decor__image {
+  position: absolute;
+}
+
+@media screen and (max-width:767px) {
+  .ny-decor__image {
+    display: none;
+  }
+}

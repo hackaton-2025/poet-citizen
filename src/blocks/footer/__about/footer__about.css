@@ -1,0 +1,26 @@
+.footer__about {
+  font-size: 17px;
+  line-height: 23px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  transition: opacity 0.2s linear;
+  color: #313131;
+  cursor: pointer;
+}
+
+.footer__about:hover {
+  opacity: 0.4;
+}
+
+.footer__about:focus {
+  outline: none;
+}
+
+@media screen and (max-width: 767px) {
+  .footer__about {
+    text-align: left;
+  }
+}

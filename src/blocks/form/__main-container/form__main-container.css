@@ -1,0 +1,21 @@
+@import url(./_type/form__main-container_type_login.css);
+@import url(./_type/form__main-container_type_register.css);
+
+.form__main-container {
+    padding-top: 16px;
+    padding-bottom: 25px;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    z-index: 3;
+    backdrop-filter: blur(2px);
+}
+
+@media screen and (max-width:767px) {
+    .form__main-container {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+}

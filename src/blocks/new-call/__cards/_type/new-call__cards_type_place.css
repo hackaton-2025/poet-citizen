@@ -1,0 +1,26 @@
+.new-call__cards_type_place {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px 16px;
+}
+
+@media screen and (max-width:1024px) {
+    .new-call__cards_type_place {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 170px;
+        gap: 0;
+    }
+  }
+
+  @media screen and (max-width:768px) {
+    .new-call__cards_type_place {
+        margin-bottom: 294px;
+    }
+  }
+
+  @media screen and (max-width:767px) {
+    .new-call__cards_type_place {
+        margin-bottom: 48px;
+    }
+  }

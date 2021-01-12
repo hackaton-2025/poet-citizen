@@ -1,0 +1,21 @@
+.banner__icon_faucet {
+  bottom: 28px;
+  right: 174px;
+  width: 75px;
+  height: 75px;
+  transform: rotate(18deg);
+}
+
+@media screen and (max-width: 1024px) {
+  .banner__icon_faucet {
+    right: 79px;
+    bottom: 36px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .banner__icon_faucet {
+    right: 47px;
+    bottom: 36px;
+  }
+}

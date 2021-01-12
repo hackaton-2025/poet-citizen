@@ -1,0 +1,17 @@
+.banner__content {
+  box-sizing: border-box;
+  max-width: 480px;
+  z-index: 1;
+}
+
+@media screen and (max-width: 1024px) {
+  .banner__content {
+    max-width: 466px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .banner__content {
+    max-width: 296px;
+  }
+}

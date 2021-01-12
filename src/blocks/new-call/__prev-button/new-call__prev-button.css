@@ -1,0 +1,33 @@
+.new-call__prev-button {
+    border: none;
+    background: transparent;
+    border-color: #9B50FB;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 10px;
+    color: #9B50FB;
+    padding: 0;
+    cursor: pointer;
+    width: 200px;
+    height: 50px;
+    align-self: flex-end;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.03em;
+    transition: opacity .2s linear;
+    outline: none;
+    grid-area: button-prev;
+}
+
+.new-call__prev-button:hover {
+    opacity: 0.4;
+}
+
+@media screen and (max-width:767px) {
+    .new-call__prev-button{
+        width: 100%;
+        justify-self: center;
+  }
+}

@@ -1,0 +1,18 @@
+.footer__email-link {
+    font-size: 17px;
+    color: #0038FF;
+    line-height: 23px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+    transition: opacity .2s linear;
+    
+}
+
+.footer__email-link:hover {
+    opacity: .4;
+}
+
+.footer__email-link:active {
+  color: #0038FF;
+}

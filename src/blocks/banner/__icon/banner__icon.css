@@ -1,0 +1,11 @@
+.banner__icon {
+  position: absolute;
+  margin: 0;
+  z-index: -1;
+}
+
+@media screen and (max-width: 767px) {
+  .banner__icon {
+    display: none;
+  }
+}

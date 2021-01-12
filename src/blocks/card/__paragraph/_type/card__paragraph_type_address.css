@@ -1,0 +1,9 @@
+.card__paragraph_type_address {
+    font-size: 17px;
+    line-height: 23px;
+    letter-spacing: 0.03em;
+    text-align: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin: 0;
+}

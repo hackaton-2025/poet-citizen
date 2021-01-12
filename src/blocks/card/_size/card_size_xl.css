@@ -1,0 +1,19 @@
+.card_size_xl {
+  display: flex;
+  grid-column: 1/5;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 16px;
+}
+
+@media screen and (max-width:1024px) {
+  .card_size_xl {
+      grid-column: 1/3;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .card_size_xl {
+      grid-column: 1;
+  }
+}

@@ -1,0 +1,17 @@
+@import url(./__cards/new-call__cards.css);
+@import url(./__call-description/new-call__call-description.css);
+@import url(./__call-element/new-call__call-element.css);
+@import url(./__call-element/_type/new-call__call-element_type_poem.css);
+@import url(./__call-image/new-call__call-image.css);
+@import url(./__call-title/new-call__call-title.css);
+@import url(./__call/new-call__call.css);
+@import url(./__next-button/new-call__next-button.css);
+@import url(./__next-button/_active/new-call__next-button_active.css);
+@import url(./__next-button/_disabled/new-call__next-button_disabled.css);
+@import url(./__prev-button/new-call__prev-button.css);
+@import url(./__button-img/_type/new-call__button-img_type_next.css);
+@import url(./__button-img/_type/new-call__button-img_type_prev.css);
+
+.new-call {
+  font-family: "Open Sans", Arial, sans-serif;
+}

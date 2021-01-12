@@ -1,0 +1,21 @@
+.page__title {
+    font-size: 28px;
+    line-height: 38px;
+    font-weight: 700px;
+    margin: 0;
+    grid-area: title;
+  }
+
+  @media screen and (max-width:1024px) {
+    .page__title {
+        margin: 0 0 8px 0;
+  }
+}
+
+@media screen and (max-width:767px) {
+  .page__title {
+      margin: 0 0 8px 0;
+      justify-self: center;
+}
+}
+

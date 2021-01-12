@@ -1,0 +1,18 @@
+.section__emoji {
+  width: 75px;
+  height: 75px;
+}
+
+@media screen and (max-width: 768px) {
+  .section__emoji {
+    width: 97px;
+    height: 97px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .section__emoji {
+    width: 76px;
+    height: 76px;
+  }
+}

@@ -1,0 +1,12 @@
+.form__fieldset_type_four-columns {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  @media screen and (max-width:767px) {
+    .form__fieldset_type_four-columns {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0 16px;
+    }
+}

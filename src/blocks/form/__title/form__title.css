@@ -1,0 +1,11 @@
+.form__title {
+    grid-area: title;
+    font-size: 28px;
+    line-height: 38px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: #313131;
+  }
+
+  

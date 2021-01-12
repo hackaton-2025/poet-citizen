@@ -1,0 +1,21 @@
+.banner__icon_lightning {
+  top: 200px;
+  left: 50px;
+  width: 45px;
+  height: 65px;
+  transform: rotate(-10deg);
+}
+
+@media screen and (max-width: 1024px) {
+  .banner__icon_lightning {
+    top: 179px;
+    left: 18px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .banner__icon_lightning {
+    top: 180px;
+    left: 8px;
+  }
+}

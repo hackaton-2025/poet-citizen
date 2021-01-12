@@ -1,0 +1,15 @@
+.banner__btn {
+    outline: none;
+    background: #5264a3;
+    border: none;
+    padding: 13px 35px;
+    border-radius: 30px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 23px;
+    line-height: 28px;
+    text-align: center;
+    color: #ffffff;
+    cursor: pointer;
+    text-decoration: none;
+  }

@@ -1,0 +1,14 @@
+.section__list {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-column-gap: calc((100% - (173px * 6)) / 5);
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  .section__list {
+    justify-items: center;
+  }
+}

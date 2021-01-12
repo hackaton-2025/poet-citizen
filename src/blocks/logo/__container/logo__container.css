@@ -1,0 +1,7 @@
+.logo__container {
+  max-width: 112px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+  font-family: "Open Sans", Arial, sans-serif;
+}

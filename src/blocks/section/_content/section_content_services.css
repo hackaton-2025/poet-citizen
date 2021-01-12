@@ -1,0 +1,16 @@
+/* Добавляем цвет в модификаторы, чтобы можно было сделать разноцветные блоки */
+.section_content_services {
+  padding-top: 100px;
+}
+
+@media screen and (max-width: 768px) {
+  .section_content_services {
+    padding-top: 80px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .section_content_services {
+    padding-top: 131px;
+  }
+}

@@ -1,0 +1,40 @@
+.popup__link {
+  outline: none;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 23px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+  padding: 12.5px 50.5px;
+  background: linear-gradient(94.08deg, #7e87f8 0%, #9b50fb 98.92%);
+  box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  border: none;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.popup__link:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image:  linear-gradient(94.08deg, #7E87F8 100%, #9B50FB 98.92%);
+  transition: opacity  .2s linear;
+  z-index: -1;
+  opacity: 0;
+  border-radius: 10px;
+}
+
+.popup__link:hover:before {
+  opacity: 1;
+  outline: none;
+  box-shadow: none;
+}
+

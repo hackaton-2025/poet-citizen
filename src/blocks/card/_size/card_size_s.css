@@ -1,0 +1,37 @@
+.card_size_s {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+@media screen and (max-width:1024px) {
+  .card_size_s {
+    height: 92px;
+    padding: 6px;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .card_size_s {
+    height: 80px;
+  }
+}
+
+@media screen and (max-width:767px) {
+  .card_size_s {
+    height: 92px;
+    justify-content:center;
+    padding: 10px 20px;
+  }
+}
+
+@media screen and (max-width:425px) {
+  .card_size_s {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    justify-items: center;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}

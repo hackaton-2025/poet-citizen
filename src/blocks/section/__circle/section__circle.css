@@ -1,0 +1,29 @@
+.section__circle {
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  width: 173px;
+  height: 173px;
+  border-radius: 50%;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 70px;
+  box-sizing: border-box;
+  border: none;
+  border: 1px solid rgb(255 255 255 / 0.4);
+}
+
+@media screen and (max-width: 768px) {
+  .section__circle {
+    width: 223px;
+    height: 223px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .section__circle {
+    width: 173px;
+    height: 173px;
+  }
+}

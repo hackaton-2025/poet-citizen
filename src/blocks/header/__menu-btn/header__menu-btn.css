@@ -1,0 +1,16 @@
+.header__menu-btn {
+  display: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.header__menu-btn:focus {
+  outline: none;
+}
+
+@media screen and (max-width: 767px) {
+  .header__menu-btn {
+    display: block;
+  }
+}

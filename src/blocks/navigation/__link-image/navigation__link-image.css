@@ -1,0 +1,25 @@
+@import url(./_type/navigation__link-image_type_information.css);
+@import url(./_type/navigation__link-image_type_new-call.css);
+@import url(./_type/navigation__link-image_type_profile.css);
+@import url(./_type/navigation__link-image_type_user-calls.css);
+
+.navigation__link-image {
+    min-width: 40px;
+    height: 47px;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  @media screen and (max-width:768px) {
+    .navigation__link-image {
+      min-width: 36px;
+    height: 43px;
+    }
+  }
+  
+  @media screen and (max-width:425px) {
+    .navigation__link-image {
+      min-width: 40px;
+    height: 47px;
+    }
+  }

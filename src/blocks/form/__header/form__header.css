@@ -1,0 +1,23 @@
+.form__header {
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(2px);
+    padding: 32px 25px 28px 25px;
+    display: grid;
+    grid-template-columns: 1fr min-content;
+    grid-template-rows: repeat(2, min-content);
+    grid-template-areas:  'link   emoji'
+                          'title  emoji';
+}
+
+@media screen and (max-width:767px) {
+    .form__header {
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+        padding: 24px 25px 24px 25px;
+    }
+}
